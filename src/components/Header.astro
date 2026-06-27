@@ -21,7 +21,8 @@ import { SITE_TITLE } from '../consts';
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	h2 {
-		margin: 0;
+		justify-self: start;
+        margin: 0;
 		font-size: 1em;
 	}
 
@@ -29,10 +30,15 @@ import { SITE_TITLE } from '../consts';
 	h2 a.active {
 		text-decoration: none;
 	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.internal-links {
+        justify-self: center;
+        display: flex;
+        gap: 1rem;
+    }
+    nav {
+		display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -43,14 +49,5 @@ import { SITE_TITLE } from '../consts';
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
 	}
 </style>
