@@ -39,7 +39,7 @@ const today = new Date();
               /></path></svg
 			>
 		</a>
-        <a href="https://www.linkedin.com/in/feihao-zhang" target="_blank">
+        <a href="https://www.linkedin.com/in/feihao-zhang-a4a02235a" target="_blank">
 			<span class="sr-only">Follow Fey on Linkedin</span>
 			<svg viewBox="0 0 290.25 354.02" aria-hidden="true" width="32" height="32" astro-icon="social/twitter"
 				>
@@ -67,17 +67,15 @@ const today = new Date();
 		color: rgb(var(--gray));
 		text-align: center;
 	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+	    .social-links a {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+
+         transition: transform 0.25s ease;
+    }
+
+        .social-links a:hover {
+         transform: scale(1.25);
+    }
 </style>
