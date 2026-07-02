@@ -1,54 +1,351 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Hello, Welcome aboard~</h1>
-			<img src="/images/exhibition thumbnail.jpg">
-            <style>
-            .hero-img {
-             width: 500px;
-             height: auto;
-            }
-            </style>
-            <p>
-				Welcome to my personal website! This little site began on a hot June day, but gladly, 
-                the heat wave is receding now. I opened my window a minute ago, and now the pendant light 
-                is swinging in the English evening breeze. I wish you could feel this calm and chill whenever 
-                and wherever you see these words.
-			</p>
-			<p>
-				This website is where I showcase my work and share recent thoughts and progress. Whether 
-                you stop by for any random reason or make it to this place through links, I am very happy 
-                to meet you at this corner of the internet, and I wish you a good time.
-			</p>
-			<p>So... why "capsule"?</p>
-			<p>
-				Perhaps everyone lives in an individual capsule in a way? I am an architect; to me, designing is 
-                a process of building a capsule. Or perhaps I am an observer? I travel in my own capsule and see
-                different people and worlds. Anyway, I don't want to sound too sketchy and philosophical. Perhaps 
-                this is just a personal space, a home in the endless urban landscape, like that of the Nakagin 
-                Capsule Tower.
-			</p>
-			<p>
-                You can learn more about me 
-                <a href="/about" style="rgb(var(--gray)">
-                here
-                </a>. 
-                On this page, you will find my projects. There is space where you 
-                can drop me a message. Have fun!  
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+    <body>
+      <Header />
+
+      <main class="home">
+
+        <canvas id="starfield"></canvas>
+
+        <section class="hero">
+          <div class="hero-text">
+            <p class="eyebrow">Welcome</p>
+            <h1>Capsule Fey</h1>
+            <p class="subtitle">
+              风霜雨雪近在咫尺<br />
+              万家灯火遥不可及
+            </p>
+
+            <p class="intro">
+              This website is where I showcase my work and share recent inspirations and progress.
+               I wish you a wonderful time :)
+            </p>
+
+            <a class="button" href="/research">Explore Research &rarr;</a>
+          </div>
+        </section>
+
+        <section class="ascii-ocean" aria-hidden="true">
+          <div class="icebergs">
+            <pre>
+                    ++                  ++                          ++++
+                   +++                 + +++                       ++ ++++++
+                  ++ + +        ++     ++ +++        + +           +++ +++ +++
+             ___ _++  ++++_ ___++++____+++++++++_____++ +++_________++++  ++++++____
+            </pre>
+          </div>
+
+          <div class="wave wave-one">
+            <pre>
+          +  .+  . .+ o.+ . +  . o.. +   .+  . +  .+.O o. +  .+ o . + . +
+            +.  + o+ .   + .+   . +  +  .  + .+  .   +. +
+              + o  . +.  + .    +  .+   .O +   + o  . +   +O  . .+ .
+           </pre>
+          </div>
+
+          <div class="wave wave-two">
+            <pre>
+              +  . o +.  +.o  O.+   + .   o+. .+  . O.+  .+ . . +.
+          + .   .+   . . +   +   .. + .+  . o.+ . +  .  +. .+  .
+            +. .+O. + .  .+  +. O . + . +.   .o+   +    ..+ 0.
+            </pre>
+          </div>
+
+          <div class="shore">
+            <div class="sand sand-one"></div>
+            <div class="sand sand-two"></div>
+            <div class="sand sand-three"></div>
+          </div>
+        </section>
+      </main>
+
+    </body>
 </html>
+
+<script>
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = Array.from({ length: 70 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.7,
+      r: Math.random() * 1.4 + 0.3,
+      speed: Math.random() * 0.18 + 0.04,
+      alpha: Math.random() * 0.45 + 0.2,
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    stars.forEach((star) => {
+      star.y += star.speed;
+      if (star.y > canvas.height * 0.75) {
+        star.y = -10;
+        star.x = Math.random() * canvas.width;
+      }
+
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(93, 126, 145, ${star.alpha})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+
+  window.addEventListener('resize', resize);
+</script>
+
+<style>
+  .home {
+    position: relative;
+    width: 100vw;
+    max-width: none;
+    min-height: calc(100vh - 80px);
+    margin: 0;
+    overflow: hidden;
+    background:
+      linear-gradient(
+        to bottom,
+        #f8fbfc 0%,
+        #eef5f8 50%,
+        #dce9ef 100%
+      );
+    color: rgb(var(--black));
+  }
+  
+  main.home {
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+  }
+
+  #starfield {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6rem 8vw 2rem;
+    text-align: left;
+  }
+
+  .hero-text {
+    max-width: 520px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.75rem;
+    color: #6f93a8;
+  }
+
+  h1 {
+    margin: 0.2em 0;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    line-height: 1.8;
+    font-size: 0.9rem;
+  }
+
+  .intro {
+    max-width: 420px;
+    line-height: 1.7;
+    margin: 2rem 0;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.9rem 1.4rem;
+    border: 1px solid rgba(93, 126, 145, 0.45);
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.45);
+  }
+
+  .ascii-ocean {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48vh;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .icebergs {
+    position: absolute;
+    transform: translateX(30%);
+    left: 0;
+    right: 0;
+    top: 25%;
+    opacity: 0.25;
+    font-size: clamp(0.45rem, 0.8vw, 0.75rem);
+    line-height: 0.85;
+    color: rgba(93, 126, 145, 0.55);
+  }
+
+  .wave {
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    color: rgba(93, 126, 145, 0.65);
+  }
+
+  .wave pre {
+    margin: 0;
+    font-size: clamp(0.8rem, 1.4vw, 1.25rem);
+    line-height: 1.1;
+    letter-spacing: 0.35em;
+    white-space: pre;
+  }
+
+  .wave-one {
+    top: 38%;
+    animation: waveDrift 16s ease-in-out infinite;
+  }
+
+  .wave-two {
+    top: 52%;
+    opacity: 0.42;
+    animation: waveDriftReverse 23s ease-in-out infinite;
+  }
+
+  .shore {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 36%;
+    z-index: -1;
+    background: linear-gradient(
+    to bottom,
+    rgba(214, 229, 236, 0.05),
+    rgba(93, 126, 145, 0.18)
+    );
+  }
+
+  .sand {
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 80%;
+    border-radius: 50% 50% 0 0;
+    background: rgba(93, 126, 145, 0.08);
+  }
+
+  .sand-one {
+    bottom: -35%;
+    animation: shoreWash 18s ease-in-out infinite;
+  }
+
+  .sand-two {
+    bottom: -45%;
+    opacity: 0.7;
+    animation: shoreWash 24s ease-in-out infinite reverse;
+    }
+
+  .sand-three {
+    bottom: -55%;
+    opacity: 0.45;
+    animation: shoreWash 32s ease-in-out infinite;
+    }
+
+  @keyframes waveDrift {
+    from {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(8%) translateY(8px);
+    }
+    to {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  @keyframes waveDriftReverse {
+    from {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-7%) translateY(-6px);
+    }
+    to {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  @keyframes shoreWash {
+    0% {
+      transform: translateY(12px) scaleX(1);
+    }
+    50% {
+      transform: translateY(-18px) scaleX(1.04);
+    }
+    100% {
+      transform: translateY(12px) scaleX(1);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero {
+      padding: 7rem 1.5rem 2rem;
+      align-items: flex-start;
+    }
+
+    .ascii-ocean {
+      height: 36vh;
+    }
+
+    .subtitle {
+      letter-spacing: 0.18em;
+    }
+  }
+</style>
