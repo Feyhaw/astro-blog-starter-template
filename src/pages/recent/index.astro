@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={{`Recent | ${SITE_TITLE}`}} description="Latest updates" />
+		<BaseHead title={"Recent | " + SITE_TITLE} description="Latest updates" />
 		<style>
 			main {
 				width: 960px;
