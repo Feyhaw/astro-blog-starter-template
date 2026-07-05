@@ -1,0 +1,123 @@
+---
+import { siteMap } from '../data/siteMap';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const currentEntry = Object.entries(siteMap).find(
+    ([, page]) => {
+    const pagePath = page.path.replace(/\/$/, '') || '/';
+    return pagePath === currentPath;
+    }
+);
+
+const currentPage = currentEntry?.[1];
+const neighbours = currentPage?.neighbours ?? {};
+---
+
+<nav class="edge-nav" aria-label="Spatial navigation">
+    {
+        Object.entries(neighbours).map(([direction, key]) => {
+            const target = siteMap[key];
+
+            return (
+                <a
+                    class:list={['edge', `edge-${direction}`]}
+                    href={target.path}
+                    aria-label={`Go ${direction} to ${target.label}`}
+                >
+                    <span class="arrow">
+                        {direction === 'left' && '←'}
+                        {direction === 'right' && '→'}
+                        {direction === 'up' && '↑'}
+                        {direction === 'down' && '↓'}
+                    </span>
+                    <span class="label">{target.label}</span>
+                </a>
+            );
+        })
+    }
+</nav>
+
+<style>
+    .edge-nav {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        pointer-events: none;
+    }
+
+    .edge {
+        position: absolute;
+        pointer-events: auto;
+        color: rgb(var(--gray-dark));
+        text-decoration: none;
+        opacity: 0;
+        transition:
+            opacity 0.25s ease,
+            background 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .edge:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .edge-left,
+    .edge-right {
+        top: 0;
+        bottom: 0;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .edge-left {
+        left: 0;
+    }
+
+    .edge-right {
+        right: 0;
+    }
+
+    .edge-up,
+    .edge-down {
+        left: 0;
+        right: 0;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .edge-up {
+        top: 0;
+    }
+
+    .edge-down {
+        bottom: 0;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .edge-up .arrow,
+    .edge-down .arrow {
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    .edge-up,
+    .edge-down {
+        flex-direction: column;
+    }
+
+    .label {
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+</style>

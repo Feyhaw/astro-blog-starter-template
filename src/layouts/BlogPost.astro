@@ -4,6 +4,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import BreathingBackG from '../components/BreathingBackG.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import EdgeNav from '../components/EdgeNav.astro';
+
+import { ClientRouter } from 'astro:transitions';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -13,6 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<ClientRouter />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -59,13 +63,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 font-size: 2rem;
                 line-height: 1.2;
             }
-
             .prose h3 {
              margin-top: 1.5rem;
              margin-bottom: 0.75rem;
              font-size: 1.5rem;
             }
-
             .prose p {
              line-height: 1.8;
              margin-bottom: 1.2rem;
@@ -74,8 +76,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
-		<Header />
-		<BreathingBackG />
+		<Header transition:name="site-header" />
+		<BreathingBackG transition:name="site-background" />
+		<EdgeNav />
 		<main>
 			<article>
 				<div class="hero-image">
