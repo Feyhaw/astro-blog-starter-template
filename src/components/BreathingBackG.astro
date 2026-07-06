@@ -43,12 +43,12 @@
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        stars = Array.from({ length: 70 }, () => ({
+        stars = Array.from({ length: 140 }, () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height * 0.7,
-            r: Math.random() * 1.4 + 0.3,
-            speed: Math.random() * 0.18 + 0.04,
-            alpha: Math.random() * 0.45 + 0.2,
+            r: Math.random() * 2 + 0.4,
+            speed: Math.random() * 0.28 + 0.05,
+            alpha: Math.random() * 0.35 + 0.12,
         }));
     }
 

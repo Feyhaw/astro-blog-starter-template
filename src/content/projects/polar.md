@@ -4,13 +4,13 @@ subtitle: Polar Architecture Since 1957
 description: Historical and theoretical research on architectures in the Arctic and Antarctic
 pubDate: 2026-06-08
 
-heroImage: /images/Front-01.jpg
+heroImage: /images/2025_9.jpg
 
-category: Research
+category: PhD Thesis
 
 featured: true
 
-year: 2024
+year: 2026
 
 keywords:
     - Polar regions

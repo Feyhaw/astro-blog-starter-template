@@ -33,6 +33,20 @@ const { title, description } = Astro.props;
 		min-height: 100vh;
 	}
 
+	:global(.shortcut) {
+		text-decoration: none;
+		color: rgb(var(--accent));
+		border-bottom: 1px solid rgba(var(--accent), 0.25);
+		transition:
+			border-color 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	:global(.shortcut:hover) {
+		border-bottom-color: rgb(var(--accent));
+		opacity: 0.75;
+	}
+
 	.page {
 		width: 960px;
 		max-width: calc(100% - 2rem);
