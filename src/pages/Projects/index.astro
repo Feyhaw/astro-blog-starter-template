@@ -1,20 +1,25 @@
 ---
-import Layout from '../../layouts/BlogPost.astro';
+import Layout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
-<Layout
-	title="Research and Projects"
-	description="research highlights"
-	heroImage="/images/research_index.jpg"
-	pubDate={new Date('July 05 2026')}
-	>
-	
-	<p>
-	This section 
-	</p>
-	
-	<h2> 
-        Test
-	</h2>
+<Layout title="Projects" description="Research archive">
+	<h1>Projects</h1>
 
+	<div class="project-grid">
+		{
+			projects.map((project) => (
+				<article class="project-card">
+					<img src={project.data.heroImage} alt={project.data.title} />
+					<p>{project.data.year} · {project.data.category}</p>
+					<h3>{project.data.title}</h3>
+					<p>{project.data.description}</p>
+				</article>
+			))
+		}
+	</div>
 </Layout>

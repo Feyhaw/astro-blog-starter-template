@@ -1,17 +1,19 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from '../layouts/PageLayout.astro';
 ---
 
 <Layout
 	title="A little about Fey"
 	description="Something about me"
-	pubDate={new Date('June 28 2026')}
-	heroImage="/images/Icarus.jpg">
+>
+	<h3>A Little About "Fey"</h3>
 
-    <h3> 
-        Although many people have called me by different names, I suppose "Fey" is the easiest one to 
-		pronounce and remember, hence the name of this site. 
-	</h3>
+	<br><br>
+
+    <p>
+		<strong> Although many people have called me by different names, I suppose "Fey" is the easiest one to 
+		pronounce and remember, hence the name of this site.</strong>
+	</p>
 
 	<p>
 		But officially, my name is Feihao. Literally, it means "flying into the sky and meeting the 
@@ -33,9 +35,9 @@ import Layout from '../layouts/BlogPost.astro';
 		self-destructive as Icarus, my friends thought that analogy was perfect.  
 	</p>
 
-    <h3> 
-        My favorite song is "Have You Ever Seen The Rain" by CCR. And in general, I love rock music. 
-	</h3>
+    <p> 
+        <strong>My favorite song is "Have You Ever Seen The Rain" by CCR. And in general, I love rock music.</strong> 
+	</p>
 
 	<p>
 		But perhaps my friends are right in a way? I’ve always felt drawn to things destined to 
@@ -111,16 +113,12 @@ import Layout from '../layouts/BlogPost.astro';
 	</p>
 
 	<p>
-		Daedalus may have had a good point, but Icarus said: "if I'm doomed to plunge, let me 
-		fly higher."
+		<strong>Daedalus may have had a good point, but Icarus said: "if I'm doomed to plunge, let me 
+		fly higher."</strong>
 	</p>
 
-	<style>
-		.hero-image img {
-    	width: 30%;
-    	max-width: 600px;
-    	height: auto;
-		}
-	</style>
+	z<br><br>
+
+	<img src="/images/Icarus.jpg">
 
 </Layout>
