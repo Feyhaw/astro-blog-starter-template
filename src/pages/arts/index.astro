@@ -2,57 +2,51 @@
 import Layout from '../../layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
-const projects = (await getCollection('projects')).sort(
+const arts = (await getCollection('art')).sort(
 	(a, b) => b.data.year - a.data.year,
 );
 ---
 
-<Layout title="Research and Projects" description="Research archive">
-	<h1>Research and Projects</h1>
-	<p> A partial collection of the current and previous projects</p>
-	<p> The comment section is not opened yet, but feel free to 
-	contact me on <a class="shortcut" href="https://www.linkedin.com/in/feihao-zhang-a4a02235a/" 
-	style="color: rgb(var(--gray));">
-    LinkedIn
-    </a>. 
-	</p> 
+<Layout title="Art" description="Art archive">
+	<h1>Gallery</h1>
+
+	<p>A partial collection of my drawings.</p>
 
 	<div class="project-grid">
-  		{
-    		projects.map((project) => (
-      			<article
-					id={project.id}
-        			class="project-card"
-        			data-modal={`project-${project.id}`}
-      			>
-        			<img src={project.data.heroImage} alt={project.data.title} />
-        			<p>{project.data.year} · {project.data.category}</p>
-        			<h3>{project.data.title}</h3>
-        			<p>{project.data.description}</p>
-      			</article>
-    		))
-  		}
+		{
+			arts.map((art) => (
+				<article
+					id={art.id}
+					class="project-card"
+					data-modal={`project-${art.id}`}
+				>
+					<img src={art.data.heroImage} alt={art.data.title} />
+					<p>{art.data.year}</p>
+					<h3>{art.data.title}</h3>
+					<p>{art.data.description}</p>
+				</article>
+			))
+		}
 	</div>
 
 	{
-  		projects.map((project) => (
-    		<dialog id={`project-${project.id}`} class="project-modal">
-      			<div class="modal-inner">
-        			<button class="modal-close" aria-label="Close">×</button>
+		arts.map((art) => (
+			<dialog id={`project-${art.id}`} class="project-modal">
+				<div class="modal-inner">
+					<button class="modal-close" aria-label="Close">×</button>
 
-        			<div class="modal-image">
-          				<img src={project.data.heroImage} alt={project.data.title} />
-        			</div>
+					<div class="modal-image">
+						<img src={art.data.heroImage} alt={art.data.title} />
+					</div>
 
-        			<div class="modal-text">
-          				<p class="modal-meta">{project.data.year} · {project.data.category}</p>
-          				<h2>{project.data.title}</h2>
-          				{project.data.subtitle && <h3>{project.data.subtitle}</h3>}
-          				<p>{project.data.description}</p>
-        			</div>
-      			</div>
-    		</dialog>
-  		))
+					<div class="modal-text">
+						<p class="modal-meta">{art.data.year}</p>
+						<h2>{art.data.title}</h2>
+						<p>{art.data.description}</p>
+					</div>
+				</div>
+			</dialog>
+		))
 	}
 
 	<style>
@@ -202,4 +196,11 @@ const projects = (await getCollection('projects')).sort(
   			modal?.showModal();
 		}
 	</script>
+
+	<br><br>
+	<p>B - Birmingham, UK</p>
+	<p>M - Milano, IT</p>
+	<p>T - Toronto, CA</p>
+	<p>Y - Mianyang, CN</p>
+
 </Layout>

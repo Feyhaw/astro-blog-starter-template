@@ -75,15 +75,15 @@ export const siteMap = {
 
         neighbours: {
             up: 'home',
-            down: 'art',
+            down: 'arts',
         },
 
         type: 'cards',
     },
 
-    art: {
-        path: '/art',
-        label: 'Art',
+    arts: {
+        path: '/arts',
+        label: 'Arts',
         x: 0,
         y: 2,
 
