@@ -8,7 +8,7 @@ heroImage: /images/2026_5.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2026
 

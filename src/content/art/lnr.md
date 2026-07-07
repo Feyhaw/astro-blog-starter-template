@@ -8,7 +8,7 @@ heroImage: /images/2024_9_0920.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2025
 

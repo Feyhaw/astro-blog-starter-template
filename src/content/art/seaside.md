@@ -8,7 +8,7 @@ heroImage: /images/2024_1.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2024
 

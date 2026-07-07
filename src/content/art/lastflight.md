@@ -8,7 +8,7 @@ heroImage: /images/The Last Flight.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2026
 

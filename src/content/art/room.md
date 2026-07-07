@@ -8,7 +8,7 @@ heroImage: /images/2021_11.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2022
 

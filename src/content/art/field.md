@@ -8,7 +8,7 @@ heroImage: /images/2023_2(0302).jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2023
 

@@ -37,6 +37,8 @@ const projects = defineCollection({
 		
 		status: z.string().optional(),
 
+		abstract: z.string().optional(),
+
 		order: z.number().optional(),
 	}),
 });

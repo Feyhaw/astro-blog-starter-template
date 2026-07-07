@@ -8,7 +8,7 @@ heroImage: /images/free.jpg
 
 medium: Digital art
 
-featured: true
+featured: false
 
 year: 2022
 

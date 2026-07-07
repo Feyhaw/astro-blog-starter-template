@@ -1,0 +1,18 @@
+---
+const { item } = Astro.props;
+---
+
+<article
+	id={item.id}
+	class="project-card"
+	data-modal={`project-${item.id}`}
+>
+	<img src={item.data.heroImage} alt={item.data.title} />
+
+	<p>
+		{item.data.category ? `${item.data.year} · ${item.data.category}` : item.data.year}
+	</p>
+
+	<h3>{item.data.title}</h3>
+	<p>{item.data.description}</p>
+</article>

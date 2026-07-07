@@ -1,0 +1,59 @@
+---
+const { item, type = 'project' } = Astro.props;
+
+const hasKeywords = item.data.keywords && item.data.keywords.length > 0;
+---
+
+<dialog id={`project-${item.id}`} class="project-modal">
+	<div class="modal-inner">
+		<button class="modal-close" aria-label="Close">×</button>
+
+		<div class="modal-image">
+			<img src={item.data.heroImage} alt={item.data.title} />
+		</div>
+
+		<div class="modal-text">
+			<p class="modal-meta">
+				{item.data.category ? `${item.data.year} · ${item.data.category}` : item.data.year}
+			</p>
+
+			<h2>{item.data.title}</h2>
+
+			{item.data.subtitle && <h3>{item.data.subtitle}</h3>}
+
+            {
+	            type === 'art' && item.data.medium && (
+		            <p class="modal-status">{item.data.medium}</p>
+	            )
+            }
+
+			{type === 'project' && item.data.status && (
+	            <p class="modal-status">{item.data.status}</p>
+            )}
+
+            {type === 'project' && hasKeywords && (
+	            <div class="modal-keywords">
+		            {item.data.keywords.map((keyword) => (
+			            <span>{keyword}</span>
+		            ))}
+	            </div>
+            )}
+
+            <hr />
+
+			{
+				type === 'art' && (
+					<p>{item.data.description}</p>
+				)
+			}
+
+            {item.data.abstract && (
+	            <div class="modal-abstract">
+		            {item.data.abstract.split('\n\n').map((paragraph) => (
+			        <p>{paragraph}</p>
+		            ))}
+	            </div>
+            )}
+		</div>
+	</div>
+</dialog>

@@ -1,10 +1,14 @@
 ---
 import Layout from '../../layouts/PageLayout.astro';
+import ArchiveGrid from '../../components/ArchiveGrid.astro';
 import { getCollection } from 'astro:content';
 
-const arts = (await getCollection('art')).sort(
-	(a, b) => b.data.year - a.data.year,
-);
+const arts = (await getCollection('art')).sort((a, b) => {
+	if (a.data.featured && !b.data.featured) return -1;
+	if (!a.data.featured && b.data.featured) return 1;
+
+	return 0;
+});
 ---
 
 <Layout title="Art" description="Art archive">
@@ -12,195 +16,19 @@ const arts = (await getCollection('art')).sort(
 
 	<p>A partial collection of my drawings.</p>
 
-	<div class="project-grid">
-		{
-			arts.map((art) => (
-				<article
-					id={art.id}
-					class="project-card"
-					data-modal={`project-${art.id}`}
-				>
-					<img src={art.data.heroImage} alt={art.data.title} />
-					<p>{art.data.year}</p>
-					<h3>{art.data.title}</h3>
-					<p>{art.data.description}</p>
-				</article>
-			))
-		}
-	</div>
-
-	{
-		arts.map((art) => (
-			<dialog id={`project-${art.id}`} class="project-modal">
-				<div class="modal-inner">
-					<button class="modal-close" aria-label="Close">×</button>
-
-					<div class="modal-image">
-						<img src={art.data.heroImage} alt={art.data.title} />
-					</div>
-
-					<div class="modal-text">
-						<p class="modal-meta">{art.data.year}</p>
-						<h2>{art.data.title}</h2>
-						<p>{art.data.description}</p>
-					</div>
-				</div>
-			</dialog>
-		))
-	}
-
-	<style>
-	.project-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
-		margin-top: 3rem;
-	}
-
-	.project-card {
-		background: rgba(255, 255, 255, 0.55);
-		border: 1px solid rgba(93, 126, 145, 0.18);
-		border-radius: 16px;
-		overflow: hidden;
-		box-shadow: 0 12px 30px rgba(93, 126, 145, 0.08);
-		transition:
-			transform 0.25s ease,
-			box-shadow 0.25s ease,
-			background 0.25s ease;
-	}
-
-	.project-card:hover {
-		transform: scale(1.045);
-		box-shadow: 0 18px 45px rgba(93, 126, 145, 0.18);
-		background: rgba(255, 255, 255, 0.72);
-	}
-
-	.project-card img {
-		width: 100%;
-		height: 220px;
-		display: block;
-		object-fit: cover;
-	}
-
-	.project-card p,
-	.project-card h3 {
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
-
-	.project-card p:first-of-type {
-		margin-top: 1rem;
-		font-size: 0.8rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: rgba(93, 126, 145, 0.8);
-	}
-
-	.project-card h3 {
-		margin-top: 0.5rem;
-		margin-bottom: 0.6rem;
-		font-size: 1.25rem;
-		line-height: 1.25;
-		color: rgb(var(--black));
-	}
-
-	.project-card p:last-of-type {
-		margin-bottom: 1.3rem;
-		font-size: 0.95rem;
-		line-height: 1.6;
-		color: rgb(var(--gray-dark));
-	}
-
-	.project-modal {
-  		width: min(900px, 86vw);
-  		height: min(620px, 82vh);
-  		border: none;
-  		border-radius: 18px;
-  		padding: 0;
-  		background: rgba(255, 255, 255, 0.86);
-  		box-shadow: 0 30px 90px rgba(93, 126, 145, 0.28);
-	}
-
-	.project-modal::backdrop {
-  		background: rgba(240, 248, 252, 0.45);
-  		backdrop-filter: blur(4px);
-	}
-
-	.modal-inner {
-  		display: grid;
-  		grid-template-columns: 42% 58%;
-  		height: 100%;
-	}
-
-	.modal-image {
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 1.5rem;
-		overflow: hidden;
-	}
-
-	.modal-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-	}
-
-	.modal-text {
-  		padding: 2rem;
-  		overflow-y: auto;
-	}
-
-	.modal-close {
-  		position: absolute;
-  		top: 1rem;
-  		right: 1rem;
-  		border: none;
-  		background: transparent;
-  		font-size: 1.5rem;
-  		cursor: pointer;
-	}
-
-	@media (max-width: 900px) {
-		.project-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (max-width: 600px) {
-		.project-grid {
-			grid-template-columns: 1fr;
-		}
-	}
-	</style>
-
-	<script>
-  		document.querySelectorAll('[data-modal]').forEach((button) => {
-    		button.addEventListener('click', () => {
-      		const modal = document.getElementById(button.dataset.modal);
-      		modal?.showModal();
-    		});
-  		});
-
-  		document.querySelectorAll('.modal-close').forEach((button) => {
-    		button.addEventListener('click', () => {
-      		button.closest('dialog')?.close();
-    		});
-  		});
-
-		const hash = window.location.hash.slice(1);
-
-		if (hash) {
-  			const modal = document.getElementById(`project-${hash}`);
-  			modal?.showModal();
-		}
-	</script>
+	<ArchiveGrid 
+		items={arts}
+		type="art" 
+		variant="masonry" 
+	/>
 
 	<br><br>
-	<p>B - Birmingham, UK</p>
-	<p>M - Milano, IT</p>
-	<p>T - Toronto, CA</p>
-	<p>Y - Mianyang, CN</p>
+	<p>Places where the arts are created:</p>
+	<p>
+	B - Birmingham, UK<br>
+	M - Milano, IT<br>
+	T - Toronto, CA<br>
+	Y - Mianyang, CN<br>
+	</p>
 
 </Layout>
