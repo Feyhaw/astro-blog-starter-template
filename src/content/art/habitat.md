@@ -10,6 +10,21 @@ medium: Digital art
 
 featured: false
 
+theme: Space architecture
+
+topics: 
+    - Emotion
+    - Retro
+    - Capsule
+    - Ecology
+
+keywords:
+    - Girl
+    - Vehicle
+    - Portrait
+    - Technosphere
+    - Heloise
+
 year: 2026
 
 ---

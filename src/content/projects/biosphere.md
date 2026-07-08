@@ -19,6 +19,14 @@ featured: true
 
 year: 2026
 
+theme: Capsule
+
+topics: 
+    - Ecology
+    - Environmental control
+    - Expansionism
+    - Technology
+
 keywords:
     - Natrual state
     - Ecology

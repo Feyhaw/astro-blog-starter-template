@@ -10,6 +10,17 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Tradition
+
+keywords:
+    - Girl
+    - Vehicle
+    - Solitude
+    - Portrait
+
 year: 2026
 
 ---

@@ -17,6 +17,16 @@ featured: true
 
 year: 2024
 
+theme: Polar architecture
+
+topics: 
+    - Infrastructure
+    - Expansionism
+    - Colonialism
+    - Technology
+    - Housing
+    - Military
+
 keywords:
     - Cold war
     - Confinement

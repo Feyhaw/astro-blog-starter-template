@@ -21,6 +21,15 @@ featured: true
 
 year: 2025
 
+theme: Polar architecture
+
+topics: 
+    - Infrastructure
+    - Expansionism
+    - Colonialism
+    - Technology
+    - Military
+
 keywords:
     - Cybernetics
     - Arctic

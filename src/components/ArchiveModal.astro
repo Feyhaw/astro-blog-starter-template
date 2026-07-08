@@ -1,4 +1,5 @@
 ---
+import Librarian from './Librarian.astro';
 const { item, type = 'project' } = Astro.props;
 
 const hasKeywords = item.data.keywords && item.data.keywords.length > 0;
@@ -54,6 +55,13 @@ const hasKeywords = item.data.keywords && item.data.keywords.length > 0;
 		            ))}
 	            </div>
             )}
+
+			<Librarian
+				title="Archive Librarian"
+				description="Ask about this entry, its background, or related ideas."
+				context={item.data.title}
+			/>
+
 		</div>
 	</div>
 </dialog>

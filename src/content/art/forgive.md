@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+
+keywords:
+    - Season
+    - Birmingham
+
 year: 2025
 
 ---

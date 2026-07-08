@@ -21,6 +21,17 @@ featured: true
 
 year: 2023
 
+theme: Polar architecture
+
+topics: 
+    - Infrastructure
+    - Colonialism 
+    - Environmental control
+    - Housing 
+    - Military
+    - Propaganda
+    - Economy
+
 keywords:
     - Polar expeditions
     - Space Race

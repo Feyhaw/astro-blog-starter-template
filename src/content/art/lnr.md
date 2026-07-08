@@ -10,6 +10,19 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+    - Infrastructure
+
+keywords:
+    - Girl
+    - Vehicle
+    - Feihao Zhang
+    - Fey
+    - Birmingham
+
 year: 2025
 
 ---

@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Capsule
+
+topics: 
+    - Emotion
+    - Retro
+
+keywords:
+    - Natural state 
+
 year: 2025
 
 ---

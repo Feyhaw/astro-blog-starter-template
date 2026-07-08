@@ -17,10 +17,16 @@ featured: true
 
 year: 2022
 
+theme: Urbanism
+
+topics: 
+    - Infrastructure
+    - Economy
+
 keywords:
     - Wholesale market
     - Urban rennovation
-    - Milano
+    - Milan
 
 status: NA
 

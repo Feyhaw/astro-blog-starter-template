@@ -10,6 +10,20 @@ medium: Digital art
 
 featured: false
 
+theme: Space architecture
+
+topics: 
+    - Emotion
+    - Technology
+    - Expansionism
+    - Retro
+
+keywords:
+    - Girl
+    - Vehicle
+    - Solitude
+    - NASA
+
 year: 2025
 
 ---

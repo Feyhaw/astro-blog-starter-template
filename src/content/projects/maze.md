@@ -21,8 +21,14 @@ featured: true
 
 year: 2022
 
+theme: Urbanism
+
+topics: 
+    - History
+    - Preservation
+
 keywords:
-    - Maze
+    - Labyrinth
     - Parametric design
 
 status: NA

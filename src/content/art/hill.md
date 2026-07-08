@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+
+keywords:
+    - Portrait
+    - Birmingham
+
 year: 2024
 
 ---

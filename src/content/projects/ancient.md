@@ -19,11 +19,18 @@ featured: true
 
 year: 2026
 
+theme: Urbanism
+
+topics: 
+    - Military
+    - History
+    - Preservation
+
 keywords:
     - Chinese history
-    - Sichuan
-    - Urbanism 
-    - Archive
+    - Sichuan 
+    - Mianyang
+    - Flood
 
 status: Ongoing
 

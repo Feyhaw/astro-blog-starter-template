@@ -10,6 +10,20 @@ medium: Digital art
 
 featured: false
 
+theme: Space architecture
+
+topics: 
+    - Technology
+    - Expansionism
+    - Soviet
+    - Propaganda
+
+keywords:
+    - Girl
+    - Spaceship
+    - Belief
+    - Portrait
+
 year: 2022
 
 ---

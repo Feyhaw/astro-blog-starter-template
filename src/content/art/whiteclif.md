@@ -10,6 +10,17 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+
+keywords:
+    - Girl
+    - Portrait
+    - Feihao Zhang
+    - Fey
+
 year: 2025
 
 ---

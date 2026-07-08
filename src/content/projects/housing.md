@@ -22,6 +22,14 @@ featured: true
 
 year: 2023
 
+theme: Urbanism
+
+topics: 
+    - Infrastructure
+    - Economy
+    - Propaganda
+    - Housing
+
 keywords:
     - Welfare injustice
     - Socialist movement

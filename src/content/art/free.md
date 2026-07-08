@@ -10,6 +10,17 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+    - Retro
+
+keywords:
+    - Girl
+    - Vehicle
+    - Portrait
+
 year: 2022
 
 ---

@@ -25,9 +25,18 @@ featured: true
 
 year: 2022
 
+theme: Urbanism
+
+topics: 
+    - Religion
+    - History
+    - Preservation
+
 keywords:
     - Varese
     - Religion
+    - Preservation
+    - Survey
     - Cultural heritage
 
 status: NA

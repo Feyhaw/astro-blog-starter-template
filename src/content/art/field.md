@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+
+keywords:
+    - Season
+    - Breakup
+
 year: 2023
 
 ---

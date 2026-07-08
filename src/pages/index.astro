@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import EdgeNav from '../components/EdgeNav.astro';
+import Librarian from '../components/Librarian.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -28,12 +29,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </p>
 
             <p class="intro">
-              This website is where I showcase my work and share recent inspirations and progress.
-               I wish you a wonderful time :)
+              This website is where I store and showcase my work, and share recent inspirations and progress.
+              Here is a 
+              <a class="shortcut" href="/recent/manual" style="color: rgb(var(--gray));">
+              simple manual</a>. 
+              I wish you a wonderful time :)
+              
             </p>
 
-            <a class="button" href="/projects">Explore Research &rarr;</a>
-          </div>
+            <button id="begin-conversation" class="button">
+              Begin the Conversation
+            </button>
+
+            <div id="home-librarian">
+              <Librarian
+                title="Archive Librarian"
+                description="Welcome to Capsule Fey. I'm here to help you explore the archive."
+                context="Capsule Fey"
+              />
+            </div>
         </section>
 
         <section class="ascii-ocean" aria-hidden="true">
@@ -114,6 +128,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   draw();
 
   window.addEventListener('resize', resize);
+  
+  (() => {
+		const button = document.getElementById('begin-conversation');
+		const panel = document.getElementById('home-librarian');
+
+		if (!button || !panel) return;
+
+		button.addEventListener('click', () => {
+			panel.classList.add('open');
+			button.classList.add('hidden');
+		});
+	})();
+
 </script>
 
 <style>
@@ -196,17 +223,53 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     display: inline-block;
     padding: 0.9rem 1.4rem;
     border: 1px solid rgba(93, 126, 145, 0.45);
+    background: transparent;
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: 0.75rem;
+    cursor: pointer;
     transition: transform 0.25s ease, background 0.25s ease;
   }
 
   .button:hover {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.45);
+  }
+
+  .librarian textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #home-librarian {
+    max-width: 480px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height .6s ease,
+      opacity .5s ease;
+  }
+
+  #home-librarian.open {
+    max-height: 900px;
+    opacity: 1;
+  }
+
+  #home-librarian .librarian {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(10px);
+  }
+
+  #begin-conversation.hidden {
+	  display: none;
+  }
+
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .ascii-ocean {
@@ -298,6 +361,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     opacity: 0.45;
     animation: shoreWash 32s ease-in-out infinite;
     }
+
+  .shortcut {
+		text-decoration: none;
+		color: rgb(var(--accent));
+		border-bottom: 1px solid rgba(var(--accent), 0.25);
+		transition:
+			border-color 0.2s ease,
+			opacity 0.2s ease;
+	}
 
   @keyframes waveDrift {
     from {

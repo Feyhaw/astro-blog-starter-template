@@ -10,6 +10,17 @@ medium: Digital art
 
 featured: false
 
+theme: Polar architecture
+
+topics: 
+    - Emotion
+    - Technology
+    - Expansionism
+
+keywords:
+    - Polar regions
+    - Vehicle
+
 year: 2025
 
 ---

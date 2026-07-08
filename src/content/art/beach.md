@@ -10,6 +10,18 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+
+keywords:
+    - Girl
+    - Vehicle
+    - Portrait
+    - Liqi Zhang
+    - Beach
+
 year: 2026
 
 ---

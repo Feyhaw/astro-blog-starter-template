@@ -1,10 +1,10 @@
 ---
-title: Drowning
+title: Lost
 subtitle: NA
-description: Turn it upside down (M) 
+description: Lost in the world with an old car (M)
 pubDate: NA
 
-heroImage: /images/2021_10.jpg
+heroImage: /images/2023_12_0407.jpg
 
 medium: Digital art
 
@@ -13,10 +13,11 @@ featured: false
 theme: Travel
 
 topics: 
-    - Emotion
+    - Retro
 
 keywords:
-    - Milan
+    - Car
+    - Solitude
     - Breakup
 
 year: 2023

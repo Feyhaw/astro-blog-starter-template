@@ -10,6 +10,16 @@ medium: Digital art
 
 featured: false
 
+theme: Capsule
+
+topics: 
+    - Emotion
+
+keywords:
+    - Milan
+    - Feihao Zhang
+    - Fey
+
 year: 2022
 
 ---

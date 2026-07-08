@@ -10,6 +10,20 @@ medium: Digital art
 
 featured: false
 
+theme: Travel
+
+topics: 
+    - Emotion
+    - Technology
+
+keywords:
+    - Girl
+    - Sichuan
+    - Vehicle
+    - Portrait
+    - Feihao Zhang
+    - Fey
+
 year: 2026
 
 ---

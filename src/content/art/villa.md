@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Capsule
+
+topics: 
+    - Emotion
+    - Tradition
+
+keywords:
+    - Natrual state
+
 year: 2020
 
 ---

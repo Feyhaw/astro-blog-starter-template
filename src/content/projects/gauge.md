@@ -19,10 +19,19 @@ featured: true
 
 year: 2020
 
+theme: Urbanism 
+
+topics: 
+    - Infrastructure
+    - Technology
+    - Economy 
+    - History
+
 keywords:
     - Railway
     - Standard
     - Commerce
+    - Toronto
 
 status: NA
 

@@ -10,6 +10,15 @@ medium: Digital art
 
 featured: false
 
+theme: Capsule
+
+topics: 
+    - Emotion
+
+keywords:
+    - Season
+    - Toronto
+
 year: 2020
 
 ---

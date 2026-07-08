@@ -1,0 +1,263 @@
+---
+const {
+	title = 'Archive Librarian',
+	description = 'Ask about this archive entry, its context, or related ideas.',
+	context = '',
+} = Astro.props;
+---
+
+<section class="librarian">
+	<div class="librarian-header">
+		<span class="librarian-dot"></span>
+		<h3>{title}</h3>
+	</div>
+
+	<p>{description}</p>
+
+	<div class="librarian-conversation" aria-live="polite">
+		<div class="message librarian-message">
+			Welcome. I am the Librarian of Capsule Fey. What would you like to know?
+		</div>
+	</div>
+
+	<form class="librarian-form">
+		<textarea
+			name="question"
+			rows="3"
+			placeholder="Continue the conversation..."
+			data-context={context}
+		></textarea>
+
+		<button type="button">
+			Ask →
+		</button>
+	</form>
+</section>
+
+<style>
+	.librarian {
+		margin-top: 2rem;
+		padding: 1rem;
+		border: 1px solid rgba(93, 126, 145, 0.18);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.42);
+	}
+
+	.librarian-header {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.librarian-header h3 {
+		margin: 0;
+		font-size: 0.9rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.librarian-dot {
+		width: 0.55rem;
+		height: 0.55rem;
+		border-radius: 999px;
+		background: rgba(93, 126, 145, 0.75);
+	}
+
+	.librarian p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: rgb(var(--gray-dark));
+	}
+
+	.librarian-conversation {
+		max-height: 220px;
+		overflow-y: auto;
+		margin: 1rem 0;
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.message {
+		padding: 0.75rem 0.9rem;
+		border-radius: 14px;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		background: rgba(255, 255, 255, 0.45);
+	}
+
+	.user-message {
+		margin-left: 2rem;
+		background: rgba(93, 126, 145, 0.12);
+	}
+
+	.librarian-message {
+		margin-right: 2rem;
+	}
+
+	.librarian-form {
+		display: grid;
+		gap: 0.7rem;
+	}
+
+	.librarian textarea {
+		width: 100%;
+		box-sizing: border-box;
+		resize: vertical;
+		border: 1px solid rgba(93, 126, 145, 0.2);
+		border-radius: 12px;
+		padding: 0.8rem;
+		background: rgba(255, 255, 255, 0.55);
+		font: inherit;
+		color: rgb(var(--gray-dark));
+	}
+
+	.librarian button {
+		justify-self: start;
+		border: 1px solid rgba(93, 126, 145, 0.35);
+		border-radius: 999px;
+		padding: 0.55rem 0.9rem;
+		background: transparent;
+		cursor: pointer;
+		font-size: 0.75rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.librarian button:hover {
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	:global(.typing-dots) {
+		display: inline-flex;
+		gap: 0.28rem;
+		align-items: center;
+	}
+
+	:global(.typing-dots span) {
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 999px;
+		background: rgba(93, 126, 145, 0.65);
+		animation: librarianBreath 1.2s ease-in-out infinite;
+	}
+
+	:global(.typing-dots span:nth-child(2)) {
+		animation-delay: 0.18s;
+	}
+
+	:global(.typing-dots span:nth-child(3)) {
+		animation-delay: 0.36s;
+	}
+
+	:global(.librarian-links) {
+	margin: 0.8rem 0 0;
+	padding-left: 1.1rem;
+}
+
+	:global(.librarian-links li) {
+		margin: 0.35rem 0;
+	}
+
+	:global(.librarian-links a) {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		border-bottom: 1px solid rgba(93,126,145,.25);
+		transition: opacity .2s ease;
+	}
+
+	:global(.librarian-links a:hover) {
+		opacity: .65;
+	}
+
+	:global(.materials-consulted) {
+		margin-top: 1rem;
+		font-size: 0.8rem;
+		opacity: 0.75;
+	}
+
+	:global(.materials-consulted h4) {
+		margin: 0 0 0.4rem;
+		font-size: 0.72rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	:global(.materials-consulted ul) {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+
+	@keyframes librarianBreath {
+		0%, 100% {
+				transform: scale(0.75);
+			opacity: 0.35;
+		}
+
+		50% {
+			transform: scale(1.15);
+			opacity: 0.9;
+		}
+	}
+</style>
+
+<script>
+	document.querySelectorAll('.librarian').forEach((librarian) => {
+		const textarea = librarian.querySelector('textarea');
+		const button = librarian.querySelector('button');
+		const conversation = librarian.querySelector('.librarian-conversation');
+		const context = textarea.dataset.context || 'this archive entry';
+
+		const loadingMessages = [
+			`Consulting "${context}"...`,
+			`Reading the archive entry "${context}"...`,
+			'Searching related materials...',
+			'Cross-checking the catalogue...',
+		];
+
+		function addMessage(text, className) {
+			const message = document.createElement('div');
+			message.className = `message ${className}`;
+			message.textContent = text;
+			conversation.appendChild(message);
+			conversation.scrollTop = conversation.scrollHeight;
+			return message;
+		}
+
+		button.addEventListener('click', () => {
+			const question = textarea.value.trim();
+			if (!question) return;
+
+			addMessage(question, 'user-message');
+			textarea.value = '';
+
+			const loadingText =
+				loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+
+			const loading = addMessage('', 'librarian-message');
+			loading.innerHTML = `
+				<span class="typing-dots" aria-label="${loadingText}">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			`;
+
+			setTimeout(async () => {
+				const response = await fetch('/api/librarian', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						question,
+						context,
+					}),
+				});
+
+				const data = await response.json();
+				loading.innerHTML = data.answer;
+
+			}, 1100);
+		});
+	});
+</script>

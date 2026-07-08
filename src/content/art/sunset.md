@@ -10,6 +10,16 @@ medium: Digital art
 
 featured: false
 
+theme: Capsule
+
+topics: 
+    - Emotion
+    - Infrastructure
+
+keywords:
+    - Beach
+
+
 year: 2022
 
 ---

@@ -19,6 +19,17 @@ featured: true
 
 year: 2026
 
+theme: Polar architecture
+
+topics: 
+    - Cybernetics
+    - Colonialism
+    - Infrastructure
+    - Military 
+    - Expansionism
+    - Housing
+    - Environmental control
+
 keywords:
     - Polar regions
     - Cold War
