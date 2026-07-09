@@ -136,7 +136,7 @@ const posts = (await getCollection('recent')).sort((a, b) => {
         			constitution.map((doc) => (
             			<article class="constitution-card">
 
-                				<a href={`/constitution/${doc.id}/`}>
+                				<a href={`/constitution/${doc.id.replace(/\.mdx?$/, '')}/`}>
 
     			                	<h5>{doc.data.title}</h5>
 

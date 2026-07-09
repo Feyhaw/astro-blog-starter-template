@@ -175,3 +175,8 @@ Moreover, it should be noted that in the current economic and climate environmen
 <img src= "/images/aircon F/4.jpg">
 <img src= "/images/aircon F/5.jpg">
 <img src= "/images/aircon F/6.jpg">
+<br>
+
+<a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
+Return to "Recent"</a>
+</p>

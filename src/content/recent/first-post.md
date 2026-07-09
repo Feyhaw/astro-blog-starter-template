@@ -43,6 +43,6 @@ am very happen to greet you from this tiny corner of the internet.
 
 <p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
-Click to return to "Recent"</a>
+Return to "Recent"</a>
 </p>
 
