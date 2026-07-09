@@ -1,8 +1,11 @@
 ---
-title: "Welcome to Capsule Fey"
-description: "A genral navigatino of the entire website."
-pubDate: "July 7 2026"
+title: "Capsule Fey Manual"
+description: "A general navigation of the entire website."
+
+pubDate: 2026-07-08
+
 pinned: true
+
 ---
 
 <p>
@@ -66,3 +69,8 @@ this website was crafted by me and AI together (does that remind you of the huma
 machine interface of Apollo capsule?). I never wanted to build a static portfolio. In stead, 
 I wanted to build a website that breathes, listens, and thinks.
 </p> 
+
+<p>
+<a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
+Return to "Recent"</a>
+</p>

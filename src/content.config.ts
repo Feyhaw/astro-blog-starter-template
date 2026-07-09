@@ -2,6 +2,23 @@ import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 
+const constitution = defineCollection({
+    schema: z.object({
+        title: z.string(),
+
+        description: z.string(),
+
+        pubDate: z.date().optional(),
+
+        theme: z.string().optional(),
+
+        topics: z.array(z.string()).optional(),
+
+        keywords: z.array(z.string()).optional(),
+		
+    }),
+});
+
 const recent = defineCollection({
 	// Load Markdown and MDX files in the `src/content/recent/` directory.
 	loader: glob({ base: "./src/content/recent", pattern: "**/*.{md,mdx}" }),
@@ -85,4 +102,5 @@ export const collections = {
   recent,
   projects,
   art,
+  constitution,
 };

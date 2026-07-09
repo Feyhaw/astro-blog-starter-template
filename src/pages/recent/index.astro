@@ -7,6 +7,10 @@ import EdgeNav from '../../components/EdgeNav.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+const constitution = (await getCollection('constitution')).sort(
+	(a, b) => a.data.title.localeCompare(b.data.title)
+);
+
 const posts = (await getCollection('recent')).sort((a, b) => {
 	if (a.data.pinned && !b.data.pinned) return -1;
 	if (!a.data.pinned && b.data.pinned) return 1;
@@ -21,70 +25,95 @@ const posts = (await getCollection('recent')).sort((a, b) => {
 		<BaseHead title={"Recent | " + SITE_TITLE} description="Latest updates" />
 		<style>
 			main {
-				width: 960px;
+				width: min(860px, calc(100% - 2rem));
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
+			
+			.constitution {
+    			margin-bottom: 3rem;
+			}
+
+			.constitution h2 {
+    			margin-bottom: .4rem;
+			}
+
+			.constitution-card {
+    			padding: 1.2rem 0;
+    			border-top: 1px solid rgba(93,126,145,.18);
+    			border-bottom: 1px solid rgba(93,126,145,.18);
+			}
+
+			.constitution-card a{
+    			text-decoration:none;
+    			color:inherit;
+			}
+
+			.log-intro {
+				margin-top:4rem 
+				margin-bottom: 2rem;
+			}
+
+			.log-intro p {
+				color: rgb(var(--gray));
+				line-height: 1.7;
+			}
+
+			.log-list {
+				display: grid;
+				gap: 0;
+				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+
+			.log-entry {
+				border-top: 1px solid rgba(93, 126, 145, 0.22);
+				padding: 1.4rem 0;
 			}
-			ul li * {
+
+			.log-entry:last-child {
+				border-bottom: 1px solid rgba(93, 126, 145, 0.22);
+			}
+
+			.log-entry a {
+				display: grid;
+				grid-template-columns: 1fr auto;
+				gap: 1.5rem;
 				text-decoration: none;
-				transition: 0.2s ease;
+				color: inherit;
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
+
+			.log-title {
+				margin: 0 0 0.55rem;
+				font-size: 1.15rem;
+				line-height: 1.3;
 				color: rgb(var(--black));
-				line-height: 1;
 			}
-			.date {
+
+			.log-description {
 				margin: 0;
+				max-width: 560px;
+				line-height: 1.65;
+				color: rgb(var(--gray-dark));
+			}
+
+			.log-date {
+				margin: 0;
+				white-space: nowrap;
+				font-size: 0.82rem;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
 				color: rgb(var(--gray));
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
+
+			.log-entry a:hover .log-title,
+			.log-entry a:hover .log-date {
 				color: rgb(var(--accent));
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
+
 			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+				.log-entry a {
+					grid-template-columns: 1fr;
+					gap: 0.6rem;
 				}
 			}
 		</style>
@@ -93,23 +122,44 @@ const posts = (await getCollection('recent')).sort((a, b) => {
 		<Header />
 		<BreathingBackG transition:name="site-background" />
 		<EdgeNav />
-		<main>
+		<main>			
 			<section>
-				<ul>
+				<div class="log-intro">
+					<h1>Archive Log</h1>
+					<p>
+					Recent progress and inspirations.
+					</p>
+				</div>
+
+				<section class="constitution">
+    				{
+        			constitution.map((doc) => (
+            			<article class="constitution-card">
+
+                				<a href={`/constitution/${doc.id}/`}>
+
+    			                	<h5>{doc.data.title}</h5>
+
+                			    	<p>{doc.data.description}</p>
+
+        			        	</a>
+
+            				</article>
+        				))
+    				}
+				</section>
+
+				<ul class="log-list">
 					{
 						posts.map((post) => (
-							<li>
+							<li class="log-entry">
 								<a href={`/recent/${post.id}/`}>
-									{
-    									post.data.heroImage && (
-        									<img
-            									src={post.data.heroImage}
-            									alt={post.data.title}
-        									/>
-    									)
-									}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<div>
+										<h2 class="log-title">{post.data.title}</h2>
+										<p class="log-description">{post.data.description}</p>
+									</div>
+
+									<p class="log-date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
