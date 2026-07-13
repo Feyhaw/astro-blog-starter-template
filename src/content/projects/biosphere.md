@@ -1,5 +1,5 @@
 ---
-title: Encapsulating the natural state 
+title: Encapsulating the Natural State 
 subtitle: World engineering at Biosphere 2 Laboratory
 
 description: Architectural examination of Biosphere 2 as a capsule architecture

@@ -1,5 +1,5 @@
 ---
-title: Born with struggle
+title: Born to Struggle
 subtitle: Nagakin Capsule Tower story 
 
 description: Historical and Architectual review of the Nagakin Capsule Tower
