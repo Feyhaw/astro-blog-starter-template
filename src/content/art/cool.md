@@ -1,7 +1,7 @@
 ---
 title: Fey
 subtitle: NA
-description: Another potrait
+description: A cooler potrait
 pubDate: NA
 
 heroImage: /images/photo_6.jpg
