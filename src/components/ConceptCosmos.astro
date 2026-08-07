@@ -1,0 +1,599 @@
+---
+const topics = [
+	{
+		id: 'confinment',
+		title: 'Confinement',
+		theme: 'Capsule architecture',
+		ideas: [
+			'architectural typology',
+		],
+		connections: ['homeostasis', 'natural state'],
+	},
+	{
+		id: 'envelop',
+		title: 'Envelop',
+		theme: 'Capsule architecture',
+		ideas: [
+			'architectural typology',
+		],
+		connections: ['closed system', 'material circulation'],
+	},
+	{
+		id: 'life-sustaining',
+		title: 'Life-sustaining',
+		theme: 'Habitation',
+		ideas: [
+			'function',
+		],
+		connections: ['homeostasis','cyborg'],
+	},
+	{
+		id: 'survival',
+		title: 'Survival',
+		theme: 'Habitation',
+		ideas: [
+			'function',
+		],
+		connections: ['natural state'],
+	},
+	{
+		id: 'outpost',
+		title: 'Outpost',
+		theme: 'Occupation',
+		ideas: [
+			'function',
+		],
+		connections: ['spatial arrangment'],
+	},
+	{
+		id: 'competition',
+		title: 'Competition',
+		theme: 'Occupation',
+		ideas: [
+			'function',
+		],
+		connections: ['finite system'],
+	},
+	{
+		id: 'knowledge',
+		title: 'Knowledge',
+		theme: 'Research',
+		ideas: ['function'],
+		connections: ['natural state'],
+	},
+		{
+		id: 'colonialism',
+		title: 'Colonialism',
+		theme: 'Extraction',
+		ideas: ['function'],
+		connections: ['expansion', 'material circulation'],
+	},
+	{
+		id: 'material circulation',
+		title: 'Material circulation',
+		theme: 'World analog',
+		ideas: [
+			'technology'
+		],
+		connections: ['colonialism','envelop'],
+	},
+	{
+		id: 'automation',
+		title: 'Automation',
+		theme: 'Computer',
+		ideas: [
+			'technology'
+		],
+		connections: ['spatial arrangment','human-machine interface'],
+	},
+		{
+		id: 'wiring modules',
+		title: 'Wiring modules',
+		theme: 'Computer',
+		ideas: [
+			'technology'
+		],
+		connections: ['spatial arrangment','human-machine interface'],
+	},
+	{
+		id: 'homeostasis',
+		title: 'Homeostasis',
+		theme: 'Cybernetics',
+		ideas: [
+			'principle and model'
+		],
+		connections: ['confinement','life-sustaining','natural state'],
+	},
+	{
+		id: 'closed system',
+		title: 'Closed system',
+		theme: 'Cybernetics',
+		ideas: [
+			'principle and model'
+		],
+		connections: ['envelop'],
+	},
+	{
+		id: 'general system theory',
+		title: 'General System Theory',
+		theme: 'World model',
+		ideas: [
+			'principle and model'
+		],
+		connections: ['wiring modules'],
+	},
+		{
+		id: 'finite system',
+		title: 'Finite system',
+		theme: 'World model',
+		ideas: [
+			'principle and model'
+		],
+		connections: ['competition'],
+	},
+	{
+		id: 'natural state',
+		title: 'Natural state',
+		theme: 'Comfort',
+		ideas: [
+			'Motivation'
+		],
+		connections: ['confinement','homeostasis','survival','knowledge'],
+	},
+	{
+		id: 'expansion',
+		title: 'Expansion',
+		theme: 'comfort',
+		ideas: [
+			'Motivation'
+		],
+		connections: ['colonialism'],
+	},
+	{
+		id: 'human-machine interface',
+		title: 'Human-machine interface',
+		theme: 'Body engineering',
+		ideas: [
+			'Practice'
+		],
+		connections: ['automation','wiring modules'],
+	},
+	{
+		id: 'cyborg',
+		title: 'Cyborg',
+		theme: 'Body engineering',
+		ideas: [
+			'practice'
+		],
+		connections: ['life-sustaining'],
+	},
+	{
+		id: 'spatial arrangment',
+		title: 'Spatial arrangment',
+		theme: 'Social programming',
+		ideas: [
+			'practice',
+		],
+		connections: ['automation','wiring modules'],
+	},
+];
+---
+
+<div class="concept-cosmos" data-concept-cosmos>
+	<svg
+		class="concept-lines"
+		aria-hidden="true"
+		preserveAspectRatio="none"
+	></svg>
+
+	{
+		topics.map((topic, index) => (
+			<div
+	            class="concept-node"
+	            data-id={topic.id}
+	            data-index={index}
+	            role="button"
+	            tabindex="0"
+	            aria-expanded="false"
+            >
+				<span class="concept-label">{topic.title}</span>
+
+                <button
+	                type="button"
+	                class="concept-minimize"
+	                aria-label={`Minimize ${topic.title}`}
+                >
+	            Minimize
+                </button>
+
+				<div class="concept-detail">
+					<p class="concept-theme-label">Topic</p>
+					<p class="concept-theme">{topic.theme}</p>
+
+					<p class="concept-ideas-label">discussed in:</p>
+					<ul>
+						{topic.ideas.map((idea) => <li>{idea}</li>)}
+					</ul>
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<script define:vars={{ topics }}>
+	const cosmos = document.querySelector('[data-concept-cosmos]');
+
+	if (cosmos) {
+		const nodes = [...cosmos.querySelectorAll('.concept-node')];
+		const svg = cosmos.querySelector('.concept-lines');
+
+		function createInitialPosition(index, total) {
+			const cols = Math.ceil(Math.sqrt(total));
+		const rows = Math.ceil(total / cols);
+
+		const col = index % cols;
+		const row = Math.floor(index / cols);
+
+		const cellWidth = 80 / cols;
+		const cellHeight = 76 / rows;
+
+		const x =
+			10 +
+			cellWidth * col +
+			cellWidth / 2 +
+			(Math.random() - 0.5) * cellWidth * 0.35;
+
+		const y =
+			12 +
+			cellHeight * row +
+			cellHeight / 2 +
+			(Math.random() - 0.5) * cellHeight * 0.35;
+
+		return { x, y };
+	}
+
+	const nodeStates = nodes.map((node, index) => {
+		const position = createInitialPosition(index, nodes.length);
+
+		return {
+			node,
+			x: position.x,
+			y: position.y,
+
+			vx:
+				(Math.random() * 0.01 + 0.005) *
+				(Math.random() > 0.5 ? 1 : -1),
+
+			vy:
+				(Math.random() * 0.009 + 0.004) *
+				(Math.random() > 0.5 ? 1 : -1),
+
+			paused: false,
+			open: false,
+		};
+	});
+
+		function applyPositions() {
+			nodeStates.forEach((state) => {
+				state.node.style.left = `${state.x}%`;
+				state.node.style.top = `${state.y}%`;
+			});
+		}
+
+		function getNodeCentre(node) {
+			const cosmosRect = cosmos.getBoundingClientRect();
+			const rect = node.getBoundingClientRect();
+
+			return {
+				x: rect.left - cosmosRect.left + rect.width / 2,
+				y: rect.top - cosmosRect.top + rect.height / 2,
+			};
+		}
+
+		function drawLines(activeId = '') {
+			svg.innerHTML = '';
+
+			const drawn = new Set();
+
+			topics.forEach((topic) => {
+				topic.connections.forEach((connectionId) => {
+					const key = [topic.id, connectionId].sort().join('--');
+
+					if (drawn.has(key)) return;
+					drawn.add(key);
+
+					const startNode = cosmos.querySelector(
+						`[data-id="${topic.id}"]`
+					);
+
+					const endNode = cosmos.querySelector(
+						`[data-id="${connectionId}"]`
+					);
+
+					if (!startNode || !endNode) return;
+
+					const start = getNodeCentre(startNode);
+					const end = getNodeCentre(endNode);
+
+					const line = document.createElementNS(
+						'http://www.w3.org/2000/svg',
+						'line'
+					);
+
+					line.setAttribute('x1', String(start.x));
+					line.setAttribute('y1', String(start.y));
+					line.setAttribute('x2', String(end.x));
+					line.setAttribute('y2', String(end.y));
+
+					const highlighted =
+						activeId &&
+						(topic.id === activeId || connectionId === activeId);
+
+					line.classList.toggle('active', Boolean(highlighted));
+
+					if (activeId && !highlighted) {
+						line.classList.add('dimmed');
+					}
+
+					svg.appendChild(line);
+				});
+			});
+		}
+
+		function animate() {
+			nodeStates.forEach((state) => {
+				if (state.paused || state.open) return;
+
+				state.x += state.vx;
+				state.y += state.vy;
+
+				// Keep nodes away from the very edges
+				if (state.x < 9 || state.x > 91) {
+					state.vx *= -1;
+					state.x = Math.max(9, Math.min(91, state.x));
+				}
+
+				if (state.y < 10 || state.y > 90) {
+					state.vy *= -1;
+					state.y = Math.max(10, Math.min(90, state.y));
+				}
+			});
+
+			applyPositions();
+
+			const active = nodeStates.find((state) => state.open);
+			drawLines(active?.node.dataset.id || '');
+
+			requestAnimationFrame(animate);
+		}
+
+		nodeStates.forEach((state) => {
+			const node = state.node;
+            const minimize = node.querySelector('.concept-minimize');
+
+            minimize?.addEventListener('click', (event) => {
+	            event.stopPropagation();
+
+	            state.open = false;
+	            state.paused = false;
+
+	            node.classList.remove('open');
+	            node.setAttribute('aria-expanded', 'false');
+
+	            drawLines();
+            });
+
+			node.addEventListener('mouseenter', () => {
+				state.paused = true;
+			});
+
+			node.addEventListener('mouseleave', () => {
+				if (!state.open) {
+					state.paused = false;
+				}
+			});
+
+			node.addEventListener('click', () => {
+				const wasOpen = state.open;
+
+				nodeStates.forEach((other) => {
+					other.open = false;
+					other.paused = false;
+					other.node.classList.remove('open');
+					other.node.setAttribute('aria-expanded', 'false');
+				});
+
+				if (wasOpen) {
+					drawLines();
+					return;
+				}
+
+				state.open = true;
+				state.paused = true;
+
+				node.classList.add('open');
+				node.setAttribute('aria-expanded', 'true');
+
+				drawLines(node.dataset.id);
+			});
+		});
+
+		window.addEventListener('resize', () => {
+			const active = nodeStates.find((state) => state.open);
+			drawLines(active?.node.dataset.id || '');
+		});
+
+		applyPositions();
+		requestAnimationFrame(animate);
+	}
+</script>
+
+<style>
+	.concept-cosmos {
+		position: relative;
+		width: 100%;
+		height: min(820px, 82vh);
+		min-height: 700px;
+		margin: 4rem 0 5rem;
+
+		overflow: visible;
+
+		border: none;
+		background: transparent;
+	}
+
+	.concept-lines {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.concept-lines :global(line) {
+		stroke: rgba(40, 52, 60, 0.15);
+		stroke-width: 1;
+		transition:
+			stroke 0.25s ease,
+			stroke-width 0.25s ease,
+			opacity 0.25s ease;
+	}
+
+	.concept-lines :global(line.active) {
+		stroke: rgba(20, 27, 32, 0.75);
+		stroke-width: 1.5;
+	}
+    
+    .concept-lines :global(line.dimmed) {
+	    opacity: 0.12;
+    }
+
+	.concept-node {
+		position: absolute;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+        will-change: left, top, transform;
+		min-width: 7.5rem;
+		padding: 0.65rem 0.9rem;
+		border: 1px solid rgba(93, 126, 145, 0.24);
+		border-radius: 9px;
+		background: rgba(255, 255, 255, 0.88);
+		box-shadow: 0 5px 18px rgba(60, 78, 88, 0.08);
+		color: rgb(var(--black));
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+		transition:
+			width 0.35s ease,
+			padding 0.35s ease,
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.concept-node:hover {
+		transform: translate(-50%, -50%) scale(1.04);
+		box-shadow: 0 9px 24px rgba(60, 78, 88, 0.14);
+	}
+
+	.concept-label {
+		display: block;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	.concept-detail {
+		display: none;
+		margin-top: 1rem;
+		font-size: 0.8rem;
+		line-height: 1.5;
+	}
+
+	.concept-node.open {
+		z-index: 100;
+		width: min(310px, 72vw);
+		padding: 1.25rem;
+	}
+
+	.concept-node.open .concept-label {
+		font-size: 1.25rem;
+		text-align: left;
+	}
+
+	.concept-node.open .concept-detail {
+		display: block;
+	}
+
+	.concept-theme-label,
+	.concept-ideas-label {
+		margin: 0.8rem 0 0.25rem;
+		font-size: 0.68rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
+
+	.concept-theme {
+		display: inline-block;
+		margin: 0;
+		padding: 0.25rem 0.55rem;
+		border-radius: 999px;
+		background: rgba(93, 126, 145, 0.09);
+	}
+
+	.concept-detail ul {
+		margin: 0.3rem 0 0;
+		padding-left: 1.1rem;
+	}
+
+    .concept-minimize {
+	    display: none;
+	    position: absolute;
+	    top: 0.85rem;
+	    right: 0.9rem;
+
+	    border: 0;
+	    background: transparent;
+	    padding: 0;
+
+	    font: inherit;
+	    font-size: 0.65rem;
+	    letter-spacing: 0.08em;
+	    text-transform: uppercase;
+
+	    color: rgb(var(--gray));
+	    cursor: pointer;
+
+	    opacity: 0.65;
+	    transition: opacity 0.2s ease;
+    }
+
+    .concept-minimize:hover {
+	    opacity: 1;
+    }
+
+    .concept-node.open .concept-minimize {
+	    display: block;
+    }
+
+    .concept-node.open .concept-label {
+	    padding-right: 4.5rem;
+    }
+
+	@media (max-width: 720px) {
+		.concept-cosmos {
+			height: 650px;
+			min-height: 650px;
+		}
+
+		.concept-node {
+			min-width: 6.4rem;
+			padding: 0.55rem 0.7rem;
+		}
+
+		.concept-label {
+			font-size: 0.78rem;
+		}
+	}
+</style>

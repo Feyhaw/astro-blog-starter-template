@@ -6,7 +6,7 @@ pubDate: "Aug 05 2026"
 
 ---
 
-<h3>A Brief Timeline of Polar and Space Architecture</h3>
+<h3>A Timeline for Polar and Space Architecture</h3>
 <p>
 History is not a collection of events, but the way they are put together
 <pr>
@@ -115,6 +115,7 @@ History is not a collection of events, but the way they are put together
 1944	Jul	Bretton Woods Agreement: IMF and World Bank were founded<br>
 1945	ENIAC (Electric Numeric Integrator And Computer) was built by the University of Pennsylvania<br>
 1945	The Launch of the Arctic Institute of North America (AINA)<br>
+1945    <em>Operation Tabarin</em> was replaced by the Falkland Islands Dependencies Survey (FIDS) after the war<br>
 1945	Jul	Vannevar Bush's report <em>Science: The Endless Frontier</em><br>
 1945	Jul	<em>Operation Overcast</em>: secretly transfering German engineers and scientists to the allies' zone<br>
 1945	Jul(16)	First test of atomic bomb<br>
@@ -185,8 +186,8 @@ History is not a collection of events, but the way they are put together
 1955	Dec	Publication of <em>The New Brutalism</em> by Reyner Banham<br>
 1956	The US Antarctic expidition <em>Operation Deep Freeze</em>: 6 stations built<br>
 1956	A fully-fledged airport was built in Kulusuq to support the construction of the DEW line<br>
-1956	Jan(6)	Halley I was built by Royal Socioety: the 1st British Antarctic research station<br>
-1956	Feb(13)	Soviet Union built Mirny in the East Antarctica<br>
+1956	Jan(6)	Halley Bay Station ("Z") was built by Royal Socioety: the 1st British Antarctic research station<br>
+1956	Feb(13)	Soviet Union built Mirny Station (namesake: Peaceful/ World) in the East Antarctica<br>
 1956	Feb(14)	The 20th congress of Soviet Union Communist Party: official start of de-Stalinization<br>
 1956	Feb(16) McMurdo Station was established by the US Navy: renamed as McMurdo Station in 1961<br>
 1956	Jun	Suez Crisis<br>
@@ -238,9 +239,247 @@ History is not a collection of events, but the way they are put together
 1960	Jul(15)	The <em>New Frontier</em> speech by JF Kennedy<br>
 1961	The first Issue of Archigram magazine by Peter Cook and David Greene <br>
 1961	<em>The Death and Life of Great American Cities</em> by Jane Jacob<br>
+1961	Apr(12)	Launch of Vostok and first human in space: Yuri Gagarin<br>
+1961	Apr(17)	Bay of Pigs Invasion<br>
+1961	May(5)	First Mercury manned flight	by Alan B. Shepard: upper stratosphere<br>
+1960	May(11)	World Design Conference was held in Tokyo<br>
+1961	May(25)	J.F. Kenney set the goal to land on the moon by the end of the decade<br>
+1961	Jun(23)	Enforcement of the Antarctic Treaty: to be reconsidered in 30 years<br>
+1961	Aug(4)	The first Contract in the Apollo Program was given to the Instrumentation Laboratoy (MIT)<br>
+1961	Oct Khrushchev set the goal to build communism in 20 years<br>
+1961	Oct(27)	Military standoff in the checkpoint between the East and West Berlin<br>
+1961    Dec A small portable nuclear powerplant PM-3A arrived at McMurdo Station<br>
+1962	China began the study on the lunar probe<br>
+1962	The USSR began the study of Zvezda/Barmingrad moon base: it was terminated in 1974<br>
+1962	Feb(20)	John Glenn became the first US astronaut in space<br>
+1962	Mar(3)	Founding of The British Antarctic Survey (BAS) under the Colonial Office<br>
+1962	Mar(4)	The nuclear powerplant at McMurdo station reached initiall criticality<br>
+1962	Apr(26)	Ranger 4 impacted moon: first organic material (wood) on moon<br>
+1962	Sep(12)	JF Kennedy's Rice University adress<br>
+1962	Sep(27)	<em>Silent Spring</em> by Rachel Carson<br>
+1962	Nov	Cuba Missile Crisis
+1962	Dec(12) "The Architecture of Complexity" by Herbert A. Simon<br>
+1962	Dec(13)	UN resolution on the legal principle governing space explorations<br>
+1963	<em>Pug-in City</em> by Peter Cook<br>
+1963	Canada's first social housing program in the Arctic<br>
+1963	The Institute of Biomedical Problems (IBMP) was founded in Moscow: Oleg Gazenko worked here<br>
+1963	Galina Balashova designed the Soyuz spaceship's interior<br>
+1963	Jul(1)	The US Air Force ordered shut-down of all 28 intermediate DEW Line stations<br>
+1963	Jun(16)	Valentina Tereshkova became the first woman in space<br>
+1963	Oct(13)	UN resolution on complete disarmament in space<br>
+1963	Nov(22)	The assasination of John F. Kennedy<br>
+1964	Khrushchev announced the Soviet's manned mission to the moon<br>
+1964	Apr(22)	"To the Moon and Beyond" was played at the T&T Pavilion during the New York World's Fair<br>
+1964	Nov(28)	Mariner-4: first imaging of Mars 
+1965	<em>Drop City</em> by the Bernofskys and Clark Richer<br>
+1965	"A Home is not a House" by Reyner Banham: living package<br>
+1965	Construction began for BIOS-3 lab in Krasnoyarsk, Siberia<br>
+1965	Mar(8)	Full escalation of the Vietnam war: involvement of the US Marine<br>
+1965	Mar(18)	The first extravehicular activity (space walk) by Alexi Leonov <br>
+1965	Mar(21)	Ranger-7 impacted on moon: first lunar flight broadcast<br>
+1965	Jun(3)	First American space walk by Howard H. White<br>
+1965	Aug(27) Le Corbusier passed away<br>
+1966	Sergei Korolev died from a surgery operation<br>
+1966	IBMP began to coduct biomedical research of long-term space travel at Vostok station <br>
+1966	Beginning of the <em>Star Trek</em> series<br>
+1966	Feb(3)	Luna-9 accomplished the fisrt soft landing on the moon<br>
+1966	Mar(16)	The first space docking	between Gemini and Agena spaceship<br>
+1966	May(16)	May 16 Notification: Beginning of the Cultrual Revolution in China<br> 
+1966	Dec(19)	UN Outer Space Treaty<br>
+1967	Expo'67 in Montreal<br>
+1967	Halley II Station became operational (steel-reinforced roof)<br> 
+1967	Jan(27)	Three astroanuts killed in a trianing event: Apollo 1<br>
+1967    Jul The "Summer of Love" music festival in San Francisco<br>
+1968	<em>2001: A Space Odyssey</em> by Stanely Kubrick and Arthur C. Clark<br>
+1968	<em>General System Theory</em> by Ludwig von Bertalanffy<br>
+1968	Jan(5)	Prague Spring Revolution<br>
+1968	Apr	The founding of "The Club of Rome"<br>
+1968	May <em>The population Bomb</em> by Paul and Anne Ehrlich<br>
+1968	Sep(8)	The public display of the Boeing 747 prototype<br>
+1968	Dec(21)	Apollo 8 mission: the "Earthrise" photo<br>
+1969	<em>Operating Manual For Spaceship Earth</em> by Richard Buckminster Fuller<br>
+1969	The founding of Synergia Ranch by John P. Allen and his group<br>
+1969	Jan(4)	The first Soyuz docking	between Soyuz-4 and Soyuz-5<br>
+1969	Mar(3)	The first Apollo docking: Apollo 9<br>
+1969	Jun(12)	The World Game directed by Buckminster Fuller<br>
+1969	Jul(20)	The first moon landing: Apollo 11<br>
+1969	Aug(15)	First Woodstock music festival<br>
+1969	Summer	American ship <em>SS Manhattan</em> tested the Northern shipping passage<br>
+1969	Buckminster Fuller was nomiated for Nobel Peace Prize<br>
 </p>
 
-<h5>More is coming...</h5>
+<h5>1970s</h5>
+<p>
+1970	The founding of <em>Arcosanti</em> by Paolo Soleri<br>
+1970	The US Air Force closed the chimp college: no more chimps in space<br>
+1970	Jay Forrest presented a world model to identify specific issues of the time<br>
+1970	Mar	Expo'70 in Osaka<br> 
+1970	Apr(24)	China's first artificial satellite: <em>Dongfanghong-1</em><br>
+1970	Sep(12)	Luna-16 became the first robotic probe on the moon<br>
+1970	Nov(10)	Luna-17 (Lunokhod-1) became the first moving vehicle on the moon<br>
+1971	Flyback F-1 was studied as a part of the Saturn-V rocket program: idea of space shuttle<br>
+1971	Jun(6)	Soyuz 11: three cosmonauts killed during the re-entering<br>
+1971	Feb(5)	Apollo 14: the first boradcasted moon experiment<br>
+1971	Apr(19)	Launch of the world's first space station, Salyut-1<br>
+1971	May(19)	Mars-2: the first probe to reach the Mars surface<br>
+1971	Jul(30)	Apollo-15: the first moon car and the moon postcard scandal<br>
+1972	Amendment made to the Antactic Treaty: CCAS<br>
+1972	Transferring of the legal responsbility of McMurdo station from the NS Navy to NSF<br>
+1972    Leakage was detected at the PM-3A poweplant: it was to be decommissioned by 1979<br>
+1972	Richard Nixon approved NASA's space shuttle program<br>
+1972	<em>The Limits to Growth</em> by The Club of Rome<br>
+1972	Feb(21)	Nixon's visit to China<br>
+1972	May(26)	Signing of Anti-Ballistic Missile Treaty: Nixon and Brezhnev<br>
+1972	Oct	Nagakin Capsule Tower was built<br>
+1972	Dec	The last moon landing: Apollo-17<br>
+1973	Halley III Station became operational (burried tube)<br>
+1973	The founding of the Institute of Ecotechnics at Synergia Ranch<br>
+1973	Oil Crisis<br>
+1973	May(14)	Lauch of NASA Skylab<br>
+1974	The first American woman spent a winter in Antarctic<br>
+1974	Mar(17)	Louis Khan passed away<br>
+1974	Aug(8)	Nixon resigned in a national TV address<br>
+1974	Sep	<em>Physics Today</em> published O'Neill's article on space colonization<br>
+1974	Sep(14)	Recovering of the Soviet Submarine K-129 and sea burial of its sailors<br>
+1975	NASA launched the NASA Worm logo<br>
+1975	May(7)	"Space Manufacturing Facilities" conference held at Princeton University<br>
+1975	May(30)	The founding of European Space Agency (ESA)<br>
+1975	Summer	NASA's 10 week design Study at Stanford University around space colonization<br>
+1975	Jul(17) The first docking between the US spacecraft Apollo and the Soviet spacecraft Soyuz<br>
+1975	Aug(20)	Viking-1: first Mars rover<br>
+1977	Jun(16) Werner von Braun passed away<br>
+1977	Beginning of <em>Star Wars</em> series<br>
+1977	Sep(5)	Launch of Voyager-1<br>
+1978	President Carter donated 500g of Apollo moon rock to China<br>
+1978	NASA launched CELSS (Controlled Environment Life Support System) project<br>
+1979	China initiated the Open and Reform policies<br>
+1979	<em>Home Rule</em>: Greenland becomes a constituent country of Denmark<br>
+1979	Two Chinese scientists were invited by the Australian governemnt to join the next Antarctic expedition<br>
+1979	Jan NASA launched BSRP (Biological System Research Program) workshop<br>
+1979	Mar(28)	Three Mile Island nuclear accident<br> 
+1979	Nov(28)	A DC-10 crashed at Ross Island in Antarctic (Mont Erebus disaster)<br>
+</p>
+
+<h5>1980s</h5>
+<p>
+1980	Amendment to the Antarctica Treaty: CCAMLR<br>
+1981	The Institute of Biophysics (IBP) was founded and given the BIOS-3 lab<br>
+1981	Apr	The first flight of space shuttle <em>Enterprise</em><br>
+1982	Falkland Island War between the UK and Argentina<br>
+1983	Jun(18)	STS-7: Sally K. Ride became the first American woman in space<br>
+1983	China joined the Antactica Treaty: it became an ATCP in 1985<br>
+1984	NASA was commissioned to build a new space station<br>
+1984	Halley IV Station became operational (exposed tube): it discovered the ozone hole in 1985<br>
+1984	Biosphere 2's design started<br>
+1984	Discovery of meteroite ALH84001: the hypothesis of introduction of the Earth life from space<br>
+1985	Feb(20)	China's first Antarctica Station: Changcheng (namesake: "the Greatwall")<br>
+1986	Jan	Loss of the Space shuttle <em>Challenger</em> along with its 7 crew members<br>
+1986	Feb(19)	Lauch of the modular space station <em>Mir</em> (namesake: Peace)<br>
+1986	Apr(26)	Chernobyl nuclear disaster<br>
+1987	Biosphere 2's construction began<br>
+1987	Oct	Mikhail Gorbashev's speech on "Arctic as a zone of peace"<br>
+1988	Amendment to the Antarctica Treaty: CRAMRA<br>
+1989	President Geroge Bush Sr. announced the first manned mission to Mars by 2017<br>
+1989	Feb(26)	Zhongshan Station: China's second Antarctic station (namesake: Sun Ya-tzen)<br>
+1989	Jun(4) Tiananmen incident<br>
+1989    Nov(9) The border between the East and West Berlin opened<br>
+</p>
+
+<h5>1990s</h5>
+1990	Jan(24)	<em>Hiten</em>(Japan): the fist probe other than the US and USSR<br>
+1990	Feb(4)	Last photo of the solar system sent from Voyager-1<br>
+1991	The new space station program initiated in 1984 was replaced by <em>Space Station Freedom</em><br>
+1991	Halley V Station became operational (extentable legs & elevated platform)<br>
+1991	Settlement of Russia-China border disputes<br>
+1991	Autumn The US Congress ratified the Cooperative Threat Reduction program (CTR)<br>
+1991	Sep(26)	Beginning of the close experiments at Biosphere 2<br>
+1991	Oct	Amendment to the Antarctica Treaty (Madrid Protocal): continuation of the treaty<br>
+1991	Dec(26)	Dissolve of the USSR<br>
+1992	China purchased one of the eight ice breaker <em>Juvent</em> built at Kherson shipyard, Ukraine<br>
+1992	NASA switched back to the Meatball logo<br>
+1992	Feb(7)	The founding of the European Union<br>
+1993	The unmanned North Warning System were built on the existing DEW Line sites: end of the DEW Line<br>
+1993	<em>Space Station Freedom</em> was scaled down to <em>Space Station Alpha</em>
+1993	The US and Russia decided to build a space station jointly<br>
+1993	Jun	Fouding of China National Space Agency (CNSA)<br>
+1993	Sep(26)	Ending of the close experiments at Biosphere 2<br>
+1994	Apr(1)	Ed Bass demanded the removal of the original managers of Biosphere 2<br>
+1995	First shuttle/Mir docking<br>
+1995	Biosphere 2 changed into a flow-through system<br>
+1996	Haughton-Mars Project initiated at the Haughton impact crater in the Arctic<br>
+1996	Jan(1)	Columbia Univeristy took over Biosphere 2<br>
+1996	Sep	Signing of Artcic Militray Environmental Cooperation (AMEC): A3 countries<br>
+1996	Sep(19)	Signing of <em>Ottawa Declaration</em>: creation of the Arctic Council<br>
+1998	<em>Mir</em> was decommissioned<br>
+1998	Jan(29)	Sigining of the International Space Station Intergovernmental Agreement<br>
+1998	spring	The CTR was linked with AMEC<br>
+1998	Nov(20)	Launch of the first core module of the ISS<br>
+</p>
+
+<h5>2000s</h5>
+2000	<em>FMARS Project</em> conducted near the Haughton impact crater<br>
+2000	Jan(1)	Sexual harrasment scandel at the IBMP Mars simulator<br>
+2001	China joined the world trade organization (WTO)<br>
+2003	Feb	Loss of the space shuttle <em>Columbia</em> along with its 7 crew members<br>
+2003	Oct(15)	China's first manned space flight<br>
+2004	China's Huanghe station (namesake: Yellow River) was established on Svalbard Island<br>
+2004	Jan	President Bush announced the new space program<br>
+2004	Dec	The US Congress granted FAA additional authority over private space initiatives<br>
+2005	Concordia Station (France & Italy) became operational<br>
+2005	Aug	Space shuttles are gounded after the flight of Discovery<br>
+2006	Biosphere 2 was transfered to the University of Arizona<br>
+2007	Mar	The 4th Interntaional Polar Year<br>
+2007	Aug	Russia planted a flag on the seabed of the magnetic North Pole<br>
+2007	Oct(24)	Chang'e-1 made China the world's third moon mapping country<br>
+2008	Feb(26)	Global Seed Vault opened in Svalbald<br>
+2008	May(28)	Signing of <em>Ilulissant Declaration</em>: A5 contries<br>
+2008	Sep(27)	China's first spacewalk<br>
+2009	Jan	Kunlun Station (namesake: Kunlun Mountain): China's third Antarctic station<br>
+</p>
+
+<h5>2010s</h5>
+<p>
+2011	The end of the US space shuttle program<br>
+2011	Apr(2)	Launch of China's experiemntal space station Tiangong-1 (namesake: heavenly palace)<br>
+2011	Apr(15)	Wolf Amendement: banned the cooperation between NASA and CNSA<br>
+2012	Halley VI Station became operational (modular & movable)<br>
+2012	Taiwan scientists were invited to Changcheng Station: first Taiwan scientists in the Antarctic<br>
+2012	Jun(17) Voyager-1 left the solar system<br>
+2013	China became the observer member of the Arctic Council<br>
+2014	Russia designed a 3-stage lunar program to build a moonbase<br>
+2014	China's fourth Anatrctic station: Taishan (nameskae: Taishan Mountain)<br>
+2014	Feb Russia annexed Crimea<br>
+2017	China hosted its first ATCM conference in Beijing<br>
+2018	NASA set the goal to return to the moon in 10 years<br>
+2018	Jan	<em>EDEM ISS Project</em> began in the Antarctic<br>
+2019	Jan(3) Yutu-2 (namesake: jade rabit): the first artificial object on the back side of the moon<br>
+2019	Mar(26)	President Trump demanded NASA to land the first woman on moon by 2024<br>
+2019    Jun(4) China withdrew bid for Greenland airport projects<br>
+2019	Dec(1)	First patient of Coronavirus (SARS-CoV-2) discovered in Wuhan<br>
+2019	Dec(20)	Establishemnet of the United States Space Force<br>
+</p>
+
+<h5>2020s</h5>
+2021	Apr(29)	Signing of partnership in building the lunar research station between China and Russia<br>
+2022	Feb(24)	Russian launched full military invasion against Ukraine<br>
+2022	Mar(5)	Dicovery of <em>Endurance</em>'s shipreck<br>
+2022	Apr	Demolition of Nagakin Capsule Tower<br>
+2022	Oct(17)	Beginning of my research on the Arctic, Antarctic, and space Architectures<br>
+2022	Nov(16)	Launch of <em>Artemis I</em> (namesake: Apollo's sister) unmaned test<br>
+2023	Apr	Finland joined NATO<br>
+2023	Apr(20)	First integrated flight test of heavy rocket <em>Starship</em> of Space X<br>
+2024	Jan(18)	Russia launched the new Vostok station<br>
+2026    Jan President Trump offered to purchase Greenland<br>
+2026    Feb Strait of Hormuz crisis<br>
+</p>
+
+<h5>2030s</h5>
+<p>
+2032	The 5th International Polar Year<br>
+</p>
+
+<br><h5>History is happening everyday</h5>
+<p>This page will be continually updated</p>
 
 <br><p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
