@@ -28,6 +28,8 @@ topics:
     - Infrastructure
     - Economy
     - Propaganda
+    - Inequality
+    - Welfare
     - Housing
 
 keywords:

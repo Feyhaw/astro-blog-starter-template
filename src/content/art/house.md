@@ -1,5 +1,5 @@
 ---
-title: House
+title: Summer house
 subtitle: NA
 description: Saw this house in Malvern Hills (B)
 pubDate: NA
@@ -10,14 +10,15 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Experience
 
 topics: 
-    - Emotion
+    - Travel
     - Retro
 
 keywords:
-    - Natural state 
+    - Summer
+    - Birmingham
 
 year: 2025
 

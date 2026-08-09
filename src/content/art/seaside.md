@@ -10,14 +10,16 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Fantacy
 
 topics: 
+    - Travel
+    - Solitude
     - Emotion
 
 keywords:
-    - Feihao Zhang
-    - Fey
+    - Seaside
+    - Beach
 
 year: 2024
 

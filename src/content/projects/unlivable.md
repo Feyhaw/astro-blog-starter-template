@@ -34,6 +34,9 @@ topics:
 
 keywords:
     - Polar expeditions
+    - Pole
+    - Polar
+    - Space
     - Space Race
     - Cold War
     - Technology

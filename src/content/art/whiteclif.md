@@ -1,5 +1,5 @@
 ---
-title: White Cliff Eastbourne
+title: White Cliff, Eastbourne
 subtitle: NA
 description: Me at the White Cliff (B) 
 pubDate: NA
@@ -10,13 +10,13 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Experience
 
 topics: 
-    - Emotion
+    - Travel
+    - Nature
 
 keywords:
-    - Girl
     - Portrait
     - Feihao Zhang
     - Fey

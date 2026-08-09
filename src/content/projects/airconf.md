@@ -17,7 +17,7 @@ featured: true
 
 year: 2026
 
-theme: Capsule
+theme: Experiement
 
 topics: 
     - Technology

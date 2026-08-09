@@ -10,19 +10,16 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Fantacy
 
 topics: 
-    - Emotion
+    - Transportation
     - Technology
 
 keywords:
     - Girl
     - Sichuan
-    - Vehicle
-    - Portrait
-    - Feihao Zhang
-    - Fey
+    - Airplane
 
 year: 2026
 

@@ -10,14 +10,14 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Fantacy
 
 topics: 
-    - Emotion
     - Infrastructure
 
 keywords:
     - Beach
+    - Seaside
 
 
 year: 2022

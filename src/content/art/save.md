@@ -10,13 +10,14 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Fantacy
 
 topics: 
     - Emotion
 
 keywords:
-    - Milan
+    - Spring
+    - Heal
     - Breakup
 
 year: 2023

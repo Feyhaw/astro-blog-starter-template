@@ -1,7 +1,7 @@
 ---
 title: Spring Field
 subtitle: NA
-description: A drawing at the crossroad fof my life (M) 
+description: A drawing at the crossroad of my life (M) 
 pubDate: NA
 
 heroImage: /images/2023_2(0302).jpg
@@ -10,14 +10,15 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Experience
 
 topics: 
-    - Emotion
+    - Travel
 
 keywords:
-    - Season
-    - Breakup
+    - Break up
+    - Choice
+    - Spring
 
 year: 2023
 

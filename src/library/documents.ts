@@ -1,6 +1,10 @@
 import { getCollection } from 'astro:content';
 
-export type ArchiveType = 'project' | 'art' | 'recent';
+export type ArchiveType =
+	| 'project'
+	| 'art'
+	| 'recent'
+	| 'page';
 
 export type ArchiveEntry = {
 	id: string;
@@ -11,46 +15,107 @@ export type ArchiveEntry = {
 	theme: string;
 	topics: string[];
 	keywords: string[];
+	excerpt?: string;
 };
 
 export async function getArchiveEntries(): Promise<ArchiveEntry[]> {
 	const projects = await getCollection('projects');
 	const arts = await getCollection('art');
 	const recent = await getCollection('recent');
+	const manualEntries: ArchiveEntry[] = [
+	{
+		id: 'about',
+		type: 'page',
+		title: 'About Fey',
+		description:
+			'An introduction to Feihao Zhang (Fey), her background, research interests, and the purpose of Capsule Fey.',
+		url: '/about',
+		theme: 'Identity and Practice',
+		topics: ['Biography', 'Research', 'Background'],
+		keywords: [
+			'Fey',
+			'Feihao',
+			'Feihao Zhang',
+			'About',
+			'Who is Fey',
+		],
+	},
+
+	{
+		id: 'cv',
+		type: 'page',
+		title: 'CV',
+		description:
+			'Academic background, education, work experience, research experience, projects, and professional history of Feihao Zhang.',
+		url: '/cv',
+		theme: 'Academic Profile',
+		topics: ['Education', 'Research', 'Experience'],
+		keywords: [
+			'CV',
+			'Curriculum Vitae',
+			'Feihao Zhang',
+			'Education',
+			'work',
+			'career',
+			'experience',
+			'Academic background',
+		],
+	},
+];
 
 	return [
-		...projects.map((item) => ({
-			id: item.id,
-			type: 'project' as const,
-			title: item.data.title,
-			description: item.data.description,
-			url: `/projects#${item.id}`,
-			theme: item.data.theme ?? '',
-			topics: item.data.topics ?? [],
-			keywords: item.data.keywords ?? [],
-		})),
+	...manualEntries,
 
-		...arts.map((item) => ({
-			id: item.id,
-			type: 'art' as const,
-			title: item.data.title,
-			description: item.data.description,
-			url: `/arts#${item.id}`,
-			theme: item.data.theme ?? '',
-			topics: item.data.topics ?? [],
-			keywords: item.data.keywords ?? [],
-		})),
+	...projects.map((item) => ({
+		id: item.id,
+		type: 'project' as const,
+		title: item.data.title,
+		description: item.data.description,
+		url: `/projects#${item.id}`,
+		theme: item.data.theme ?? '',
+		topics: item.data.topics ?? [],
+		keywords: item.data.keywords ?? [],
 
-		...recent.map((item) => ({
-			id: item.id,
-			type: 'recent' as const,
-			title: item.data.title,
-			description: item.data.description,
-			url: `/recent/${item.id}/`,
-			theme: item.data.theme ?? '',
-			topics: item.data.topics ?? [],
-			keywords: item.data.keywords ?? [],
-		})),
+		excerpt: item.body
+			?.replace(/[#>*_`]/g, '')
+			.replace(/\s+/g, ' ')
+			.trim()
+			.slice(0, 1200) ?? '',
+	})),
+
+	...arts.map((item) => ({
+		id: item.id,
+		type: 'art' as const,
+		title: item.data.title,
+		description: item.data.description,
+		url: `/arts#${item.id}`,
+		theme: item.data.theme ?? '',
+		topics: item.data.topics ?? [],
+		keywords: item.data.keywords ?? [],
+
+		excerpt: item.body
+			?.replace(/[#>*_`]/g, '')
+			.replace(/\s+/g, ' ')
+			.trim()
+			.slice(0, 1200) ?? '',
+	})),
+
+	...recent.map((item) => ({
+		id: item.id,
+		type: 'recent' as const,
+		title: item.data.title,
+		description: item.data.description,
+		url: `/recent/${item.id}/`,
+		theme: item.data.theme ?? '',
+		topics: item.data.topics ?? [],
+		keywords: item.data.keywords ?? [],
+
+		excerpt: item.body
+			?.replace(/[#>*_`]/g, '')
+			.replace(/\s+/g, ' ')
+			.trim()
+			.slice(0, 1200) ?? '',
+	})),
 	];
 }
 
@@ -66,6 +131,31 @@ function scoreEntry(question: string, entry: ArchiveEntry) {
 	const theme = normalize(entry.theme);
 	const topics = entry.topics.map(normalize);
 	const keywords = entry.keywords.map(normalize);
+	const identityPatterns = [
+	'who is fey',
+	"who's fey",
+	'who is feihao',
+	'who is feihao zhang',
+	'about fey',
+	'about feihao',
+	'about feihao zhang',
+	];
+
+	const isIdentityQuery = identityPatterns.some((pattern) =>
+		q.includes(pattern)
+	);
+
+	const archiveStopWords = new Set([
+	'fey',
+	'feihao',
+	'zhang',
+	'capsule',
+	'capsule fey',
+	]);
+
+	if (isIdentityQuery && entry.type === 'page') {
+	score += 18;
+	}
 
 	// 1. Direct title match: 最强
 	if (title && q.includes(title)) score += 20;

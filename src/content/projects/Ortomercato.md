@@ -22,10 +22,14 @@ theme: Urbanism
 topics: 
     - Infrastructure
     - Economy
+    - Design
+    - Culture
 
 keywords:
     - Wholesale market
     - Urban rennovation
+    - Design
+    - Proposal
     - Milan
 
 status: NA

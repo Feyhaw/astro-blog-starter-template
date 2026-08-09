@@ -10,15 +10,15 @@ medium: Photo
 
 featured: true
 
-theme: Travel
+theme: Architecture
 
 topics: 
-    - Italy
     - Preservation
     - Ecomony
     - History
 
 keywords:
+    - Italy
     - Calabria
 
 year: 2022

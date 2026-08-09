@@ -15,14 +15,13 @@ theme: Space architecture
 topics: 
     - Technology
     - Expansionism
-    - Soviet
+    - Soviet Union
     - Propaganda
 
 keywords:
-    - Girl
-    - Spaceship
-    - Belief
-    - Portrait
+    - Space shuttle
+    - Space
+
 
 year: 2022
 

@@ -10,16 +10,18 @@ medium: Photo
 
 featured: true
 
-theme: Travel
+theme: Experience
 
 topics: 
     - Italy
     - Preservation
     - Ecomony
+    - Housing
     - History
 
 keywords:
     - Milan
+    - Heal
 
 year: 2023
 

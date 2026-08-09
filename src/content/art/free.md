@@ -10,16 +10,15 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Fantacy
 
 topics: 
-    - Emotion
+    - Travel
     - Retro
 
 keywords:
-    - Girl
     - Vehicle
-    - Portrait
+    - Milan
 
 year: 2022
 

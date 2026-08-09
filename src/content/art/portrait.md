@@ -10,10 +10,9 @@ medium: Photo
 
 featured: true
 
-theme: Polar architecture
+theme: Person
 
 topics: 
-    - Emotion
     - History
 
 keywords:

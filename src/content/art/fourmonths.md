@@ -10,10 +10,10 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Experience
 
 topics: 
-    - Emotion
+    - Pandemic
 
 keywords:
     - Season

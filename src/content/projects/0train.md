@@ -19,7 +19,7 @@ featured: true
 
 year: 2019
 
-theme: Travel
+theme: Culture
 
 topics: 
     - Japan
@@ -28,6 +28,7 @@ topics:
     - Technology
     - Infrastructure
     - Transportation
+    - Trian
 
 keywords:
     - Japan

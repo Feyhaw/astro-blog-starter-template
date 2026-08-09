@@ -21,11 +21,10 @@ featured: true
 
 year: 2022
 
-theme: Urbanism
+theme: Culture
 
 topics: 
     - History
-    - Preservation
 
 keywords:
     - Labyrinth

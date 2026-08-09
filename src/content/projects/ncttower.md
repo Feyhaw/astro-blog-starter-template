@@ -23,18 +23,19 @@ featured: true
 
 year: 2023
 
-theme: Travel
+theme: Capsule
 
 topics: 
-    - Aviation
+    - Housing
     - Economy
     - Technology
     - Infrastructure
-    - Transportation
+    - Culture
 
 keywords:
-    - Aviation
-    - Jumble jet
+    - Capsule
+    - Housing
+    - Nagakin
     - Economy
     - Postwar history
 

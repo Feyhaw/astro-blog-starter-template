@@ -10,16 +10,16 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Animal
 
 topics: 
-    - Animal
+    - Pet
 
 keywords:
     - Dog
     - Mianyang
-    - Feihao
     - Fey
+    - Three hundred
 
 year: 2021
 

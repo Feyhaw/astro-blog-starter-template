@@ -19,7 +19,7 @@ featured: true
 
 year: 2018
 
-theme: Travel
+theme: Culture
 
 topics: 
     - Aviation
@@ -30,6 +30,7 @@ topics:
 
 keywords:
     - Aviation
+    - Airplane
     - Jumble jet
     - Economy
     - Postwar history

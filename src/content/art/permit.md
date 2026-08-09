@@ -10,11 +10,11 @@ medium: Photo
 
 featured: true
 
-theme: Travel
+theme: Politics
 
 topics: 
-    - Nanjing
     - Infrastructure
+    - Inequality
     - Ecomony
     - Welfare
     - Housing

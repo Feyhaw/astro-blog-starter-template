@@ -10,15 +10,14 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Experience
 
 topics: 
-    - Emotion
+    - Housing
+    - Home
 
 keywords:
     - Milan
-    - Feihao Zhang
-    - Fey
 
 year: 2022
 

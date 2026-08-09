@@ -10,16 +10,16 @@ medium: Photo
 
 featured: true
 
-theme: Travel
+theme: Architecture
 
 topics: 
-    - Architecture
     - Religion
     - Preservation
 
 keywords:
     - Tibet
     - China
+    - Temple
 
 year: 2023
 

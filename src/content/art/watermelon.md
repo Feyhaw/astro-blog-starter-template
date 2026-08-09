@@ -10,10 +10,13 @@ medium: Photo
 
 featured: true
 
-theme: Capsule
+theme: Experience
 
 topics: 
+    - Pandemic
     - Toronto
+    - Home
+    - Housing
     - COVID
 
 keywords:

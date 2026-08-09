@@ -10,15 +10,16 @@ medium: Photo
 
 featured: true
 
-theme: Travel
+theme: Experience
 
 topics: 
-    - Italy
-    - Nature
+    - Travel
 
 keywords:
+    - Italy
     - Dolomiti
     - Alps
+    - Nature
 
 year: 2022
 

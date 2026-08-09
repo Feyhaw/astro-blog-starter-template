@@ -10,13 +10,14 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Fantacy
 
 topics: 
     - Retro
+    - Travel
 
 keywords:
-    - Car
+    - Vehicle
     - Solitude
     - Breakup
 

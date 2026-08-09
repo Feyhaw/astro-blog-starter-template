@@ -10,13 +10,12 @@ medium: Photo
 
 featured: true
 
-theme: Polar architecture
+theme: Person
 
 topics: 
-    - Emotion
+    - Travel
 
 keywords:
-    - Girl
     - Portrait
     - Feihao Zhang
     - Fey

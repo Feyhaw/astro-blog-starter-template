@@ -10,14 +10,13 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Fantacy
 
 topics: 
-    - Emotion
     - Tradition
 
 keywords:
-    - Natrual state
+    - Dream
 
 year: 2020
 

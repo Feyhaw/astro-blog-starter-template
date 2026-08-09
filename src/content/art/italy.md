@@ -10,14 +10,13 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Fantacy
 
 topics: 
     - Culture
 
 keywords:
-    - Girl
-    - Portrait
+    - Friend
     - Italy
 
 year: 2026

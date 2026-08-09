@@ -22,7 +22,7 @@ featured: true
 
 year: 2021
 
-theme: Travel
+theme: Urbanism
 
 topics: 
     - Economy

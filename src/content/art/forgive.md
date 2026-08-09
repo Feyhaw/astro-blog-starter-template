@@ -1,7 +1,7 @@
 ---
 title: Forgiveness
 subtitle: NA
-description: A beginning of the difficult reconciliation (B) 
+description: Waiting at the other end (B) 
 pubDate: NA
 
 heroImage: /images/2025_2.jpg
@@ -10,13 +10,14 @@ medium: Digital art
 
 featured: false
 
-theme: Travel
+theme: Experience
 
 topics: 
     - Emotion
 
 keywords:
-    - Season
+    - Spring
+    - Heal
     - Birmingham
 
 year: 2025

@@ -13,13 +13,13 @@ featured: false
 theme: Polar architecture
 
 topics: 
-    - Emotion
+    - Transportation
     - Technology
     - Expansionism
 
 keywords:
-    - Polar regions
-    - Vehicle
+    - Polar
+    - Ship
 
 year: 2025
 

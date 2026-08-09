@@ -10,18 +10,16 @@ medium: Digital art
 
 featured: false
 
-theme: Space architecture
+theme: Capsule
 
 topics: 
-    - Emotion
     - Retro
     - Capsule
     - Ecology
 
 keywords:
-    - Girl
     - Vehicle
-    - Portrait
+    - Friend
     - Technosphere
     - Heloise
 

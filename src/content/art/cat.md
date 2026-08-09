@@ -10,10 +10,10 @@ medium: Digital art
 
 featured: false
 
-theme: Capsule
+theme: Animal
 
 topics: 
-    - Animal
+    - Pet
 
 keywords:
     - Cat
