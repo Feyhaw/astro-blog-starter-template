@@ -1,7 +1,7 @@
 ---
 title: Summer Hill
 subtitle: NA
-description: A car that used to mean something (B) 
+description: The car used to mean something (B) 
 pubDate: NA
 
 heroImage: /images/2024_11.jpg
