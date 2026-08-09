@@ -1,6 +1,7 @@
 ---
 title: "Recommended Readings"
 description: "A partial selection of bibliography"
+role: bibliography
 
 pubDate: "Aug 05 2026"
 

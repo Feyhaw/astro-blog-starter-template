@@ -1,6 +1,7 @@
 ---
 title: "Space and Polar Architecture Timeline"
 description: "A way to tell stories"
+role: timeline
 
 pubDate: "Aug 05 2026"
 

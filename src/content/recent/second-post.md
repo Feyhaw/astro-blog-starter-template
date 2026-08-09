@@ -1,6 +1,7 @@
 ---
 title: "Homemade airconditioner"
 description: "homemade ac"
+role: design
 pubDate: "Jul 9 2026"
 
 theme: Capsule
