@@ -1,6 +1,7 @@
 ---
 title: "Launch of Capsule Fey (beta)"
 description: "Hello world"
+role: log
 
 pubDate: "Jul 08 2026"
 

@@ -11,6 +11,7 @@ type Source = {
 	theme?: string;
 	topics?: string[];
 	keywords?: string[];
+	abstract?: string;
 	excerpt?: string;
 };
 
@@ -37,9 +38,12 @@ function buildArchiveContext(sources: Source[]) {
 				source.keywords?.length
 					? `Keywords: ${source.keywords.join(', ')}`
 					: '',
+				source.abstract
+				? `Abstract: ${source.abstract}`
+					: '',
 				source.excerpt
 					? `Archive excerpt: ${source.excerpt}`
-	: '',
+					: '',
 				`URL: ${source.url}`,
 			];
 

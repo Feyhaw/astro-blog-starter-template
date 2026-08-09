@@ -60,15 +60,26 @@ Or you can visit her personal page on the school sites:<br>
 If you have any questions related to the contents, research, and art creations,
 feel free to drop me a message - the way of contact can be found in 
 the CV page.<br><br>
-Meanwhile, you may also found the librarian system helpful in locating certain information.
-Although it reamins as a cataloguing machine at the moment, in the long run, I'm expecting 
-to add AI APIs into this system so it can actually discuss with the visitors. <br>
+The current librarian AI is under continual modification and improvement. His working 
+hour is from 10 am to 10 pm (GMT) everyday. Outside the working hour, you may still 
+browse the collected material, but there will only a catalogue machine on duty. <br>
+
+The Librarian provides archive-grounded summaries and interpretations based on materials 
+available within Capsule Fey. Its responses may simplify, infer, or misinterpret the 
+author's intentions and should not be taken as Fey's definitive personal views.<br> 
+</p> 
+
+<p>I never wanted to build a static portfolio. In stead, 
+I wanted to build a website that breathes, listens, and thinks.<br>
 
 Artificial Intelligence is an inevitable technology; as a matter of fact, 
 this website was crafted by me and AI together (does that remind you of the human-
-machine interface of Apollo capsule?). I never wanted to build a static portfolio. In stead, 
-I wanted to build a website that breathes, listens, and thinks.
-</p> 
+machine interface of Apollo capsule?).
+</p>
+
+<p>
+Last updated on Aug 09, 2026.
+</p>
 
 <p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
