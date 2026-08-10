@@ -875,6 +875,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Zhang, Feihao. “For the greater good: modern China’s struggle on housing shortage” <em>City, Territory and Architecture.</em> 11 no.12 (2024): 1s40410-024-00230-y00052.
+</p>
+
+<p>
 •	Zhang, Feihao. “Layering confinement: Polar architectures among the 1950s infrastructural programs.” <em>Perspectives in Architecture and Urbanism</em> 2 no.4 (2025): 100052.
 </p>
 

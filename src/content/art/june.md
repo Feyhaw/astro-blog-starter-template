@@ -1,10 +1,10 @@
 ---
-title: June, July, August, Sptember
+title: June
 subtitle: NA
 description: My first digital drawings; done during the lock down in Toronto (T) 
 pubDate: NA
 
-heroImage: /images/4pic.jpg
+heroImage: /images/2020_6.jpg
 
 medium: Digital art
 
