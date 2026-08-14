@@ -1,0 +1,224 @@
+---
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import EdgeNav from '../../components/EdgeNav.astro';
+
+export const prerender = false;
+
+const accessCookie =
+	Astro.cookies.get('capsule_thesis_access');
+
+const hasAccess =
+	accessCookie?.value === 'granted';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Thesis — Capsule Fey"
+			description="Research workspace and thesis development within Capsule Fey."
+		/>
+	</head>
+
+	<body>
+		<Header />
+
+		<SpatialNavigation />
+
+		<main class="thesis">
+	        {
+	            hasAccess ? (
+		            <section class="thesis-workspace">
+		            	<div class="thesis-intro">
+		            		<p class="eyebrow">Research Workspace</p>
+		            		<h1>Thesis</h1>
+			            	<p>
+			            		Interactive supplements to the research proposal.
+				            </p>
+			            </div>
+
+			            <div class="thesis-catalogue">
+				            <a class="thesis-entry" href="/thesis/cosmic-of-ideas">
+				            	<div>
+				            		<p class="entry-type">Conceptual Map</p>
+				            		<h4>Cosmic of Ideas</h4>
+				            		<p>
+					            		A living map of recurring concepts and their
+					            		relationships across the research.
+					            	</p>
+					            </div>
+
+				            	<span class="entry-arrow">→</span>
+				            </a>
+
+				            <a class="thesis-entry" href="/thesis/GeneralPlanning">
+				            	<div>
+				            		<p class="entry-type">Thesis Structure</p>
+				            		<h4>General Thesis Plan</h4>
+				            		<p>
+				            		An evolving structural map of the thesis,
+				        			its arguments, chapters, and internal relationships.
+				            		</p>
+				            	</div>
+
+					            <span class="entry-arrow">→</span>
+				            </a>
+			            
+                            <a class="thesis-entry" href="/thesis/chapter-structure">
+	                            <div>
+		                            <p class="entry-type">
+			                        Thesis Structure
+		                            </p>
+		                            <h4>Chapter Structure</h4>
+		                            <p>
+			                        An interactive chapter-by-chapter overview
+			                        of the thesis, including sections, case studies,
+			                        abstracts, and research keywords.
+		                            </p>
+	                            </div>
+
+	                            <span class="entry-arrow">→</span>
+                            </a>
+                        
+                        </div>
+		            </section>
+	            ) : (
+	            	<section class="thesis-lock">
+			            <p class="eyebrow">Restricted Archive</p>
+
+			            <h1>Thesis</h1>
+
+			            <p>
+				            This page is currently not open to the public
+				            due to copyright concerns.
+			            </p>
+
+			            <form id="thesis-access-form">
+				            <label for="thesis-password">
+				        	Access key
+				        </label>
+
+				        <input
+				        	id="thesis-password"
+				        	name="password"
+				        	type="password"
+				        	autocomplete="current-password"
+				        	required
+				        />
+
+				        <button type="submit">
+				        	Enter
+				        </button>
+
+				        <p
+				        	id="access-message"
+				        	aria-live="polite"
+				        ></p>
+			            </form>
+		            </section>
+	            )
+            }
+        </main>
+	</body>
+</html>
+
+<style>
+	.thesis-workspace {
+	    width: min(100%, 58rem);
+    }
+
+    .thesis-intro {
+    	margin-bottom: 4rem;
+    }
+
+    .thesis-catalogue {
+	    display: flex;
+	    flex-direction: column;
+	    gap: 1rem;
+    }
+
+    .thesis-entry {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    gap: 2rem;
+
+	    padding: 1.5rem 0;
+
+	    border-top: 1px solid rgba(93, 126, 145, 0.18);
+
+	    color: inherit;
+	    text-decoration: none;
+
+	    transition:
+	    	padding-left 0.25s ease,
+	    	opacity 0.25s ease;
+    }
+
+    .thesis-entry:last-child {
+	    border-bottom: 1px solid rgba(93, 126, 145, 0.18);
+    }
+
+    .thesis-entry:hover {
+	    padding-left: 0.75rem;
+    }
+
+    .entry-type {
+	    margin: 0 0 0.35rem;
+	    font-size: 0.68rem;
+	    letter-spacing: 0.14em;
+	    text-transform: uppercase;
+	    color: rgb(var(--gray));
+    }
+
+    .thesis-entry h2 {
+	    margin: 0 0 0.4rem;
+    }
+
+    .thesis-entry p {
+	    margin-bottom: 0;
+    }
+
+    .entry-arrow {
+	    flex: 0 0 auto;
+	    font-size: 1.4rem;
+    }
+</style>
+
+<script>
+	const form =
+		document.querySelector<HTMLFormElement>(
+			'#thesis-access-form'
+		);
+
+	const message =
+		document.querySelector<HTMLElement>(
+			'#access-message'
+		);
+
+	form?.addEventListener('submit', async (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(form);
+
+		const response = await fetch(
+			'/api/thesis-auth',
+			{
+				method: 'POST',
+				body: formData,
+			}
+		);
+
+		if (response.ok) {
+			window.location.reload();
+			return;
+		}
+
+		if (message) {
+			message.textContent =
+				'The access key was not recognised.';
+		}
+	});
+</script>

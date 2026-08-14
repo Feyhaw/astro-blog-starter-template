@@ -2,20 +2,22 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import BreathingBackG from '../components/BreathingBackG.astro';
-import EdgeNav from '../components/EdgeNav.astro';
+import SpatialNavigation from '../components/SpatialNavigation.astro';
 
 const { title, description } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
+		<meta charset="UTF-8" />
 		<BaseHead title={title} description={description} />
 	</head>
 
 	<body>
 		<Header transition:name="site-header" />
 		<BreathingBackG transition:name="site-background" />
-		<EdgeNav />
+		
+		<SpatialNavigation />
 
 		<main>
 			<section class="page">

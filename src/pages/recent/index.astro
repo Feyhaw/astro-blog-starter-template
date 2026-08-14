@@ -1,9 +1,9 @@
 ---
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import BreathingBackG from '../../components/BreathingBackG.astro';
-import EdgeNav from '../../components/EdgeNav.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -120,8 +120,11 @@ const posts = (await getCollection('recent')).sort((a, b) => {
 	</head>
 	<body>
 		<Header />
+
+		<SpatialNavigation />
+		
 		<BreathingBackG transition:name="site-background" />
-		<EdgeNav />
+	
 		<main>			
 			<section>
 				<div class="log-intro">

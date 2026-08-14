@@ -1,0 +1,618 @@
+---
+const nodes = [
+	{
+		id: 'intro',
+		title: 'Intro',
+		x: 50,
+		y: 8,
+		function: 'Literature review',
+        detail: 'Writting of philosphors, architects, and historians  (6000 words).',
+		aim: 'Narrowing down themes and topics of the chapter',
+		question: 'What literature will be used and why?',
+	},
+
+	{
+		id: 'secondary-1',
+		title: 'Secondary Case Study',
+		x: 22,
+		y: 30,
+		function: 'Research article',
+        detail: 'Polar architecture and homefront projects',
+		aim: 'Investigating the connections between polar architecture and related contemprary architecture (8000 words total).',
+		question: 'How do polar architecture reflect the hidden language of the contemproray architectural design?',
+	},
+
+	{
+		id: 'secondary-2',
+		title: 'Secondary Case Study',
+		x: 78,
+		y: 30,
+		function: 'Research article',
+        detail: 'Polar architecture and homefront projects',
+		aim: 'Exploring the connections between polar architecture and contemproray urban planning (8000 words total).',
+		question: 'What is the relationship between polar architecture and contemproray urban planning?',
+	},
+
+	{
+		id: 'primary',
+		title: 'Primary Case Study',
+		x: 50,
+		y: 50,
+		function: 'Research article',
+        detail: 'Polar architecture',
+		aim: 'Investigating the site conditions, architectural design, and technologies of a polar architecture (8000 words).',
+		question: 'What is the motivation of the environment control and how is it executed?',
+	},
+
+	{
+		id: 'secondary-3',
+		title: 'Secondary Case Study',
+		x: 22,
+		y: 70,
+		function: 'Research article',
+		detail: 'Polar architecture and homefront projects (8000 words total)',
+        aim: 'Investigating the connections between polar architecture and contemporary housing programs.',
+		question: 'How does polar architecture relate to contemporary housing programs?',
+	},
+
+	{
+		id: 'secondary-4',
+		title: 'Secondary Case Study',
+		x: 78,
+		y: 70,
+		function: 'Research article',
+		aim: 'Polar architecture and homefront projects (8000 words total)',
+		detail: 'Investigating the connections between polar architecture and contemporary popular culture.',
+		question: 'How is polar architecture incorporated into contemporary popular culture?',
+	},
+
+	{
+		id: 'conclusion',
+		title: 'Conclusion',
+		x: 50,
+		y: 88,
+		function: 'Summary and synthesis',
+        detail: '(If applicable) Further literature and concepts to be explored in the next chapter (3000 words).',
+		aim: 'Recalling the literature review and summarising the chapter.',
+		question: 'How to define polar architecture? How to interpret the concepts in the literature review?',
+	},
+];
+
+---
+
+<div class="planning-map" data-planning-map>
+
+	<svg
+	    class="connections"
+	    viewBox="0 0 100 100"
+	    preserveAspectRatio="none"
+	    aria-hidden="true"
+    >
+	    <!-- Introduction enters the primary case -->
+	    <line
+	    	class="connection narrative intro-line"
+	    	x1="50"
+	    	y1="10"
+	    	x2="50"
+	    	y2="42"
+	    />
+
+	    <!--
+		Open analytical field:
+		secondary case studies develop around
+		different aspects of the primary case.
+	    -->
+	    <path
+	        class="connection secondary-ring"
+	        d="
+		        M 37 20
+		        A 30 30 0 1 0 63 20
+	        "
+        />
+
+	    <!-- Analytical field resolves into conclusion -->
+	    <line
+		    class="connection narrative conclusion-line"
+		    x1="50"
+		    y1="58"
+		    x2="50"
+		    y2="86"
+	    />
+
+	    <!-- Conclusion opens the next chapter -->
+	    <line
+	    	class="connection continuation-line"
+	    	x1="50"
+	    	y1="90"
+	    	x2="50"
+	    	y2="94"
+	    />
+    </svg>
+
+    <span class="next-intro-label">
+    	Intro
+    </span>
+
+	{
+		nodes.map((node) => (
+ 
+			<button
+				class:list={[
+					'planning-node',
+					`node-${node.id}`,
+				]}
+				style={`--x:${node.x}%; --y:${node.y}%;`}
+				data-node={node.id}
+				data-title={node.title}
+				data-function={node.function}
+				data-aim={node.aim}
+				data-detail={node.detail}
+				data-question={node.question}
+				type="button"
+			>
+				<span>{node.title}</span>
+			</button>
+		))
+	}
+
+	<article class="planning-card" data-planning-card hidden>
+		<button
+			class="minimize"
+			type="button"
+			data-minimize
+		>
+			Minimize
+		</button>
+
+		<p class="card-type">
+			Thesis Structure
+		</p>
+
+		<h2 data-card-title></h2>
+
+		<div class="card-section">
+			<h3>Function</h3>
+			<p data-card-function></p>
+		</div>
+
+		<div class="card-section">
+			<h3>Aim</h3>
+			<p data-card-aim></p>
+		</div>
+
+		<div class="card-section">
+			<h3>Detail</h3>
+			<p data-card-detail></p>
+		</div>
+
+		<div class="card-section">
+			<h3>Question</h3>
+			<p data-card-question></p>
+		</div>
+	</article>
+
+</div>
+
+<script>
+	const maps =
+		document.querySelectorAll<HTMLElement>(
+			'[data-planning-map]'
+		);
+
+	maps.forEach((map) => {
+		const nodes =
+			map.querySelectorAll<HTMLButtonElement>(
+				'[data-node]'
+			);
+
+		const lines =
+			map.querySelectorAll<SVGElement>(
+				'.connection'
+			);
+
+		const card =
+			map.querySelector<HTMLElement>(
+				'[data-planning-card]'
+			);
+
+		const minimize =
+			map.querySelector<HTMLButtonElement>(
+				'[data-minimize]'
+			);
+
+		if (!card) return;
+
+		const title =
+			card.querySelector<HTMLElement>(
+				'[data-card-title]'
+			);
+
+		const functionText =
+			card.querySelector<HTMLElement>(
+				'[data-card-function]'
+			);
+
+		const aim =
+			card.querySelector<HTMLElement>(
+				'[data-card-aim]'
+			);
+
+		const detail =
+			card.querySelector<HTMLElement>(
+				'[data-card-detail]'
+			);
+
+		const question =
+			card.querySelector<HTMLElement>(
+				'[data-card-question]'
+			);
+
+		const introLine =
+			map.querySelector<SVGElement>(
+				'.intro-line'
+			);
+
+		const secondaryRing =
+			map.querySelector<SVGElement>(
+				'.secondary-ring'
+			);
+
+		const conclusionLine =
+			map.querySelector<SVGElement>(
+				'.conclusion-line'
+			);
+
+		const continuationLine =
+			map.querySelector<SVGElement>(
+				'.continuation-line'
+			);
+
+		function resetLines() {
+			lines.forEach((line) => {
+				line.classList.remove(
+					'active',
+					'dimmed'
+				);
+			});
+		}
+
+		function closeCard() {
+	        if (!card) return;
+
+	        card.hidden = true;
+
+	        nodes.forEach((node) => {
+		        node.classList.remove('active');
+	        });
+
+	        resetLines();
+        }
+
+		function highlightForNode(id: string) {
+			resetLines();
+
+			/*
+			 * Intro / Primary:
+			 * highlight the entry into the main case.
+			 */
+			if (
+				id === 'intro' ||
+				id === 'primary'
+			) {
+				introLine?.classList.add('active');
+			}
+
+			/*
+			 * Primary + all secondary studies:
+			 * highlight the whole analytical field.
+			 */
+			if (
+				id === 'primary' ||
+				id.startsWith('secondary-')
+			) {
+				secondaryRing?.classList.add(
+					'active'
+				);
+			}
+
+			/*
+			 * Conclusion:
+			 * show the analytical field resolving
+			 * into the conclusion and continuing.
+			 */
+			if (id === 'conclusion') {
+				secondaryRing?.classList.add(
+					'active'
+				);
+
+				conclusionLine?.classList.add(
+					'active'
+				);
+
+				continuationLine?.classList.add(
+					'active'
+				);
+			}
+
+		}
+
+		nodes.forEach((node) => {
+			node.addEventListener('click', () => {
+				const id = node.dataset.node;
+
+				if (!id) return;
+
+				nodes.forEach((other) => {
+					other.classList.toggle(
+						'active',
+						other === node
+					);
+				});
+
+				if (title) {
+					title.textContent =
+						node.dataset.title ?? '';
+				}
+
+				if (functionText) {
+					functionText.textContent =
+						node.dataset.function ?? '';
+				}
+
+				if (aim) {
+					aim.textContent =
+						node.dataset.aim ?? '';
+				}
+
+				if (detail) {
+					detail.textContent =
+						node.dataset.detail ?? '';
+				}
+
+				if (question) {
+					question.textContent =
+						node.dataset.question ?? '';
+				}
+
+				highlightForNode(id);
+
+				card.hidden = false;
+			});
+		});
+
+		minimize?.addEventListener(
+			'click',
+			closeCard
+		);
+	});
+</script>
+
+<style>
+	.planning-map {
+		position: relative;
+
+		width: min(100%, 48rem);
+		height: 48rem;
+
+		margin: 4rem auto 6rem;
+
+		overflow: visible;
+	}
+
+	.connections {
+		position: absolute;
+		inset: 0;
+
+		width: 100%;
+		height: 100%;
+
+		overflow: visible;
+		pointer-events: none;
+
+		z-index: 0;
+	}
+
+	.connection {
+		fill: none;
+	    stroke: rgba(70, 80, 85, 0.72);
+	    stroke-width: 0.75;
+	    vector-effect: non-scaling-stroke;
+
+	    transition:
+		    stroke 0.25s ease,
+		    opacity 0.25s ease,
+		    stroke-width 0.25s ease;
+	}
+
+	.connection-continuation {
+		stroke-dasharray: 1.2 1.2;
+	}
+
+	.connection.active {
+	    stroke: rgba(30, 35, 38, 0.92);
+	    stroke-width: 1.15;
+    }
+
+	.connection.dimmed {
+		opacity: 0.16;
+	}
+
+    .continuation-line {
+	stroke-dasharray: 2 2.5;
+    }
+
+	.planning-node {
+		position: absolute;
+
+		left: var(--x);
+		top: var(--y);
+
+		transform: translate(-50%, -50%);
+
+		z-index: 2;
+
+		border: 0;
+		border-radius: 0.4rem;
+
+		padding: 0.55rem 0.75rem;
+
+		background: transparent;
+		color: rgb(var(--gray-dark));
+
+		font: inherit;
+		font-size: 0.9rem;
+		line-height: 1.3;
+		text-align: center;
+
+		cursor: pointer;
+
+		transition:
+			background 0.2s ease,
+			box-shadow 0.2s ease,
+			transform 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	.planning-node:hover {
+	    background: transparent;
+	    box-shadow: none;
+
+	    transform:
+		    translate(-50%, -50%)
+		    scale(1.12);
+    }
+
+	.planning-node.active {
+	    background: transparent;
+	    box-shadow: none;
+
+	    transform:
+		    translate(-50%, -50%)
+		    scale(1.12);
+
+	    font-weight: 500;
+	}
+
+    .next-intro-label {
+	    position: absolute;
+
+	    left: 50%;
+	    top: 96%;
+
+	    transform: translate(-50%, -50%);
+
+	    z-index: 2;
+
+	    color: rgba(70, 80, 85, 0.45);
+
+	    font-size: 0.9rem;
+	    line-height: 1.3;
+	    text-align: center;
+
+	    pointer-events: none;
+    }
+
+	.planning-card {
+		position: absolute;
+
+		left: 50%;
+		top: 50%;
+
+		transform: translate(-50%, -50%);
+
+		z-index: 20;
+
+		width: min(32rem, calc(100% - 2rem));
+		max-height: 80%;
+
+		overflow-y: auto;
+
+		padding: 2rem;
+
+		background: rgba(255, 255, 255, 0.96);
+
+		border:
+			1px solid rgba(70, 80, 85, 0.18);
+
+		border-radius: 0.75rem;
+
+		box-shadow:
+			0 1rem 3rem rgba(30, 40, 45, 0.12);
+	}
+
+	.planning-card[hidden] {
+		display: none;
+	}
+
+	.minimize {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+
+		border: 0;
+		background: transparent;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.68rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+
+		cursor: pointer;
+	}
+
+	.minimize:hover {
+		color: rgb(var(--gray-dark));
+	}
+
+	.card-type {
+		margin: 0 0 0.5rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.65rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.planning-card h2 {
+		margin:
+			0
+			5rem
+			1.75rem
+			0;
+	}
+
+	.card-section {
+		margin-top: 1.25rem;
+	}
+
+	.card-section h3 {
+		margin: 0 0 0.3rem;
+
+		font-size: 0.7rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.card-section p {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 700px) {
+		.planning-map {
+			height: 42rem;
+		}
+
+		.planning-node {
+			font-size: 0.72rem;
+			padding: 0.4rem;
+		}
+
+		.planning-card {
+			max-height: 76%;
+			padding: 1.5rem;
+		}
+	}
+</style>

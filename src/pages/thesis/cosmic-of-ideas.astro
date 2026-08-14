@@ -1,0 +1,66 @@
+---
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import ConceptCosmos from '../../components/research/ConceptCosmos.astro';
+
+export const prerender = false;
+
+const accessCookie =
+	Astro.cookies.get('capsule_thesis_access');
+
+const hasAccess =
+	accessCookie?.value === 'granted';
+
+if (!hasAccess) {
+	return Astro.redirect('/thesis');
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Cosmic of Ideas — Thesis | Capsule Fey"
+			description="A living conceptual map within the thesis workspace."
+		/>
+	</head>
+
+	<SpatialNavigation />
+
+	<body>
+		<Header />
+
+		<main class="thesis-tool">
+
+			<header>
+				<p class="eyebrow">Conceptual Map</p>
+				<h1>Cosmic of Ideas</h1>
+
+				<p>
+					A living map of recurring concepts and their relationships
+					across the research.
+				</p>
+			</header>
+
+			<ConceptCosmos />
+
+            <a class="shortcut" 
+            href="/thesis" 
+            style="color: rgb(var(--gray));"
+>
+            Return to "Thesis"</a>
+
+		</main>
+        <style>
+            .shortcut {
+	            color: rgb(var(--gray));
+	            text-decoration: none;
+            }
+
+            .shortcut:hover {
+	            color: rgb(var(--gray-dark));
+            }
+        </style>
+	</body>
+</html>

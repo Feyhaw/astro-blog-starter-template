@@ -17,21 +17,29 @@ const neighbours = currentPage?.neighbours ?? {};
 <nav class="edge-nav" aria-label="Spatial navigation">
     {
         Object.entries(neighbours).map(([direction, key]) => {
-            const target = siteMap[key];
+            const target =
+                siteMap[key as keyof typeof siteMap];
+
+            if (!target) return null;
 
             return (
                 <a
-                    class:list={['edge', `edge-${direction}`]}
-                    href={target.path}
-                    aria-label={`Go ${direction} to ${target.label}`}
+	                class:list={['edge', `edge-${direction}`]}
+	                href={target.path}
+	                aria-label={`Go ${direction} to ${target.label}`}
                 >
-                    <span class="arrow">
-                        {direction === 'left' && '←'}
-                        {direction === 'right' && '→'}
-                        {direction === 'up' && '↑'}
-                        {direction === 'down' && '↓'}
-                    </span>
-                    <span class="label">{target.label}</span>
+	                <span class="edge-content">
+		                <span class="arrow">
+							{direction === 'left' && <Fragment set:html="&larr;" />}
+							{direction === 'right' && <Fragment set:html="&rarr;" />}
+							{direction === 'up' && <Fragment set:html="&uarr;" />}
+							{direction === 'down' && <Fragment set:html="&darr;" />}
+						</span>
+
+		                <span class="label">
+			                {target.label}
+		                </span>
+	                </span>
                 </a>
             );
         })
@@ -47,77 +55,120 @@ const neighbours = currentPage?.neighbours ?? {};
     }
 
     .edge {
-        position: absolute;
-        pointer-events: auto;
-        color: rgb(var(--gray-dark));
-        text-decoration: none;
-        opacity: 0;
-        transition:
-            opacity 0.25s ease,
-            background 0.25s ease,
-            transform 0.25s ease;
+	    position: absolute;
+	    pointer-events: auto;
+	    color: rgb(var(--gray-dark));
+	    text-decoration: none;
+	    opacity: 0;
+        overflow: visible;
+
+	    transition:
+	    	opacity 0.25s ease,
+	    	background 0.25s ease;
     }
 
     .edge:hover {
-        opacity: 1;
-        background: rgba(255, 255, 255, 0.35);
+	    opacity: 1;
     }
 
     .edge-left,
     .edge-right {
-        top: 0;
-        bottom: 0;
-        width: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	    top: 4rem;
+	    bottom: 4rem;
+	    width: 3rem;
     }
 
     .edge-left {
-        left: 0;
+	    left: 0;
     }
 
     .edge-right {
-        right: 0;
+	    right: 0;
     }
 
     .edge-up,
     .edge-down {
-        left: 0;
-        right: 0;
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	    left: 22%;
+	    right: 22%;
+	    height: 3rem;
     }
 
     .edge-up {
-        top: 0;
+	    top: 0;
     }
 
     .edge-down {
-        bottom: 0;
+	    bottom: 0;
     }
 
-    .arrow {
-        font-size: 1.5rem;
-        margin-right: 0.5rem;
+    .edge-content {
+	    position: absolute;
+	    display: flex;
+	    align-items: center;
+	    gap: 0.5rem;
+
+	    white-space: nowrap;
+	    pointer-events: none;
     }
 
-    .edge-up .arrow,
-    .edge-down .arrow {
-        margin-right: 0;
-        margin-bottom: 0.25rem;
+    .edge-left .edge-content {
+	    left: 0.75rem;
+	    top: 50%;
+	    transform: translateY(-50%);
     }
 
-    .edge-up,
-    .edge-down {
-        flex-direction: column;
+    .edge-right .edge-content {
+	    right: 0.75rem;
+	    top: 50%;
+	    transform: translateY(-50%);
+    }
+
+    .edge-up .edge-content {
+	    left: 50%;
+	    top: 0.75rem;
+	    transform: translateX(-50%);
+	    flex-direction: column;
+	    gap: 0.2rem;
+    }
+
+    .edge-down .edge-content {
+	    left: 50%;
+	    bottom: 0.75rem;
+	    transform: translateX(-50%);
+	    flex-direction: column;
+	    gap: 0.2rem;
     }
 
     .label {
-        font-size: 0.75rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
+	    font-size: clamp(0.62rem, 0.7vw, 0.78rem);
+	    letter-spacing: 0.14em;
+	    text-transform: uppercase;
+	    white-space: nowrap;
+    }
+
+    .arrow {
+    	font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    	line-height: 1;
+    }
+
+    @media (max-width: 720px) {
+	    .edge-left,
+	    .edge-right {
+	    	width: 2.5rem;
+	    	top: 3rem;
+	    	bottom: 3rem;
+	    }
+
+	    .edge-up,
+	    .edge-down {
+	    	left: 18%;
+	    	right: 18%;
+	    	height: 2.5rem;
+	    }
+
+	    .label {
+	    	font-size: 0.6rem;
+	    	letter-spacing: 0.1em;
+	    }
     }
 </style>

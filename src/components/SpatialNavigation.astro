@@ -1,0 +1,19 @@
+---
+import EdgeNav from './EdgeNav.astro';
+import MiniMap from './MiniMap.astro';
+import { siteMap } from '../data/siteMap';
+
+const currentPath =
+	Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const isMainPage = Object.values(siteMap).some((page) => {
+	const pagePath =
+		page.path.replace(/\/$/, '') || '/';
+
+	return currentPath === pagePath;
+});
+---
+
+<MiniMap />
+
+{isMainPage && <EdgeNav />}

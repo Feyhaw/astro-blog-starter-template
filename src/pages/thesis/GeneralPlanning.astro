@@ -1,0 +1,105 @@
+---
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import GeneralPlanning from '../../components/research/GeneralPlanning.astro';
+
+export const prerender = false;
+
+const accessCookie =
+	Astro.cookies.get('capsule_thesis_access');
+
+const hasAccess =
+	accessCookie?.value === 'granted';
+
+if (!hasAccess) {
+	return Astro.redirect('/thesis');
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="General Planning — Thesis | Capsule Fey"
+			description="Interactive general planning diagram for the thesis."
+		/>
+	</head>
+
+	<body>
+		<Header />
+
+		<SpatialNavigation />
+
+		<main class="thesis-tool">
+			<header>
+				<p class="eyebrow">Thesis Structure</p>
+				<h1>General Planning</h1>
+
+				<p>
+					An interactive overview of the recurring structural
+					relationships within the thesis.
+				</p>
+			</header>
+
+			<GeneralPlanning />
+
+			<p>Chapter 1</p>
+			<h5>From Polar Domes to Apollo "Weaving"</h5>
+			<p>
+			Polar space architectures in a cybernetic network<br>
+			Theme: Cybernetics<br>
+			Polar architecture as an instrument and institution of cybernetic control
+			</p><br>
+
+			<p>Chapter 2</p>
+			<h5>A Home is not a House</h5>
+			<p>
+			Home making in the North and South Poles<br>
+			Theme: Living Package<br>
+			Polar architecture as a symbiotic entity
+			</p><br>
+
+			<p>Chapter 3</p>
+			<h5>A Tomorrow Waiting to Happen</h5>
+			<p>
+			The evolution of frontier in polar space<br>
+			Theme: Frontier<br>
+			Polar architecture as a vehicle for civilization-scale suburbanisation
+			</p>
+
+			<br><br>
+			<a class="shortcut" href="/thesis">
+				Return to "Thesis"
+			</a>
+		</main>
+	</body>
+</html>
+
+<style>
+	.thesis-tool {
+		width: min(100% - 2rem, 72rem);
+		margin: 0 auto;
+		padding: 6rem 0;
+	}
+
+	header {
+		margin-bottom: 2rem;
+	}
+
+	.eyebrow {
+		font-size: 0.7rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
+
+	.shortcut {
+		color: rgb(var(--gray));
+		text-decoration: none;
+	}
+
+	.shortcut:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>

@@ -1,0 +1,123 @@
+---
+import { siteMap } from '../data/siteMap';
+
+const currentPath =
+	Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const currentEntry = Object.entries(siteMap).find(
+	([, page]) => {
+		const pagePath =
+			page.path.replace(/\/$/, '') || '/';
+
+		if (pagePath === '/') {
+			return currentPath === '/';
+		}
+
+		return (
+			currentPath === pagePath ||
+			currentPath.startsWith(`${pagePath}/`)
+		);
+	}
+);
+
+const currentKey = currentEntry?.[0];
+---
+
+<div
+	class="mini-map"
+	aria-label="Current location in Capsule Fey"
+>
+	<!-- permanent 3 × 3 spatial frame -->
+	<div class="mini-grid" aria-hidden="true">
+		{
+			Array.from({ length: 9 }).map(() => (
+				<span class="grid-cell"></span>
+			))
+		}
+	</div>
+
+	<!-- actual rooms -->
+	<div class="mini-rooms" aria-hidden="true">
+		{
+			Object.entries(siteMap).map(([key, page]) => (
+				<span
+					class:list={[
+						'mini-room',
+						key === currentKey && 'current',
+					]}
+					style={`
+						--column: ${page.x + 2};
+						--row: ${page.y + 2};
+					`}
+				></span>
+			))
+		}
+	</div>
+</div>
+
+<style>
+	.mini-map {
+		position: fixed;
+
+		top: 1.5rem;
+		right: 1.5rem;
+
+		width: 2.8rem;
+		height: 2.8rem;
+
+		z-index: 35;
+
+		pointer-events: none;
+
+		opacity: 0.75;
+	}
+
+	.mini-grid,
+	.mini-rooms {
+		position: absolute;
+		inset: 0;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+
+		gap: 0.2rem;
+	}
+
+	.grid-cell {
+		border:
+			1px solid rgba(70, 80, 85, 0.13);
+	}
+
+	.mini-room {
+		grid-column: var(--column);
+		grid-row: var(--row);
+
+		border:
+			1px solid rgba(70, 80, 85, 0.42);
+
+		background: rgba(255, 255, 255, 0.65);
+
+		transition:
+			background 0.3s ease,
+			transform 0.3s ease,
+			opacity 0.3s ease;
+	}
+
+	.mini-room.current {
+		background:
+			rgba(70, 80, 85, 0.82);
+
+		transform: scale(1.08);
+	}
+
+	@media (max-width: 700px) {
+		.mini-map {
+			top: 1rem;
+			right: 1rem;
+
+			width: 2.3rem;
+			height: 2.3rem;
+		}
+	}
+</style>

@@ -12,48 +12,6 @@
  */
 
 export const siteMap = {
-    home: {
-        path: '/',
-        label: 'Home',
-        x: 0,
-        y: 0,
-
-        neighbours: {
-            left: 'recent',
-            right: 'about',
-            up: 'cv',
-            down: 'projects',
-        },
-
-        type: 'hub',
-    },
-
-    recent: {
-        path: '/recent',
-        label: 'Recent',
-        x: -1,
-        y: 0,
-
-        neighbours: {
-            right: 'home',
-        },
-
-        type: 'timeline',
-    },
-
-    about: {
-        path: '/about',
-        label: 'About',
-        x: 1,
-        y: 0,
-
-        neighbours: {
-            left: 'home',
-        },
-
-        type: 'essay',
-    },
-
     cv: {
         path: '/cv',
         label: 'CV',
@@ -67,6 +25,64 @@ export const siteMap = {
         type: 'document',
     },
 
+    recent: {
+        path: '/recent',
+        label: 'Recent',
+        x: -1,
+        y: 0,
+
+        neighbours: {
+            right: 'home',
+            down: 'thesis',
+        },
+
+        type: 'timeline',
+    },
+
+    home: {
+        path: '/',
+        label: 'Lobby',
+        x: 0,
+        y: 0,
+
+        neighbours: {
+            left: 'recent',
+            right: 'about',
+            up: 'cv',
+            down: 'projects',
+        },
+
+        type: 'hub',
+    },
+
+    about: {
+        path: '/about',
+        label: 'About',
+        x: 1,
+        y: 0,
+
+        neighbours: {
+            left: 'home',
+            down: 'arts',
+        },
+
+        type: 'essay',
+    },
+
+    thesis: {
+        path: '/thesis',
+        label: 'Thesis',
+        x: -1,
+        y: 1,
+
+        neighbours: {
+            up: 'recent',
+            right: 'projects',
+        },
+
+        type: 'workspace',
+    },
+
     projects: {
         path: '/projects',
         label: 'Projects',
@@ -75,7 +91,8 @@ export const siteMap = {
 
         neighbours: {
             up: 'home',
-            down: 'arts',
+            left: 'thesis',
+            right: 'arts',
         },
 
         type: 'cards',
@@ -84,11 +101,12 @@ export const siteMap = {
     arts: {
         path: '/arts',
         label: 'Arts',
-        x: 0,
-        y: 2,
+        x: 1,
+        y: 1,
 
         neighbours: {
-            up: 'projects',
+            up: 'about',
+            left: 'projects',
         },
 
         type: 'gallery',
