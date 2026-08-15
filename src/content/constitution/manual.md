@@ -9,13 +9,21 @@ pinned: true
 ---
 
 <p>
+<a class="shortcut" href="https://capsulefey.com" style="color: rgb(var(--gray));">
+Return to "Lobby"
+</a>
+</p>
+
+<p>
 <strong>*This is a simple manual of Capsule Fey*</strong>
 </p>
 
 <p>
-There are six main pages in total. They are:
+There are seven main pages in total. They are:
+<a class="shortcut" href="https://capsulefey.com" style="color: rgb(var(--gray));">
 		Lobby,
- <a class="shortcut" href="/cv" style="color: rgb(var(--gray));">
+</a>
+<a class="shortcut" href="/cv" style="color: rgb(var(--gray));">
 		CV,
 </a> 
  <a class="shortcut" href="/about" style="color: rgb(var(--gray));">
@@ -27,13 +35,17 @@ There are six main pages in total. They are:
  <a class="shortcut" href="/projects" style="color: rgb(var(--gray));">
 		Projects,
 </a>  
+ <a class="shortcut" href="/thesis" style="color: rgb(var(--gray));">
+		Thesis,
+</a> 
 and
- <a class="shortcut" href="/arts" style="color: rgb(var(--gray));">
+<a class="shortcut" href="/arts" style="color: rgb(var(--gray));">
 		Gallery.
 </a> 
-They are arranged in an spatial order. On any main page (the current page is not one of them), you can navigate to the neighouring page by puting your cursor
-closer to the edge of the window. Whenever lost, you can always return to the lobby by clicking the site name on the 
-top left of the window. Have fun exploring!
+The location of the main pages can be found by the mini map on the top-right corner of your screen. On any main page 
+(the current page is a sub-page of "Recent" and not a main page), you can navigate to the neighouring page by puting 
+your cursor closer to the edge of the window. Whenever lost, you can always return to the lobby by clicking the site 
+name on the top left of the window. Have fun exploring!
 </p>
 
 <p>
@@ -47,7 +59,7 @@ You can also visit other websites for more information about Fey:<br>
 <a class="shortcut" href="https://www.deviantart.com/feihz" style="color: rgb(var(--gray));">
 - DeviantArt 
 </a><br><br>
-Or you can visit her personal page on the school sites:<br>
+Or you can visit Fey's personal page on the school sites:<br>
 <a class="shortcut" href="https://www.theglobalarchitect.polimi.it/?page_id=1527" style="color: rgb(var(--gray));">
 - Politecnico di Milano
 </a><br>
@@ -59,7 +71,7 @@ Or you can visit her personal page on the school sites:<br>
 <p>
 If you have any questions related to the contents, research, and art creations,
 feel free to drop me a message - the way of contact can be found in 
-the CV page.<br><br>
+the "CV" page.<br><br>
 The current librarian AI is under continual modification and improvement. His working 
 hour is from 10 am to 10 pm (GMT) everyday. Outside the working hour, you may still 
 browse the collected material, but there will only a catalogue machine on duty. <br>
@@ -69,19 +81,17 @@ available within Capsule Fey. Its responses may simplify, infer, or misinterpret
 author's intentions and should not be taken as Fey's definitive personal views.<br> 
 </p> 
 
-<p>I never wanted to build a static portfolio. In stead, 
-I wanted to build a website that breathes, listens, and thinks.<br>
-
-Artificial Intelligence is an inevitable technology; as a matter of fact, 
-this website was crafted by me and AI together (does that remind you of the human-
-machine interface of Apollo capsule?).
-</p>
-
+<br><br>
 <p>
-Last updated on Aug 09, 2026.
+First published on Jul 09, 2026. 
+<br>Last updated on Aug 15, 2026.
 </p>
 
 <p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
 Return to "Recent"</a>
+<br>
+<a class="shortcut" href="https://capsulefey.com" style="color: rgb(var(--gray));">
+Return to "Lobby"
+</a>
 </p>
