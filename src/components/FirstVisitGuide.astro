@@ -1,0 +1,1044 @@
+<div
+	class="first-visit-prompt"
+	data-first-visit-prompt
+>
+	<button
+		class="prompt-open"
+		type="button"
+		data-prompt-open
+		aria-label="Open first-time visitor guide"
+	>
+		<span class="prompt-pulse" aria-hidden="true"></span>
+
+		<span class="prompt-label">
+			FIRST TIME VISITOR？
+		</span>
+	</button>
+
+	<button
+		class="prompt-dismiss"
+		type="button"
+		data-prompt-close
+	>
+		Don't show anymore
+	</button>
+</div>
+
+<div
+	class="first-visit-guide"
+	data-first-visit-guide
+	hidden
+	aria-hidden="true"
+>
+	<div class="guide-backdrop"></div>
+
+	<section
+		class="guide-card"
+		role="dialog"
+		aria-modal="true"
+		aria-labelledby="guide-title"
+	>
+		<button
+			class="guide-close"
+			type="button"
+			data-guide-close
+			aria-label="Close introduction"
+		>
+			×
+		</button>
+
+		<p class="guide-eyebrow">
+			First time visitor?
+		</p>
+
+		<div class="guide-pages">
+
+			<!-- STEP 1 -->
+			<section
+				class="guide-page active"
+				data-guide-page="0"
+			>
+				<div class="guide-visual edge-demo">
+					<span class="demo-screen"></span>
+
+					<span class="demo-edge demo-up">
+						↑
+					</span>
+
+					<span class="demo-edge demo-right">
+						→
+					</span>
+
+					<span class="demo-edge demo-down">
+						↓
+					</span>
+
+					<span class="demo-edge demo-left">
+						←
+					</span>
+				</div>
+
+				<div class="guide-copy">
+					<p class="step-number">
+						01
+					</p>
+
+					<h2 id="guide-title">
+						Navigate the space
+					</h2>
+
+					<p>
+						Move your cursor towards the edge of the screen
+						to discover neighbouring spaces.
+					</p>
+				</div>
+			</section>
+
+			<!-- STEP 2 -->
+			<section
+				class="guide-page"
+				data-guide-page="1"
+				hidden
+			>
+				<div class="guide-visual librarian-demo">
+					<div class="demo-question">
+						Ask the Librarian...
+					</div>
+
+					<div class="demo-answer">
+						Archive response
+					</div>
+				</div>
+
+				<div class="guide-copy">
+					<p class="step-number">
+						02
+					</p>
+
+					<h2>
+						Ask the Librarian
+					</h2>
+
+					<p>
+						You may ask the AI Librarian questions about
+						materials held within Capsule Fey.
+					</p>
+
+					<p class="guide-note">
+						Its responses are generated from the archive
+						and may not represent Fey's own views.
+					</p>
+				</div>
+			</section>
+
+			<!-- STEP 3 -->
+			<section
+				class="guide-page"
+				data-guide-page="2"
+				hidden
+			>
+				<div class="guide-visual map-demo">
+					<div class="demo-map">
+						<span></span>
+						<span class="occupied"></span>
+						<span></span>
+
+						<span class="occupied"></span>
+						<span class="occupied current"></span>
+						<span class="occupied"></span>
+
+						<span class="occupied"></span>
+						<span class="occupied"></span>
+						<span class="occupied"></span>
+					</div>
+				</div>
+
+				<div class="guide-copy">
+					<p class="step-number">
+						03
+					</p>
+
+					<h2>
+						Know where you are
+					</h2>
+
+					<p>
+						The MiniMap shows your current location
+						within Capsule Fey.
+					</p>
+
+					<p>
+						More instructions can be found in the
+						<a class="shortcut" href="/constitution/manual" style="color: rgb(var(--gray));">
+							Manual
+						</a>.
+					</p>
+				</div>
+			</section>
+
+		</div>
+
+		<footer class="guide-footer">
+			<div
+	            class="guide-progress"
+	            aria-label="Guide steps"
+            >
+	            <button
+		            type="button"
+		            class="active"
+		            data-guide-dot="0"
+		            aria-label="Go to step 1"
+	            ></button>
+
+	            <button
+		            type="button"
+		            data-guide-dot="1"
+		            aria-label="Go to step 2"
+	            ></button>
+
+	            <button
+		            type="button"
+		            data-guide-dot="2"
+		            aria-label="Go to step 3"
+	            ></button>
+            </div>
+
+			<button
+			    class="guide-next"
+			    type="button"
+			    data-guide-next
+			>
+				Next →
+			</button>
+		</footer>
+	</section>
+</div>
+
+<script>
+	const PROMPT_KEY =
+		'capsule_first_visit_prompt_dismissed';
+
+	const DEV_ALWAYS_SHOW = false;
+
+	const prompt =
+		document.querySelector<HTMLElement>(
+			'[data-first-visit-prompt]'
+		);
+
+	const promptOpen =
+		document.querySelector<HTMLButtonElement>(
+			'[data-prompt-open]'
+		);
+
+	const promptClose =
+		document.querySelector<HTMLButtonElement>(
+			'[data-prompt-close]'
+		);
+
+	const guideElement =
+		document.querySelector<HTMLElement>(
+			'[data-first-visit-guide]'
+		);
+
+	if (guideElement) {
+		const guide = guideElement;
+
+		const pages =
+			guide.querySelectorAll<HTMLElement>(
+				'[data-guide-page]'
+			);
+
+		const progress =
+			guide.querySelectorAll<HTMLButtonElement>(
+				'[data-guide-dot]'
+			);
+
+		const nextButton =
+			guide.querySelector<HTMLButtonElement>(
+				'[data-guide-next]'
+			);
+
+		const closeButton =
+			guide.querySelector<HTMLButtonElement>(
+				'[data-guide-close]'
+			);
+
+		let currentPage = 0;
+
+		function showPrompt() {
+			if (!prompt) return;
+
+			prompt.hidden = false;
+		}
+
+		function hidePrompt() {
+			if (!prompt) return;
+
+			prompt.hidden = true;
+		}
+
+		function showGuide() {
+			guide.hidden = false;
+
+			guide.setAttribute(
+				'aria-hidden',
+				'false'
+			);
+
+			document.body.classList.add(
+				'guide-open'
+			);
+		}
+
+		function hideGuide() {
+			guide.hidden = true;
+
+			guide.setAttribute(
+				'aria-hidden',
+				'true'
+			);
+
+			document.body.classList.remove(
+				'guide-open'
+			);
+		}
+
+		function renderPage() {
+			pages.forEach((page, index) => {
+				const isActive =
+					index === currentPage;
+
+				page.hidden = !isActive;
+
+				page.classList.toggle(
+					'active',
+					isActive
+				);
+			});
+
+			progress.forEach((dot, index) => {
+				dot.classList.toggle(
+					'active',
+					index === currentPage
+				);
+			});
+
+			if (nextButton) {
+				nextButton.textContent =
+					currentPage === pages.length - 1
+						? 'Enter →'
+						: 'Next →';
+			}
+		}
+
+		function openGuide() {
+			hidePrompt();
+
+			currentPage = 0;
+
+			renderPage();
+			showGuide();
+		}
+
+		promptOpen?.addEventListener(
+			'click',
+			openGuide
+		);
+
+		promptClose?.addEventListener(
+			'click',
+			(event) => {
+				event.stopPropagation();
+
+				localStorage.setItem(
+					PROMPT_KEY,
+					'true'
+				);
+
+				hidePrompt();
+			}
+		);
+
+		progress.forEach((dot, index) => {
+			dot.addEventListener(
+				'click',
+				() => {
+					currentPage = index;
+					renderPage();
+				}
+			);
+		});
+
+		nextButton?.addEventListener(
+			'click',
+			() => {
+				if (
+					currentPage <
+					pages.length - 1
+				) {
+					currentPage += 1;
+
+					renderPage();
+
+					return;
+				}
+
+				localStorage.setItem(
+					PROMPT_KEY,
+					'true'
+				);
+
+				hideGuide();
+			}
+		);
+
+		closeButton?.addEventListener(
+			'click',
+			() => {
+				hideGuide();
+				showPrompt();
+			}
+		);
+
+		const promptDismissed =
+			localStorage.getItem(
+				PROMPT_KEY
+			) === 'true';
+
+		renderPage();
+
+		if (
+			DEV_ALWAYS_SHOW ||
+			!promptDismissed
+		) {
+			showPrompt();
+		} else {
+			hidePrompt();
+		}
+	}
+</script>
+
+<style>
+	.prompt-pulse {
+		position: relative;
+
+		width: 0.42rem;
+		height: 0.42rem;
+
+		flex: 0 0 auto;
+
+		border-radius: 50%;
+
+		background:
+			rgba(70, 80, 85, 0.72);
+
+		animation:
+			pulse-dot
+			2.8s ease-in-out
+			infinite;
+	}
+
+	.prompt-pulse::after {
+		content: '';
+
+		position: absolute;
+
+		left: 50%;
+		top: 50%;
+
+		width: 100%;
+		height: 100%;
+
+		border-radius: 50%;
+
+		border:
+			1px solid rgba(70, 80, 85, 0.42);
+
+		transform:
+			translate(-50%, -50%)
+			scale(1);
+
+		opacity: 0;
+
+		animation:
+			pulse-ring
+			2.8s ease-out
+			infinite;
+	}
+
+	@keyframes prompt-label-breathe {
+		0%,
+		100% {
+			opacity: 0.68;
+			letter-spacing: 0.04em;
+		}
+
+		45% {
+			opacity: 1;
+			letter-spacing: 0.055em;
+		}
+	}
+
+	@keyframes pulse-dot {
+		0%,
+		100% {
+			opacity: 0.42;
+			transform: scale(0.9);
+		}
+
+		45% {
+			opacity: 1;
+			transform: scale(1.12);
+		}
+
+		60% {
+			opacity: 0.78;
+			transform: scale(1);
+		}
+	}
+
+	@keyframes pulse-ring {
+		0% {
+			opacity: 0;
+			transform:
+				translate(-50%, -50%)
+				scale(0.8);
+		}
+
+		35% {
+			opacity: 0.45;
+		}
+
+		70% {
+			opacity: 0;
+			transform:
+				translate(-50%, -50%)
+				scale(2.6);
+		}
+	}
+
+	100% {
+		opacity: 0;
+		transform:
+			translate(-50%, -50%)
+			scale(2.6);
+	}
+	
+	.first-visit-prompt {
+		position: fixed;
+
+		left: 50%;
+		top: 50%;
+
+		transform: translate(-50%, -50%);
+
+		z-index: 150;
+
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+
+		min-width: 15rem;
+
+		padding: 0.45rem;
+
+		border:
+			1px solid rgba(70, 80, 85, 0.16);
+
+		border-radius: 0.75rem;
+
+		background:
+			rgba(255, 255, 255, 0.78);
+
+		box-shadow:
+			0 0.6rem 2rem
+			rgba(30, 40, 45, 0.06);
+
+		backdrop-filter: blur(2px);
+
+		transition:
+			transform 0.25s ease,
+			background 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.first-visit-prompt:hover {
+		transform:
+			translate(-50%, -50%)
+			scale(1.025);
+
+		background:
+			rgba(255, 255, 255, 0.94);
+
+		box-shadow:
+			0 0.8rem 2.4rem
+			rgba(30, 40, 45, 0.09);
+	}
+
+	.first-visit-prompt[hidden] {
+		display: none;
+	}
+
+	.prompt-open,
+	.prompt-close {
+		border: 0;
+		background: transparent;
+
+		color: rgb(var(--gray-dark));
+		font: inherit;
+
+		cursor: pointer;
+	}
+
+	.prompt-open {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: 0.65rem;
+
+		width: 100%;
+
+		padding: 0.9rem 1.2rem;
+
+		border: 0;
+		background: transparent;
+
+		color: rgb(var(--gray-dark));
+
+		font: inherit;
+
+		cursor: pointer;
+	}
+
+	.prompt-label {
+		font-size: 0.72rem;
+
+		font-weight: 500;
+
+		letter-spacing: 0.16em;
+
+		white-space: nowrap;
+	}
+
+	.prompt-open:hover {
+		transform: scale(1.07);
+		opacity: 1;
+	}
+
+	.prompt-close {
+		padding: 0.3rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.8rem;
+
+		opacity: 0.45;
+
+		transition:
+			opacity 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.prompt-dismiss {
+		width: 100%;
+
+		padding: 0.5rem 1rem 0.55rem;
+
+		border: 0;
+
+		border-top:
+			1px solid rgba(70, 80, 85, 0.10);
+
+		background: transparent;
+
+		color:
+			rgba(70, 80, 85, 0.48);
+
+		font: inherit;
+
+		font-size: 0.68rem;
+
+		letter-spacing: 0.04em;
+
+		cursor: pointer;
+
+		transition:
+			color 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.prompt-dismiss:hover {
+		color: rgb(var(--gray-dark));
+
+		background:
+			rgba(70, 80, 85, 0.025);
+	}
+
+	.prompt-close:hover {
+		opacity: 1;
+		transform: scale(1.12);
+	}
+
+	.first-visit-guide {
+		position: fixed;
+		inset: 0;
+
+		z-index: 200;
+	}
+
+	.first-visit-guide[hidden] {
+		display: none;
+	}
+
+	.guide-backdrop {
+		position: absolute;
+		inset: 0;
+
+		background:
+			rgba(245, 247, 248, 0.72);
+
+		backdrop-filter: blur(1px);
+	}
+
+	.guide-card {
+		position: absolute;
+
+		left: 50%;
+		top: 50%;
+
+		transform:
+			translate(-50%, -50%);
+
+		width:
+			min(34rem, calc(100% - 2rem));
+
+		min-height: 29rem;
+
+		display: flex;
+		flex-direction: column;
+
+		padding: 2rem;
+
+		background:
+			rgba(255, 255, 255, 0.96);
+
+		border:
+			1px solid rgba(70, 80, 85, 0.18);
+
+		border-radius: 0.8rem;
+
+		box-shadow:
+			0 1.5rem 4rem
+			rgba(30, 40, 45, 0.12);
+	}
+
+	.guide-close {
+		position: absolute;
+
+		top: 1rem;
+		right: 1rem;
+
+		border: 0;
+		background: transparent;
+
+		color: rgb(var(--gray));
+
+		font-size: 1.2rem;
+		line-height: 1;
+
+		cursor: pointer;
+	}
+
+	.guide-close:hover {
+		color: rgb(var(--gray-dark));
+	}
+
+	.guide-eyebrow {
+		margin: 0 0 2.5rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.68rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.guide-pages {
+		flex: 1;
+	}
+
+	.guide-page {
+		animation:
+			guide-enter
+			0.3s ease;
+	}
+
+	.guide-page[hidden] {
+		display: none;
+	}
+
+	.guide-visual {
+		height: 12rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-bottom: 2rem;
+	}
+
+	.guide-copy {
+		max-width: 28rem;
+	}
+
+	.step-number {
+		margin: 0 0 0.45rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+	}
+
+	.guide-copy h2 {
+		margin: 0 0 0.8rem;
+
+		font-size: 1.25rem;
+		font-weight: 500;
+	}
+
+	.guide-copy p {
+		line-height: 1.65;
+	}
+
+	.guide-note {
+		color: rgb(var(--gray));
+
+		font-size: 0.78rem;
+	}
+
+	.guide-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		margin-top: 2rem;
+	}
+
+	.guide-progress {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.guide-progress button {
+		width: 0.45rem;
+		height: 0.45rem;
+
+		padding: 0;
+		border: 0;
+		border-radius: 50%;
+
+		background:
+			rgba(70, 80, 85, 0.22);
+
+		cursor: pointer;
+
+		transition:
+			background 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.guide-progress button:hover {
+		background:
+			rgba(70, 80, 85, 0.48);
+	}
+
+	.guide-progress button.active {
+		background:
+			rgba(70, 80, 85, 0.82);
+
+		transform: scale(1.25);
+	}
+
+	.guide-next {
+		border: 0;
+		background: transparent;
+
+		color: rgb(var(--gray-dark));
+
+		font: inherit;
+
+		cursor: pointer;
+	}
+
+	.guide-next:hover {
+		opacity: 0.65;
+	}
+
+	/*
+	 * Step 1
+	 */
+
+	.edge-demo {
+		position: relative;
+	}
+
+	.demo-screen {
+		width: 8rem;
+		height: 5rem;
+
+		border:
+			1px solid rgba(70, 80, 85, 0.42);
+	}
+
+	.demo-edge {
+		position: absolute;
+
+		color:
+			rgba(70, 80, 85, 0.52);
+
+		font-size: 1.1rem;
+
+		animation:
+			edge-pulse
+			2s ease-in-out
+			infinite;
+	}
+
+	.demo-up {
+		top: 1.4rem;
+		left: 50%;
+
+		transform: translateX(-50%);
+	}
+
+	.demo-right {
+		right: calc(50% - 5.4rem);
+		top: 50%;
+
+		transform: translateY(-50%);
+	}
+
+	.demo-down {
+		bottom: 1.4rem;
+		left: 50%;
+
+		transform: translateX(-50%);
+	}
+
+	.demo-left {
+		left: calc(50% - 5.4rem);
+		top: 50%;
+
+		transform: translateY(-50%);
+	}
+
+	/*
+	 * Step 2
+	 */
+
+	.librarian-demo {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.demo-question,
+	.demo-answer {
+		width: min(19rem, 80%);
+
+		padding: 0.8rem 1rem;
+
+		border:
+			1px solid rgba(70, 80, 85, 0.16);
+
+		border-radius: 0.45rem;
+	}
+
+	.demo-question {
+		color: rgb(var(--gray));
+	}
+
+	.demo-answer {
+		margin-left: 2rem;
+
+		background:
+			rgba(70, 80, 85, 0.035);
+	}
+
+	/*
+	 * Step 3
+	 */
+
+	.demo-map {
+		width: 5rem;
+		height: 5rem;
+
+		display: grid;
+
+		grid-template-columns:
+			repeat(3, 1fr);
+
+		grid-template-rows:
+			repeat(3, 1fr);
+
+		gap: 0.3rem;
+	}
+
+	.demo-map span {
+		border:
+			1px solid rgba(70, 80, 85, 0.14);
+	}
+
+	.demo-map .occupied {
+		border-color:
+			rgba(70, 80, 85, 0.42);
+	}
+
+	.demo-map .current {
+		background:
+			rgba(70, 80, 85, 0.8);
+	}
+
+	body.guide-open {
+		overflow: hidden;
+	}
+
+	@keyframes guide-enter {
+		from {
+			opacity: 0;
+			transform:
+				translateY(0.35rem);
+		}
+
+		to {
+			opacity: 1;
+			transform:
+				translateY(0);
+		}
+	}
+
+	@keyframes edge-pulse {
+		0%,
+		100% {
+			opacity: 0.35;
+		}
+
+		50% {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.guide-card {
+			min-height: 27rem;
+
+			padding: 1.5rem;
+		}
+
+		.guide-visual {
+			height: 10rem;
+		}
+	}
+</style>

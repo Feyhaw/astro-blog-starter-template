@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import SpatialNavigation from '../components/SpatialNavigation.astro';
 import Librarian from '../components/Librarian.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import FirstVisitGuide from '../components/FirstVisitGuide.astro';
 ---
 
 <!doctype html>
@@ -14,7 +15,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
     <body>
       <Header />
+      
       <SpatialNavigation />
+      <FirstVisitGuide />
+
       <main class="home">
 
         <canvas id="starfield"></canvas>
