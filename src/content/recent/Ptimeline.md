@@ -59,6 +59,7 @@ History is not a collection of events, but the way they are put together
 1912	A whaling station was built on Deception Island; the operation lasted until 1931<br>
 1912    Jan(6) First proposal of continental drift by Alfred Lothar Wagener<br>
 1912	Jan(18) Robert F. Scott's reached the South Pole<br>
+1912    Jan(28) Noboru Shirase reached the South Pole<br>
 1912	Feb	Mawson hut was built by	Douglas Mawson's crew<br>
 1912	Feb	Wild's hut was built by	Frank Wild's crew<br>
 1914	Dec(4) Ernest Shackleton's Endurance expedition<br>
@@ -199,6 +200,7 @@ History is not a collection of events, but the way they are put together
 1956	Nov	The US South Pole Station (Amundsen-Scott Station) was established<br>
 1957	<em>Project Orion</em>: a nuclear (explosion) propelled spacecraft<br>
 1957	The first flight from Europe to Japan via the Arctic by Scandinavian Airlines System (SAS)<br>
+1957    Feb(14) Japanese <em>Showa</em> Base in the Antarctic<br>
 1957	Mar(11)	Rear Admiral Richard E. Byrd passed away in Boston: the symbolic end of the heroic age<br>
 1957	Jun(29)	China officially withdrew from IGY CSAGI due to Taiwan disputes<br>
 1957	Jul(1)	Beginig of International Geophysical Year<br>
@@ -237,6 +239,7 @@ History is not a collection of events, but the way they are put together
 <p>
 1960	<em>Dome over Manhattan</em> by Buckminster Fuller<br>
 1960	Publication of Metabolism manifestation<br>
+1960    (May) World Design Conference in Tokyo: future image of the modern world<br>
 1960	Jul(15)	The <em>New Frontier</em> speech by JF Kennedy<br>
 1961	The first Issue of Archigram magazine by Peter Cook and David Greene <br>
 1961	<em>The Death and Life of Great American Cities</em> by Jane Jacob<br>
@@ -313,6 +316,7 @@ History is not a collection of events, but the way they are put together
 <p>
 1970	The founding of <em>Arcosanti</em> by Paolo Soleri<br>
 1970	The US Air Force closed the chimp college: no more chimps in space<br>
+1970    Japnese <em>Mizuho</em> Station in the Antarctic<br>
 1970	Jay Forrest presented a world model to identify specific issues of the time<br>
 1970	Mar	Expo'70 in Osaka<br> 
 1970	Apr(24)	China's first artificial satellite: <em>Dongfanghong-1</em><br>
@@ -373,6 +377,7 @@ History is not a collection of events, but the way they are put together
 1984	Halley IV Station became operational (exposed tube): it discovered the ozone hole in 1985<br>
 1984	Biosphere 2's design started<br>
 1984	Discovery of meteroite ALH84001: the hypothesis of introduction of the Earth life from space<br>
+1985    Japanese <em>Asuka</em> Station in the Antarctic<br>
 1985	Feb(20)	China's first Antarctica Station: Changcheng (namesake: "the Greatwall")<br>
 1986	Jan	Loss of the Space shuttle <em>Challenger</em> along with its 7 crew members<br>
 1986	Feb(19)	Lauch of the modular space station <em>Mir</em> (namesake: Peace)<br>
@@ -404,6 +409,7 @@ History is not a collection of events, but the way they are put together
 1993	The US and Russia decided to build a space station jointly<br>
 1993	Jun	Fouding of China National Space Agency (CNSA)<br>
 1993	Sep(26)	Ending of the close experiments at Biosphere 2<br>
+1994    Japanese <em>Dome-Fuji</em> Station in the Antarctic<br>
 1994	Apr(1)	Ed Bass demanded the removal of the original managers of Biosphere 2<br>
 1995	First shuttle/Mir docking<br>
 1995	Biosphere 2 changed into a flow-through system<br>
@@ -423,7 +429,7 @@ History is not a collection of events, but the way they are put together
 2001	China joined the world trade organization (WTO)<br>
 2003	Feb	Loss of the space shuttle <em>Columbia</em> along with its 7 crew members<br>
 2003	Oct(15)	China's first manned space flight<br>
-2004	China's Huanghe station (namesake: Yellow River) was established on Svalbard Island<br>
+2004	Jul(28) China's Huanghe station (namesake: Yellow River) was established on Svalbard Island<br>
 2004	Jan	President Bush announced the new space program<br>
 2004	Dec	The US Congress granted FAA additional authority over private space initiatives<br>
 2005	Concordia Station (France & Italy) became operational<br>
@@ -435,7 +441,7 @@ History is not a collection of events, but the way they are put together
 2008	Feb(26)	Global Seed Vault opened in Svalbald<br>
 2008	May(28)	Signing of <em>Ilulissant Declaration</em>: A5 contries<br>
 2008	Sep(27)	China's first spacewalk<br>
-2009	Jan	Kunlun Station (namesake: Kunlun Mountain): China's third Antarctic station<br>
+2009	Jan(27)	Kunlun Station (namesake: Kunlun Mountain): China's third Antarctic station<br>
 </p>
 
 <h5>2010s</h5>
@@ -448,11 +454,12 @@ History is not a collection of events, but the way they are put together
 2012	Jun(17) Voyager-1 left the solar system<br>
 2013	China became the observer member of the Arctic Council<br>
 2014	Russia designed a 3-stage lunar program to build a moonbase<br>
-2014	China's fourth Anatrctic station: Taishan (nameskae: Taishan Mountain)<br>
-2014	Feb Russia annexed Crimea<br>
+2014	Feb(8) China's fourth Anatrctic station: Taishan (nameskae: Taishan Mountain)<br>
+2014	Feb(27) Russia annexed Crimea<br>
 2017	China hosted its first ATCM conference in Beijing<br>
 2018	NASA set the goal to return to the moon in 10 years<br>
 2018	Jan	<em>EDEM ISS Project</em> began in the Antarctic<br>
+2018    Oct(18) China-Iceland Arctic Science Obbservatory in Karholl, Iceland<br>
 2019	Jan(3) Yutu-2 (namesake: jade rabit): the first artificial object on the back side of the moon<br>
 2019	Mar(26)	President Trump demanded NASA to land the first woman on moon by 2024<br>
 2019    Jun(4) China withdrew bid for Greenland airport projects<br>
@@ -470,6 +477,7 @@ History is not a collection of events, but the way they are put together
 2023	Apr	Finland joined NATO<br>
 2023	Apr(20)	First integrated flight test of heavy rocket <em>Starship</em> of Space X<br>
 2024	Jan(18)	Russia launched the new Vostok station<br>
+2024    Feb(7) China's 5th Anatrctic station, Qinling Station (namesake: Qinling Mountain)<br>
 2026    Jan President Trump offered to purchase Greenland<br>
 2026    Feb Strait of Hormuz crisis<br>
 </p>
@@ -480,7 +488,9 @@ History is not a collection of events, but the way they are put together
 </p>
 
 <br><h5>History is happening everyday</h5>
-<p>This page will be continually updated</p>
+<p>This page will be continually updated<br>
+Last update: August 20, 2026
+</p>
 
 <br><p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
