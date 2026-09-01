@@ -219,6 +219,7 @@ History is not a collection of events, but the way they are put together
 1958	May(3)	The US government addressed 11 countries for the resolution of the Antarctic problem<br>
 1958	May(8) Nantional People's Congress announced the beginning of the Great Leap Forward<br>
 1958	May(12)	North American Aerospace Defence Command (NORAD) was founded<br>
+1958    Jul(7) Alaska Statehood Act: Alasaka became the 49th state of the USA<br>
 1958	Aug(3)	World's first nuclear submarine <em>Nautilus</em> passed The North Pole<br>
 1958	Oct(1)	Founding of NASA<br>
 1958	Dec	The End of the Internatinal Geophysical year<br>
@@ -352,6 +353,7 @@ History is not a collection of events, but the way they are put together
 1975	Summer	NASA's 10 week design Study at Stanford University around space colonization<br>
 1975	Jul(17) The first docking between the US spacecraft Apollo and the Soviet spacecraft Soyuz<br>
 1975	Aug(20)	Viking-1: first Mars rover<br>
+1977    Spring Taiwan ship <em>Hai Kung</em> reached the Antarctic: First Chinese?<br>
 1977	Jun(16) Werner von Braun passed away<br>
 1977	Beginning of <em>Star Wars</em> series<br>
 1977	Sep(5)	Launch of Voyager-1<br>
@@ -489,7 +491,7 @@ History is not a collection of events, but the way they are put together
 
 <br><h5>History is happening everyday</h5>
 <p>This page will be continually updated<br>
-Last update: August 20, 2026
+Last update: September 1, 2026
 </p>
 
 <br><p>
