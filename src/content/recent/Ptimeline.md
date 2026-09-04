@@ -95,6 +95,7 @@ History is not a collection of events, but the way they are put together
 1931	The International Council of Science Union (ICSU) was founded in Brussel<br>
 1931	Jul	Airship <em>Graf Zeppelin</em> reached the North Pole with an international team on board<br>
 1932	The 2nd International Polar Year: poor participation due to the financial hardship<br>
+1933    First mass-produced trailer by Covered Wagon Co. in Detroit<br>
 1933	<em>Athens Charter</em> and the founding of CIAM<br>
 1934	Rescue of <em>Chelyuskin</em> in the Arctic	by Nicolai Komanin: he became the trainer of Gagarin<br>
 1934	The Federal Housing Administration (FHA) was founded by the US Congress<br>
