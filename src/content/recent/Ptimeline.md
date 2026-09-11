@@ -138,6 +138,7 @@ History is not a collection of events, but the way they are put together
 1947	Oct(30)	Sign of General Agreement on Tariffs and Trade (GATT)<br>
 1947	Dec	Invention of the bipolar transistor at Bell Laboratory<br>
 1948	<em>Cybernetics: or Control and Communication in the animal and the machine</em> by Nobert Wiener<br>
+1948    US supreme Court, FHA, and VA began to eliminate racial bias in Federal-insured housing<br>
 1948	Apr(3)	Beginig of the Marshall Plan<br>
 1948	Spring	Soviet Union introduced its long-range bomber Tu-4: a knock-off B-29<br>
 1948	Jun	Berlin Blockade and Berlin Airlift<br>
@@ -408,7 +409,7 @@ History is not a collection of events, but the way they are put together
 1992	NASA switched back to the Meatball logo<br>
 1992	Feb(7)	The founding of the European Union<br>
 1993	The unmanned North Warning System were built on the existing DEW Line sites: end of the DEW Line<br>
-1993	<em>Space Station Freedom</em> was scaled down to <em>Space Station Alpha</em>
+1993	<em>Space Station Freedom</em> was scaled down to <em>Space Station Alpha</em><br>
 1993	The US and Russia decided to build a space station jointly<br>
 1993	Jun	Fouding of China National Space Agency (CNSA)<br>
 1993	Sep(26)	Ending of the close experiments at Biosphere 2<br>
@@ -494,6 +495,11 @@ History is not a collection of events, but the way they are put together
 <p>This page will be continually updated<br>
 Last update: September 1, 2026
 </p>
+
+<p>- Also check out this 
+<a class="shortcut" href="https://www.tiki-toki.com/timeline/embed/17569/0077030031/" 
+style="color: rgb(var(--gray));">
+timeline</a> from the State Univerity of Ohio, it's quite neat</p>
 
 <br><p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
