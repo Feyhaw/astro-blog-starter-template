@@ -1,0 +1,99 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import DictionaryEntry from '../../components/dictionary/DictionaryEntry.astro';
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const entries = await getCollection('dictionary');
+
+	return entries.map((entry) => ({
+		params: {
+			slug: entry.id.replace(/\.mdx?$/, ''),
+		},
+		props: {
+			entry,
+		},
+	}));
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await render(entry);
+
+const images = entry.data.images ?? [];
+const related = entry.data.related ?? [];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`${entry.data.title} — Dictionary | Capsule Fey`}
+			description={entry.data.definition}
+		/>
+	</head>
+
+	<body>
+		<Header />
+		<SpatialNavigation />
+
+		<main>
+
+			<DictionaryEntry
+				title={entry.data.title}
+				shortTitle={entry.data.shortTitle}
+				definition={entry.data.definition}
+				category={entry.data.category}
+				images={entry.data.images}
+				related={entry.data.related}
+			>
+
+				<Content />
+
+			</DictionaryEntry>
+
+		</main>
+	</body>
+</html>
+
+<style>
+	.dictionary-entry-page {
+		width: min(100% - 2rem, 72rem);
+		margin: 0 auto;
+		padding: 7rem 0 6rem;
+	}
+
+	.entry-header {
+		width: min(100%, 46rem);
+		margin: 0 auto 3.5rem;
+	}
+
+	.eyebrow {
+		color: rgb(var(--gray));
+		font-size: 0.68rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.entry-header h1 {
+		margin-bottom: 0.5rem;
+	}
+
+	.short-title {
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+
+	.definition {
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	@media (max-width: 700px) {
+		.entry-gallery {
+			grid-auto-columns: 82%;
+		}
+	}
+</style>

@@ -428,6 +428,12 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Kudo, Sakae. 2025. <em>Kokuritsu Kyokuchi Kenkyusho Soritsu 50 Shunen Kinenshi</em>. Tokyo: Research Organization of Information and Systems (Research Organization of Information and Systems). <a class="shortcut" href="https://nipr.repo.nii.ac.jp/records/2000463" style="color: rgb(var(--gray));">
+    https://nipr.repo.nii.ac.jp/records/2000463
+    </a>
+</p>
+
+<p>
 •	Lackenbauer, P. Whitney, and Matthew Farish. “The Cold War on Canadian Soil: Militarizing a Northern Environment.” <em>Environmental History</em> 12, no. 4 (2007): 920–50. <a class="shortcut" href="http://www.jstor.org/stable/25473167" style="color: rgb(var(--gray));">
     http://www.jstor.org/stable/25473167
     </a>
@@ -864,6 +870,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 
 <p>
 •	Xu, Ning. 2025. <em>The Journey of Ice and Sea</em>. Shanghai: Shanghai Scientific and Technic Publishers.
+</p>
+
+<p>
+•	Yatsuka, Hajime. 2011. <em>Metabolism Nexus</em>. Tokyo: Ohmsha.
 </p>
 
 <p>

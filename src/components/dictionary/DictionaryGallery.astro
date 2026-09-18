@@ -1,0 +1,87 @@
+---
+interface Image {
+	src: string;
+	alt: string;
+	caption?: string;
+}
+
+interface Props {
+	images?: Image[];
+}
+
+const { images = [] } = Astro.props;
+---
+
+{
+	images.length > 0 && (
+		<section class="dictionary-gallery" aria-label="Image gallery">
+			{images.map((image) => (
+				<figure>
+					<img
+						src={image.src}
+						alt={image.alt}
+						loading="lazy"
+					/>
+
+					{image.caption && (
+						<figcaption>
+							{image.caption}
+						</figcaption>
+					)}
+				</figure>
+			))}
+		</section>
+	)
+}
+
+<style>
+	.dictionary-gallery {
+		display: grid;
+
+		grid-auto-flow: column;
+		grid-auto-columns: minmax(20rem, 1fr);
+
+		gap: 1rem;
+
+		width: 100%;
+		margin: 0 0 4rem;
+
+		padding-bottom: 0.75rem;
+
+		overflow-x: auto;
+
+		scroll-snap-type: x proximity;
+	}
+
+	.dictionary-gallery figure {
+		margin: 0;
+
+		scroll-snap-align: start;
+	}
+
+	.dictionary-gallery img {
+		display: block;
+
+		width: 100%;
+		aspect-ratio: 4 / 3;
+
+		object-fit: cover;
+
+		border-radius: 0.5rem;
+	}
+
+	.dictionary-gallery figcaption {
+		margin-top: 0.55rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.72rem;
+		line-height: 1.45;
+	}
+
+	@media (max-width: 700px) {
+		.dictionary-gallery {
+			grid-auto-columns: 82%;
+		}
+	}
+</style>

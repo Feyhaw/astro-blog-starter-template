@@ -1,0 +1,262 @@
+---
+import DictionaryGallery from './DictionaryGallery.astro';
+
+interface Image {
+	src: string;
+	alt: string;
+	caption?: string;
+}
+
+interface Props {
+	title: string;
+	shortTitle?: string;
+	definition: string;
+	category: string;
+
+	images?: Image[];
+}
+
+const {
+	title,
+	shortTitle,
+	definition,
+	category,
+	images = [],
+} = Astro.props;
+---
+
+<article class="dictionary-entry">
+
+	<header class="entry-header">
+
+		<p class="entry-category">
+			{category}
+		</p>
+
+		<h1>{title}</h1>
+
+		{
+			shortTitle && (
+				<p class="short-title">
+					{shortTitle}
+				</p>
+			)
+		}
+
+		<p class="definition">
+			{definition}
+		</p>
+
+	</header>
+
+
+	<DictionaryGallery images={images} />
+
+
+	<section class="entry-body">
+
+		<slot />
+
+	</section>
+
+
+	<footer class="entry-footer">
+
+		<a href="/dictionary">
+			Return to Dictionary
+		</a>
+
+	</footer>
+
+</article>
+
+
+<style>
+
+	.dictionary-entry {
+		width: min(100% - 2rem, 72rem);
+
+		margin: 0 auto;
+
+		padding:
+			7rem
+			0
+			6rem;
+	}
+
+
+	.entry-header {
+		width: min(100%, 46rem);
+
+		margin:
+			0 auto
+			3.5rem;
+	}
+
+
+	.entry-category {
+		margin-bottom: 0.8rem;
+
+		color: rgb(var(--gray));
+
+		font-size: 0.68rem;
+
+		letter-spacing: 0.14em;
+
+		text-transform: uppercase;
+	}
+
+
+	.entry-header h1 {
+		margin:
+			0
+			0
+			0.5rem;
+	}
+
+
+	.short-title {
+		margin:
+			0
+			0
+			1.6rem;
+
+		color: rgb(var(--gray));
+	}
+
+
+	.definition {
+		margin: 0;
+
+		font-size: 1.08rem;
+
+		line-height: 1.7;
+	}
+
+
+	.entry-body {
+		width: min(100%, 46rem);
+
+		margin: 0 auto;
+	}
+
+
+	.entry-body :global(p) {
+		line-height: 1.8;
+	}
+
+
+	.entry-body :global(h2) {
+		margin-top: 3rem;
+	}
+
+
+	.entry-body :global(h3) {
+		margin-top: 2.2rem;
+	}
+
+
+	/* Dictionary internal cross-reference */
+
+	.entry-body :global(
+		a[href^="/dictionary/"]
+	) {
+		color: inherit;
+
+		text-decoration:
+			underline
+			dotted;
+
+		text-decoration-thickness: 1px;
+
+		text-underline-offset: 0.22em;
+
+		transition:
+			background-color 0.18s ease,
+			text-decoration-color 0.18s ease;
+	}
+
+
+	.entry-body :global(
+		a[href^="/dictionary/"]:hover
+	) {
+		background:
+			rgba(70, 80, 85, 0.10);
+
+		text-decoration-color:
+			transparent;
+	}
+
+
+	/* Citation */
+
+	.entry-body :global(
+		a[href^="#ref-"]
+	) {
+		margin-left: 0.1em;
+
+		font-size: 0.72em;
+
+		vertical-align: super;
+
+		color: rgb(var(--gray));
+
+		text-decoration: none;
+	}
+
+
+	.entry-body :global(
+		a[href^="#ref-"]:hover
+	) {
+		color: inherit;
+
+		background:
+			rgba(70, 80, 85, 0.10);
+	}
+
+
+	/* References */
+
+	.entry-body :global(
+		.references
+	) {
+		margin-top: 4rem;
+
+		padding-top: 1.5rem;
+
+		border-top:
+			1px solid
+			rgba(70, 80, 85, 0.16);
+	}
+
+
+	.entry-body :global(
+		.references li
+	) {
+		margin-bottom: 0.8rem;
+
+		line-height: 1.6;
+	}
+
+
+	.entry-footer {
+		width: min(100%, 46rem);
+
+		margin:
+			4rem auto
+			0;
+	}
+
+
+	.entry-footer a {
+		color: rgb(var(--gray));
+
+		text-decoration: none;
+	}
+
+
+	.entry-footer a:hover {
+		color: inherit;
+	}
+
+</style>

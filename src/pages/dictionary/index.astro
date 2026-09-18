@@ -1,0 +1,470 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('dictionary');
+
+const sortedEntries = entries.sort((a, b) =>
+	a.data.title.localeCompare(b.data.title)
+);
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const availableLetters = new Set(
+	sortedEntries.map((entry) =>
+		entry.data.title.charAt(0).toUpperCase()
+	)
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Polar Architecture Dictionary — Capsule Fey"
+			description="A cross-referenced dictionary of polar architecture, infrastructure, history, and related concepts."
+		/>
+	</head>
+
+	<body>
+
+		<Header />
+
+		<nav
+			class="alphabet-axis"
+			aria-label="Dictionary alphabet navigation"
+		>
+			<div class="alphabet-track">
+
+				{
+					alphabet.map((letter) => {
+						const available =
+							availableLetters.has(letter);
+
+						return available ? (
+							<a
+								href={`#letter-${letter}`}
+								class="available"
+							>
+								{letter}
+							</a>
+						) : (
+							<span class="unavailable">
+								{letter}
+							</span>
+						);
+					})
+				}
+
+			</div>
+		</nav>
+
+
+		<main class="dictionary-index">
+
+			<header class="dictionary-intro">
+
+				<p class="eyebrow">
+					Reference Archive
+				</p>
+
+				<h1>
+					Polar Architecture Dictionary
+				</h1>
+
+				<p class="intro">
+					A growing collection of terms, projects,
+					systems, organizations, and concepts related
+					to polar architecture.
+				</p>
+
+			</header>
+
+
+			<section class="dictionary-list">
+
+				{
+					sortedEntries.map((entry, index) => {
+
+						const firstLetter =
+							entry.data.title
+								.charAt(0)
+								.toUpperCase();
+
+						const previousLetter =
+							index > 0
+								? sortedEntries[index - 1]
+									.data.title
+									.charAt(0)
+									.toUpperCase()
+								: null;
+
+						const isFirstOfLetter =
+							firstLetter !== previousLetter;
+
+						return (
+							<article
+								class="dictionary-row"
+								id={
+									isFirstOfLetter
+										? `letter-${firstLetter}`
+										: undefined
+								}
+							>
+
+								<a
+									class="thumbnail"
+									href={`/dictionary/${entry.id.replace(/\.mdx?$/, '')}`}
+								>
+									{
+										entry.data.thumbnail ? (
+											<img
+												src={entry.data.thumbnail}
+												alt=""
+												loading="lazy"
+											/>
+										) : (
+											<div class="thumbnail-placeholder">
+												{firstLetter}
+											</div>
+										)
+									}
+								</a>
+
+
+								<div class="entry-info">
+
+									<p class="entry-category">
+										{entry.data.category}
+									</p>
+
+									<h2>
+										<a
+											href={`/dictionary/${entry.id.replace(/\.mdx?$/, '')}`}
+										>
+											{entry.data.title}
+										</a>
+									</h2>
+
+									<p class="definition">
+										{entry.data.definition}
+									</p>
+
+								</div>
+
+							</article>
+						);
+					})
+				}
+
+			</section>
+
+		</main>
+
+	</body>
+</html>
+
+<style>
+
+	.dictionary-index {
+		width: min(100% - 2rem, 72rem);
+
+		margin: 0 auto;
+
+		padding:
+			10rem
+			0
+			7rem;
+	}
+
+
+	.dictionary-intro {
+		width: min(100%, 46rem);
+
+		margin-bottom: 4rem;
+	}
+
+
+	.dictionary-intro h1 {
+		margin:
+			0.6rem
+			0
+			1.5rem;
+	}
+
+
+	.eyebrow,
+	.entry-category {
+		color: rgb(var(--gray));
+
+		font-size: 0.68rem;
+
+		letter-spacing: 0.14em;
+
+		text-transform: uppercase;
+	}
+
+
+	.intro {
+		line-height: 1.7;
+	}
+
+
+	/* -------------------------
+	   Alphabet axis
+	   ------------------------- */
+
+	.alphabet-track .available {
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.alphabet-track .unavailable {
+		color: rgb(var(--gray));
+		opacity: 0.3;
+		cursor: default;
+	}
+
+	.alphabet-axis {
+		position: fixed;
+
+		top: 5rem;
+
+		left: 50%;
+
+		transform: translateX(-50%);
+
+		z-index: 20;
+
+		width: min(
+			calc(100% - 2rem),
+			72rem
+		);
+
+		overflow-x: auto;
+
+		background:
+			rgba(255, 255, 255, 0.88);
+
+		backdrop-filter:
+			blur(10px);
+
+		border-top:
+			1px solid
+			rgba(70, 80, 85, 0.12);
+
+		border-bottom:
+			1px solid
+			rgba(70, 80, 85, 0.12);
+
+		scrollbar-width: none;
+	}
+
+
+	.alphabet-axis::-webkit-scrollbar {
+		display: none;
+	}
+
+
+	.alphabet-track {
+		display: flex;
+
+		align-items: center;
+
+		gap: 1.25rem;
+
+		width: max-content;
+
+		min-width: 100%;
+
+		padding:
+			0.7rem
+			1rem;
+	}
+
+
+	.alphabet-track a {
+		color: rgb(var(--gray));
+
+		font-size: 0.72rem;
+
+		letter-spacing: 0.1em;
+
+		text-decoration: none;
+
+		transition:
+			color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+
+	.alphabet-track a:hover {
+		color: inherit;
+
+		transform:
+			translateY(-1px);
+	}
+
+
+	/* -------------------------
+	   Entries
+	   ------------------------- */
+
+	.dictionary-list {
+		border-top:
+			1px solid
+			rgba(70, 80, 85, 0.16);
+	}
+
+
+	.dictionary-row {
+		display: grid;
+
+		grid-template-columns:
+			11rem
+			minmax(0, 1fr);
+
+		gap: 2rem;
+
+		align-items: center;
+
+		padding:
+			1.6rem
+			0;
+
+		border-bottom:
+			1px solid
+				rgba(70, 80, 85, 0.16);
+
+		scroll-margin-top: 9rem;
+	}
+
+
+	.thumbnail {
+		display: block;
+
+		overflow: hidden;
+
+		border-radius: 0.4rem;
+	}
+
+
+	.thumbnail img,
+	.thumbnail-placeholder {
+		display: block;
+
+		width: 100%;
+
+		aspect-ratio: 4 / 3;
+	}
+
+
+	.thumbnail img {
+		object-fit: cover;
+
+		transition:
+			transform 0.3s ease;
+	}
+
+
+	.thumbnail:hover img {
+		transform:
+			scale(1.025);
+	}
+
+
+	.thumbnail-placeholder {
+		display: grid;
+
+		place-items: center;
+
+		background:
+			rgba(70, 80, 85, 0.06);
+
+		color: rgb(var(--gray));
+
+		font-size: 1.4rem;
+	}
+
+
+	.entry-info {
+		max-width: 42rem;
+	}
+
+
+	.entry-category {
+		margin:
+			0
+			0
+			0.45rem;
+	}
+
+
+	.entry-info h2 {
+		margin:
+			0
+			0
+			0.55rem;
+
+		font-size: 1.2rem;
+	}
+
+
+	.entry-info h2 a {
+		color: inherit;
+
+		text-decoration: none;
+	}
+
+
+	.entry-info h2 a:hover {
+		text-decoration: underline;
+
+		text-underline-offset: 0.2em;
+	}
+
+
+	.definition {
+		margin: 0;
+
+		line-height: 1.65;
+	}
+
+
+	@media (max-width: 700px) {
+
+		.dictionary-index {
+			padding-top: 9rem;
+		}
+
+
+		.alphabet-axis {
+			top: 4.5rem;
+		}
+
+
+		.dictionary-row {
+			grid-template-columns:
+				7rem
+				minmax(0, 1fr);
+
+			gap: 1rem;
+		}
+
+	}
+
+
+	@media (max-width: 480px) {
+
+		.dictionary-row {
+			grid-template-columns: 1fr;
+		}
+
+
+		.thumbnail {
+			width: 10rem;
+		}
+
+	}
+
+</style>
