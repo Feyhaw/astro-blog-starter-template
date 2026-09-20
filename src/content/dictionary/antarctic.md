@@ -18,7 +18,7 @@ related:
 images:
   - src: "/images/dictionary/antarctic/bafkreidf65cwqqd5s42yahwkvmrovbhb7damjcm2qecn7tf3rykm2dvuou.jpg"
     alt: "Topography under ice"
-    caption: "the hidden topography under the ice cap. Image courtesy: British Antarctic Survey"
+    caption: "The hidden topography under the ice cap. Image courtesy: British Antarctic Survey"
 
   - src: "/images/dictionary/antarctic/28531578.jpg"
     alt: "no man's land"
@@ -36,10 +36,12 @@ images:
 <strong>Origin</strong>
 The Antarctic territorial claims and disputes can be traced to the beginning of the 20th century. In 1912,  there have been 
 
+By 1962, scientists had a substantial understanding of Antarctic geography as it was divided by two distinct geological entities, the large landmass on the East and an archipelago on the west: it was the iceshelf that combined the parts of Antarctic into one single ground.[1](#ref-1).
+
 <ol class="references">
 
 <li id="ref-1">
-Test reference one. Replace this with the full bibliographic reference later.
+A. P. Crary, “The Antarctic,” Scientific American 207, no. 3 (1962): 67.
 </li>
 
 <li id="ref-2">

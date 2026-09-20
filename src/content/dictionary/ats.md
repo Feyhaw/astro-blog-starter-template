@@ -21,13 +21,12 @@ images:
     caption: "Signing of the Antarctic Treaty in Washington D.C. in December 1959. Image courtesy: ATS"
 
   - src: "/images/dictionary/ats/251_2.jpg"
-    alt: "canberra meeting, 1961"
+    alt: "Canberra meeting, 1961"
     caption: "First assembly in Canberra (old Parliament House), 1961. Image courtesy: ATS"
 ---
 
-Arctic Institute of North America or AINA, was launched after the Second World Wars as a scientific research organization focusing on the Arctic. Mmany of its activities were sponsored by Canadian and American defence department in favour of their strategic interests. As a scientific organization, its research has security restrictions due to the military sponsorship. Although AINA’s director emphasizes on the organization’s scientific intention, the institute was largely funded by the military. On the other hand, the Canadian department of defence announced that the military outposts were to fulfil the demand of travel, commerce, and communication during the peacetime [1](#ref-1). 
-
-In an AINA-sponsored article “The Arctic as a Strategic Scientific Area” (1950), the Arctic was characterized as: 1. a frontier lacking systematic body of scientific data; 2. a simple, homogenous, and contained area ideal for experimental design; and 3. a region requires multidisciplinary knowledge to survive. In the wake of Soviet nuclear threats, National Research Council and National Academy of Science, together with AINA, became the most substantial bureaucratic investment in civil defence and disaster science and review them with interdisciplinary advisory board.  AINA provided documents from the previous surveys to assist the construction of [DEW line](/dictionary/dew-line) since 1954 [2](#ref-2). 
+<strong>Origin</strong>
+The Antarctic territorial claims and disputes can be traced to the beginning of the 20th century. In 1912,  there have been 
 
 <ol class="references">
 

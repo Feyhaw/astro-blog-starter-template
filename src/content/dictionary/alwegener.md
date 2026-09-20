@@ -1,6 +1,6 @@
 ---
-title: "Alfred Lothea Wegener"
-shortTitle: "alwegner"
+title: "Alfred Lothar Wegener"
+shortTitle: "Alfred Wegner"
 definition: "German geologist (November 1, 1880 – November 1930)"
 category: "Person"
 
