@@ -19,7 +19,7 @@ images:
 
   - src: "/images/dictionary/lvberkner/Lloyd_Berkner.jpg"
     alt: "A memorial plaque at where he worked"
-    caption: "His thoery of tectonic plate was later proven during the IGY. Image courtesy: Gerbil via Wikimedia Commons"
+    caption: "His thoery of tectonic plate was later proven during the IGY. Image courtesy: Wikimedia Commons"
 ---
 
  American engineer. Lloyd Berkner was the radio engineer of [Byrd’s](/dictionary/rebyrd) Antarctic flight; there he established radio connection between Antarctic and the rest of the world for the first time.[1](#ref-1) He was considered the good combination of politician and scientist; he was elected to National Academy of Science in 1948. The proposal to hold IGY in 1957-1958 originated in a dinner party in Washington in 1950, attended by Sydney Campman, Jame van Allen, and Lloyd Berkner.[2](#ref-2) Around the same time, some scholars in Union Radio-Scientifique Internationale (URSI) proposed to set the semicentennial IPY to 25 years, and it was supported by ICSU, which set up a special committee called CSAGI, chaired by S. Chapman and vice-chaired by Berkner. China eventually gave up participating in the IGY, and Lloyd Berkner criticized the Chinese government on blocking its active participation with politics.[3](#ref-3)
