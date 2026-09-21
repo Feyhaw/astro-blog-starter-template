@@ -4,7 +4,7 @@ subtitle: NA
 description: Waiting at the other end (B) 
 pubDate: NA
 
-heroImage: /images/2025_2.jpg
+heroImage: /images/drawings/2025_2.jpg
 
 medium: Digital art
 

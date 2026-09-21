@@ -4,7 +4,7 @@ subtitle: NA
 description: Sacro Monte di Varese
 pubDate: NA
 
-heroImage: /images/chapel (1).jpg
+heroImage: /images/photography/chapel (1).jpg
 
 medium: Photo
 

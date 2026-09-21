@@ -4,7 +4,7 @@ subtitle: NA
 description: Some retro-futurism? (B)
 pubDate: NA
 
-heroImage: /images/exhibition thumbnail.jpg
+heroImage: /images/drawings/exhibition thumbnail.jpg
 
 medium: Digital art
 

@@ -11,7 +11,7 @@ abstract: |
 
 pubDate: 2020-04-16
 
-heroImage: /images/rail.jpg
+heroImage: /images/projects/rail.jpg
 
 category: Term work
 

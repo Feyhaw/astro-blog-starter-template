@@ -9,7 +9,7 @@ abstract: |
 
 pubDate: 2022-06-23
 
-heroImage: /images/Masterplan Jun16 (3).jpg
+heroImage: /images/projects/Masterplan Jun16 (3).jpg
 
 category: Architectural Proposal
 

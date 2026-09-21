@@ -14,7 +14,7 @@ abstract: |
     
 pubDate: 2024-05-11
 
-heroImage: /images/Figure 5.jpg
+heroImage: /images/projects/Figure 5.jpg
 
 category: Research
 

@@ -4,7 +4,7 @@ subtitle: NA
 description: Soviet Spaceship Buran (M) 
 pubDate: NA
 
-heroImage: /images/sovietwave.jpg
+heroImage: /images/drawings/sovietwave.jpg
 
 medium: Digital art
 

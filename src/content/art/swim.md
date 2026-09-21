@@ -4,7 +4,7 @@ subtitle: NA
 description: Swimn away the troubles (B) 
 pubDate: NA
 
-heroImage: /images/2025_1.jpg
+heroImage: /images/drawings/2025_1.jpg
 
 medium: Digital art
 

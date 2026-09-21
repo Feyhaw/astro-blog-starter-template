@@ -4,7 +4,7 @@ subtitle: NA
 description: When winter is almost over and spring is almost there in Toronto(M) 
 pubDate: NA
 
-heroImage: /images/2014_4.jpg
+heroImage: /images/drawings/2014_4.jpg
 
 medium: Digital art
 

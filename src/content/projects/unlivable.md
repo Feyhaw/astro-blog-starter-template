@@ -13,7 +13,7 @@ abstract: |
 
 pubDate: 2023-07-18
 
-heroImage: /images/A4_Index.jpg
+heroImage: /images/projects/A4_Index.jpg
 
 category: MSc Thesis
 

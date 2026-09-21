@@ -9,7 +9,7 @@ abstract: |
 
 pubDate: 2025-12-09
 
-heroImage: /images/Frobisher Bay.jpg
+heroImage: /images/projects/Frobisher Bay.jpg
 
 category: Research
 

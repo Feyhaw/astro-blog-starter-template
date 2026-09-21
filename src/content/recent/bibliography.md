@@ -513,6 +513,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Miles, Malcolm. 2013. “Metabolism: A Japanese Modernism.” <em>Cultural Politics</em> 9 (1): 70-85. DOI: 10.1215/17432197-1907181
+</p>
+
+<p>
 •	Miller, Greg. “Russians Were Once Banned From a Third of the U.S.” Web article. National Geographics. March 26, 2018. <a class="shortcut" href="https://www.nationalgeographic.com/history/article/russia-cold-war-travel-ban-maps-red-scare" style="color: rgb(var(--gray));">
     https://www.nationalgeographic.com/history/article/russia-cold-war-travel-ban-maps-red-scare
     </a> 
@@ -761,9 +765,21 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Summerson, Rupert. “Nankyoku No Kyoku: The Cultural Life of the Shirase Antarctic Expedition 1910–12.” In <em>Antarctica: Music, Sounds and Cultural Connections</em>, edited by Rupert Summerson, Bernadette Hince, and Arnan Wiesel. ANU Press, 2015.
+</p>
+
+<p>
 •	Syromyatnikov, V. S. 1972. “Docking System of Androgenous and Peripheral Type.” Report at the 7th Aerospace Mechanisms Symposium. NASA website. Retrieved on June 17, 2025. <a class="shortcut" href="https://ntrs.nasa.gov/citations/19730010139" style="color: rgb(var(--gray));">
     https://ntrs.nasa.gov/citations/19730010139
     </a>
+</p>
+
+<p>
+•	Taufri, Manfredo. <em>The Sphere and The Labrinth: Avant-gardes and Architecture from Piranesi to the 1970s</em>. Translated by Pellegrino d’Acierno and Robert Connolly. Cambridge, Massachusetts and London, England: The MIT Press, 1987.
+</p>
+
+<p>
+•	Tamari, Tomoko. “Metabolism: Utopian urbanism and the Japanese modern Architecture Movement.” <em>Theory, Culture & Society</em> 31, no. 7/8 (2014): 201-225. DOI: 10.1177/0263276414547777
 </p>
 
 <p>
@@ -792,6 +808,16 @@ Some sources on polar and space architectures, housing, and architectural theory
 
 <p>
 •	Turner, Frederick Jackson. “The Significance of the Frontier in American History.” <em>Proceedings of the State Historical Society of Wisconsin</em> 41 (1893). 79–112. 
+</p>
+
+<p>
+•	Urban, Florian, “Kenzo Tange and the Metabolist Movement,” <em>The Journal of Architecture</em> 16, no. 4 (2011), 584-587. DOI: 10.1080/13602365.2011.598725
+</p>
+
+<p>
+•	Urban, Florian. “Japanese ‘Occidentalism’ and the Emergence of Postmodern Architecture.” <em>Journal of Architectural Education (1984-)</em> 65, no. 2 (2012): 89–102.  <a class="shortcut" href="http://www.jstor.org/stable/41820041" style="color: rgb(var(--gray));">
+    http://www.jstor.org/stable/41820041
+    </a>.
 </p>
 
 <p>

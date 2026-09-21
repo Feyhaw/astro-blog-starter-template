@@ -4,7 +4,7 @@ subtitle: NA
 description: My first digital drawings; done during the lock down in Toronto (T) 
 pubDate: NA
 
-heroImage: /images/2020_6.jpg
+heroImage: /images/drawings/2020_6.jpg
 
 medium: Digital art
 

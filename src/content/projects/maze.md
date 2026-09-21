@@ -13,7 +13,7 @@ abstract: |
 
 pubDate: 2022-06-30
 
-heroImage: /images/Sousse.jpg
+heroImage: /images/projects/Sousse.jpg
 
 category: Research
 

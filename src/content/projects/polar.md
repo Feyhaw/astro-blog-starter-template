@@ -11,7 +11,7 @@ abstract: |
 
 pubDate: 2026-07-07
 
-heroImage: /images/2025_9.jpg
+heroImage: /images/projects/2025_9.jpg
 
 category: PhD Thesis
 

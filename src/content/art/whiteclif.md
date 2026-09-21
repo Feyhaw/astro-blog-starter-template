@@ -4,7 +4,7 @@ subtitle: NA
 description: Me at the White Cliff (B) 
 pubDate: NA
 
-heroImage: /images/ocean view.jpg
+heroImage: /images/drawings/ocean view.jpg
 
 medium: Digital art
 

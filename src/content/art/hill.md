@@ -4,7 +4,7 @@ subtitle: NA
 description: The car used to mean something (B) 
 pubDate: NA
 
-heroImage: /images/2024_11.jpg
+heroImage: /images/drawings/2024_11.jpg
 
 medium: Digital art
 

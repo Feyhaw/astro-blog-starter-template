@@ -11,7 +11,7 @@ abstract: |
 
 pubDate: 2026-05-11
 
-heroImage: /images/1946(1).jpg
+heroImage: /images/projects/1946(1).jpg
 
 category: Project
 

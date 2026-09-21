@@ -4,7 +4,7 @@ subtitle: NA
 description: A villa I once dreamed about (Y) 
 pubDate: NA
 
-heroImage: /images/villa.jpg
+heroImage: /images/drawings/villa.jpg
 
 medium: Digital art
 

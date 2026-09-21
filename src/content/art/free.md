@@ -4,7 +4,7 @@ subtitle: NA
 description: A drawing dedicated to my friend (M)
 pubDate: NA
 
-heroImage: /images/free.jpg
+heroImage: /images/drawings/free.jpg
 
 medium: Digital art
 

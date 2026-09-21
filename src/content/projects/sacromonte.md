@@ -17,7 +17,7 @@ abstract: |
 
 pubDate: 2022-06-22
 
-heroImage: /images/chapel (2).jpg
+heroImage: /images/projects/chapel (2).jpg
 
 category: Research
 

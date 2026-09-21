@@ -4,7 +4,7 @@ subtitle: NA
 description: My bedroom back in Milano (M)
 pubDate: NA
 
-heroImage: /images/2021_11.jpg
+heroImage: /images/drawings/2021_11.jpg
 
 medium: Digital art
 

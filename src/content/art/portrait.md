@@ -4,7 +4,7 @@ subtitle: NA
 description: Myself
 pubDate: NA
 
-heroImage: /images/Portray1.jpg
+heroImage: /images/photography/Portray1.jpg
 
 medium: Photo
 

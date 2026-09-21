@@ -13,7 +13,7 @@ abstract: |
     
 pubDate: 2025-12-21
 
-heroImage: /images/Front-02.jpg
+heroImage: /images/projects/Front-02.jpg
 
 category: Research
 

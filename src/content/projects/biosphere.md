@@ -11,7 +11,7 @@ abstract: |
 
 pubDate: 2026-06-30
 
-heroImage: /images/Biosphere2 thumbnail.jpg
+heroImage: /images/projects/Biosphere2 thumbnail.jpg
 
 category: Research
 

@@ -4,7 +4,7 @@ subtitle: NA
 description: A cat I saw at the neighbour's (Y) 
 pubDate: NA
 
-heroImage: /images/cat.jpg
+heroImage: /images/drawings/cat.jpg
 
 medium: Digital art
 

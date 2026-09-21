@@ -4,7 +4,7 @@ subtitle: NA
 description: Saw this house in Malvern Hills (B)
 pubDate: NA
 
-heroImage: /images/2025_7.jpg
+heroImage: /images/drawings/2025_7.jpg
 
 medium: Digital art
 

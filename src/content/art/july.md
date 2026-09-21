@@ -4,7 +4,7 @@ subtitle: NA
 description: Pandemic drawing no.2 (T) 
 pubDate: NA
 
-heroImage: /images/2020_7.jpg
+heroImage: /images/drawings/2020_7.jpg
 
 medium: Digital art
 

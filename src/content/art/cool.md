@@ -4,7 +4,7 @@ subtitle: NA
 description: A cooler portrait
 pubDate: NA
 
-heroImage: /images/photo_6.jpg
+heroImage: /images/photography/photo_6.jpg
 
 medium: Photo
 

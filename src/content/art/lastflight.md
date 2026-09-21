@@ -4,7 +4,7 @@ subtitle: NA
 description: Last drawing of 2025 (B)
 pubDate: NA
 
-heroImage: /images/The Last Flight.jpg
+heroImage: /images/drawings/The Last Flight.jpg
 
 medium: Digital art
 
