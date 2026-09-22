@@ -16,6 +16,7 @@ related:
   - IGY
   - Nuclear Power 
   - Amundsen-Scott Station
+  - Camp Century
 
 images:
   - src: "/images/dictionary/mcmst/MacSlide00021.jpg"

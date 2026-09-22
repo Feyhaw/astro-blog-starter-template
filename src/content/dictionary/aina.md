@@ -17,8 +17,8 @@ related:
 
 images:
   - src: "/images/dictionary/aina/address.jpg"
-    alt: "DEW Line station in the Arctic"
-    caption: "Test image for the Distant Early Warning Line."
+    alt: "AINA now"
+    caption: "AINA is currently an institution of teh Univeristy of Calgary. Image Courtesy: Google Streetview"
 
 ---
 
