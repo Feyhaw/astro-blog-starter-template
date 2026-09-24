@@ -2,7 +2,7 @@
 title: "Alfred Lothar Wegener"
 shortTitle: "Alfred Wegner"
 definition: "German geologist (November 1, 1880 – November 1930)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/alwegener/Alfred_Wegener_ca.1924-30.jpg"
 

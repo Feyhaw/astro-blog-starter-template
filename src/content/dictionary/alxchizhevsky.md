@@ -2,7 +2,7 @@
 title: "Alexander Leonidovich Chizhevsky"
 shortTitle: "Alexander Chizhevsky"
 definition: "Russian scientist (February 7, 1897 – December 20, 1964)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/alxchizhevsky/A.L.-CHizhevskiy.-Moskva.jpg"
 

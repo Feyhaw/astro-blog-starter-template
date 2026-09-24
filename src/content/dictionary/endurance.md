@@ -2,7 +2,7 @@
 title: "Endurance"
 shortTitle: "Endurance"
 definition: "The ship Sharckleton used for 1914 Antarctic expedidtion"
-category: "Object"
+category: "Vehicle"
 
 thumbnail: "/images/dictionary/endurance/images.jpg"
 

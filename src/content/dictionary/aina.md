@@ -18,7 +18,7 @@ related:
 images:
   - src: "/images/dictionary/aina/address.jpg"
     alt: "AINA now"
-    caption: "AINA is currently an institution of teh Univeristy of Calgary. Image Courtesy: Google Streetview"
+    caption: "AINA is currently an institution of the Univeristy of Calgary. Image Courtesy: Google Streetview"
 
 ---
 

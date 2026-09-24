@@ -2,7 +2,7 @@
 title: "Robert Falcon Scott"
 shortTitle: "Robert Scott"
 definition: "British polar explorer (June 6, 1868 – March ?, 1912)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/rfscott/Scott_of_the_Antarctic_crop.jpg"
 

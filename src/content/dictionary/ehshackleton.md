@@ -2,7 +2,7 @@
 title: "Ernest Henry Shackleton"
 shortTitle: "Ernest Shackleton"
 definition: "British polar explorer (February 15, 1874 – January 5, 1922)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/ehshackleton/Shackleton,_Ernest_Henry_1.jpg"
 

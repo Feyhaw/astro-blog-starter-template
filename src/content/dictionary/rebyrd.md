@@ -2,7 +2,7 @@
 title: "Richard Evelyn Byrd"
 shortTitle: "Richard Byrd"
 definition: "American polar explorer (October 25, 1888 – March 11, 1957)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/rebyrd/images.jpg"
 

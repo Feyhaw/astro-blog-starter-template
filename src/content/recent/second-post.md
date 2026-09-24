@@ -149,7 +149,7 @@ Initially, I never thought of writing this report or taking any recordings. But 
 </p>
 
 <p>
-Moreover, it should be noted that in the current economic and climate environment, personal discomfort during the heatwave may reflect a larger-scale failure. It is time to take climate change seriously and stop wasting money on wars. With AirconF, I devote my mockery.
+Moreover, it should be noted that in the current economic and climate environment, personal discomfort during the heatwave may reflect a larger-scale failure. It is time to take climate change seriously and stop wasting money on wars. My homemade air conditioner is a joke, but what has made it funny is the neo-liberal industrial machine that prentends to giva a damn. With AirconF, I devote my mockery. 
 </p>
 
 <br><br>

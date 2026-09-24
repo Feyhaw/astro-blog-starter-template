@@ -2,7 +2,7 @@
 title: "Llyod Viel Berkner"
 shortTitle: "Lloyd Berkner"
 definition: "American Engineer (February 1, 1905 – June 4, 1967)"
-category: "Person"
+category: "People"
 
 thumbnail: "/images/dictionary/lvberkner/300px-1955_-_berkner.jpg"
 
