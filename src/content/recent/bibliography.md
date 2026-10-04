@@ -370,6 +370,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Japanese Antarctic research of National Institute of Polar Research. <em>Nankyoku Kansokutai no Shigoto: Kansoku Taiin no Senko Kara Kurashi Made</em>. Tokyo: Seizando-Shoten Publication.
+</p>
+
+<p>
 •	Jeffery, Brian (Simon) and Paul Kelly. “Life of a Radician: The Life of a DEWLine Station.” Unknown publish date. Web article. The DEWLine website. <a class="shortcut" href="https://lswilson.dewlineadventures.com/life-of-a-radician/" style="color: rgb(var(--gray));">
     https://lswilson.dewlineadventures.com/life-of-a-radician/
     </a> 

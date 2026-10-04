@@ -1,5 +1,5 @@
 ---
-title: LichfieldCathedral (B)
+title: Lichfield cathedral (B)
 subtitle: NA
 description: British gothic
 pubDate: NA
