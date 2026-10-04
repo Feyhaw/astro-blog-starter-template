@@ -85,7 +85,7 @@ George M. Young, “The Scientific Cosmists,” in The Russian Cosmists: The Eso
 George M. Young, “The Scientific Cosmists,” in The Russian Cosmists: The Esoteric Futurism of Nicolai Fedorov and His Followers (New York: Oxford University Press, 2012): 164.
 </li>
 
-<li id="ref-11">
+<li id="ref-12">
 George M. Young, “The Scientific Cosmists,” in The Russian Cosmists: The Esoteric Futurism of Nicolai Fedorov and His Followers (New York: Oxford University Press, 2012): 164.
 </li>
 
