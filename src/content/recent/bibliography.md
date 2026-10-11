@@ -370,7 +370,7 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
-•	Japanese Antarctic research of National Institute of Polar Research. <em>Nankyoku Kansokutai no Shigoto: Kansoku Taiin no Senko Kara Kurashi Made</em>. Tokyo: Seizando-Shoten Publication.
+•	Japanese Antarctic research of National Institute of Polar Research. 2014. <em>Nankyoku Kansokutai no Shigoto: Kansoku Taiin no Senko Kara Kurashi Made</em>. Tokyo: Seizando-Shoten Publication.
 </p>
 
 <p>
@@ -432,7 +432,7 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
-•	Kudo, Sakae. 2025. <em>Kokuritsu Kyokuchi Kenkyusho Soritsu 50 Shunen Kinenshi</em>. Tokyo: Research Organization of Information and Systems (Research Organization of Information and Systems). <a class="shortcut" href="https://nipr.repo.nii.ac.jp/records/2000463" style="color: rgb(var(--gray));">
+•	Kudo, Sakae. 2025. <em>Kokuritsu Kyokuchi Kenkyusho Soritsu 50 Shunen Kinenshi</em>. Tokyo: Research Organization of Information and Systems. <a class="shortcut" href="https://nipr.repo.nii.ac.jp/records/2000463" style="color: rgb(var(--gray));">
     https://nipr.repo.nii.ac.jp/records/2000463
     </a>
 </p>
