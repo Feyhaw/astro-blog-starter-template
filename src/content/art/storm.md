@@ -1,10 +1,10 @@
 ---
 title: Before the Storm
 subtitle: NA
-description: Last drawing of 2025 (B)
+description: Have you ever seen the rain (B)
 pubDate: NA
 
-heroImage: /images/drawings/remdemption.jpg
+heroImage: /images/drawings/remdemption1.jpg
 
 medium: Digital art
 
