@@ -180,6 +180,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Denison, Edward, and Guangyu Ren. <em>Ultra-Modernism: Architecture and Modernity in Manchuria</em>. 1st ed. Hong Kong University Press, 2016.
+</p>
+
+<p>
 •	Douglas, Mary. “The Idea of a Home: A Kind of Space.” <em>Social Research</em> 58, no. 1 (1991): 287–307. <a class="shortcut" href="http://www.jstor.org/stable/40970644" style="color: rgb(var(--gray));">
     http://www.jstor.org/stable/40970644
     </a>
