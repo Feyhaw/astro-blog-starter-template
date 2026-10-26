@@ -4,7 +4,7 @@ subtitle: NA
 description: First time trying curtains(B)
 pubDate: NA
 
-heroImage: /images/drawings/makeup.jpg
+heroImage: /images/drawings/makeup_v2.jpg
 
 medium: Digital art
 
