@@ -316,6 +316,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Gorman, Michael John. 2005. <em>Buckminster Fuller: Designing for Mobility</em>. Milan: Skira.
+</p>
+
+<p>
 •	Griswold, Robert L. 2012. “‘Russian Blonde in Space’: Soviet Women in the American Imagination, 1950-1965.” <em>Journal of Social History</em> 45, no. 4: 881–907. <a class="shortcut" href="http://www.jstor.org/stable/41678943" style="color: rgb(var(--gray));">
     http://www.jstor.org/stable/41678943
     </a>
@@ -391,6 +395,10 @@ Some sources on polar and space architectures, housing, and architectural theory
 •	Jouzel, Jean, Claude Lorius, Dominique Raynaud, and Teresa Lavender Fagan. “The Campaigns.” In <em>The White Planet: The Evolution and Future of Our Frozen World</em>, 82–109. Princeton University Press, 2013. <a class="shortcut" href="https://doi.org/10.2307/j.ctt1r2ddm.9" style="color: rgb(var(--gray));">
     https://doi.org/10.2307/j.ctt1r2ddm.9
     </a> 
+</p>
+
+<p>
+•	Kaminuma, Katsutada. 2026. <em>Syowa Kichi Imamukashi Monogatari: Nankyoku Kansoku No 70nen o Tadoru</em>. Tokyo: Maruzen.
 </p>
 
 <p>
