@@ -18,7 +18,7 @@ category: Research
 
 featured: true
 
-year: 2025
+year: 2026
 
 theme: Polar architecture
 

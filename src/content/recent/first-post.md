@@ -27,7 +27,7 @@ a smart one, but I reckcon that it is still a decent first step.
 <p>
 Having said that, it surprises me how far I have gone since the moment I put down 
 my first line of code. Inintially, this website meant to be a portfolio to showcase 
-my work and art. Then it evolved into something more than. With the dynamic background,
+my work and art. Then it evolved into something more than that. With the dynamic background,
 it started to breath. It started to resemble a map with the navigator on the edge of 
 the main pages. Now it even serve to organize my previous projects. It is now an online 
 archive. There are traces from the erlier days though; for example, vistors still have 
