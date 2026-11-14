@@ -1,0 +1,697 @@
+
+---
+import {
+  thesisProgress,
+  type Milestone,
+} from '../../data/thesisProgress';
+
+const allMilestones: Milestone[] = [
+  ...thesisProgress.chapters.flatMap(
+    chapter => chapter.sections
+  ),
+  ...thesisProgress.thesisFraming,
+  ...thesisProgress.finalStages,
+];
+
+const completed = allMilestones.filter(
+  item => item.completed
+).length;
+
+const total = allMilestones.length;
+const percentage = Math.round(
+  (completed / total) * 100
+);
+
+const literature = thesisProgress.literature;
+
+const reviewed = literature.reduce(
+  (sum, item) => sum + item.reviewed, 0
+);
+
+const identified = literature.reduce(
+  (sum, item) => sum + item.identified, 0
+);
+
+const literaturePercentage = identified > 0
+  ? Math.round((reviewed / identified) * 100)
+  : null;
+
+const formatDate = (value: string | null) =>
+  value || 'Whenever ready';
+
+const chapterCompleted = (items: Milestone[]) =>
+  items.filter(item => item.completed).length;
+---
+
+<section class="general-progress">
+
+  <header class="progress-header">
+    <p class="eyebrow">RESEARCH DEVELOPMENT</p>
+    <h1>General Progress</h1>
+    <p class="description">
+      An overview of thesis production,
+      literature consultation and expert
+      consultation.
+    </p>
+  </header>
+
+  <!-- 01 / THESIS PRODUCTION -->
+
+  <section class="progress-section">
+    <div class="section-heading">
+      <div>
+        <p class="section-number">01 / DETERMINING</p>
+        <h2>Thesis Production</h2>
+      </div>
+
+      <div class="percentage">
+        <strong>{percentage}%</strong>
+        <span>{completed} / {total} milestones</span>
+      </div>
+    </div>
+
+    <div
+      class="progress-track"
+      role="progressbar"
+      aria-label="Thesis production progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow={percentage}
+    >
+      <div
+        class="progress-fill"
+        style={`width: ${percentage}%`}
+      ></div>
+    </div>
+
+    <div class="column-headings">
+      <span>Milestone</span>
+      <span>Target</span>
+      <span>Finished</span>
+    </div>
+
+    <div class="milestone-groups">
+      {
+        thesisProgress.chapters.map(chapter => (
+          <details class="milestone-group">
+            <summary>
+              <span class="group-title">
+                {chapter.title}
+              </span>
+
+              <span class="group-count">
+                {chapterCompleted(chapter.sections)}
+                /{chapter.sections.length}
+              </span>
+            </summary>
+
+            <div class="milestone-list">
+              {chapter.sections.map(item => (
+                <div class="milestone-row">
+                  <div class="milestone-name">
+                    <span
+                      class:list={[
+                        'status-indicator',
+                        item.completed && 'complete',
+                      ]}
+                      aria-hidden="true"
+                    >
+                      {item.completed ? '✓' : ''}
+                    </span>
+
+                    {item.articleTitle ? (
+                      <span class="title-tooltip">
+                        <button
+                          type="button"
+                          class="milestone-label has-title"
+                          aria-label={`${item.label}: ${item.articleTitle}`}
+                        >
+                          {item.label}
+                        </button>
+                        <span
+                          class="tooltip-content"
+                          role="tooltip"
+                        >
+                          {item.articleTitle}
+                        </span>
+                      </span>
+                    ) : (
+                      <span class="milestone-label">
+                        {item.label}
+                      </span>
+                    )}
+                  </div>
+
+                  <span class="date">
+                    {formatDate(item.target)}
+                  </span>
+
+                  <span class="date">
+                    {item.finished || '—'}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))
+      }
+
+      <details class="milestone-group">
+        <summary>
+          <span class="group-title">
+            Thesis Framing
+          </span>
+          <span class="group-count">
+            {chapterCompleted(thesisProgress.thesisFraming)}
+            /2
+          </span>
+        </summary>
+
+        <div class="milestone-list">
+          {
+            thesisProgress.thesisFraming.map(item => (
+              <div class="milestone-row">
+                <div class="milestone-name">
+                  <span
+                    class:list={[
+                      'status-indicator',
+                      item.completed && 'complete',
+                    ]}
+                  >
+                    {item.completed ? '✓' : ''}
+                  </span>
+                  <span>{item.label}</span>
+                </div>
+                <span class="date">
+                  {formatDate(item.target)}
+                </span>
+                <span class="date">
+                  {item.finished || '—'}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </details>
+
+      <details class="milestone-group">
+        <summary>
+          <span class="group-title">
+            Revision & Examination
+          </span>
+          <span class="group-count">
+            {chapterCompleted(thesisProgress.finalStages)}
+            /3
+          </span>
+        </summary>
+
+        <div class="milestone-list">
+          {
+            thesisProgress.finalStages.map(item => (
+              <div class="milestone-row">
+                <div class="milestone-name">
+                  <span
+                    class:list={[
+                      'status-indicator',
+                      item.completed && 'complete',
+                    ]}
+                  >
+                    {item.completed ? '✓' : ''}
+                  </span>
+                  <span>{item.label}</span>
+                </div>
+                <span class="date">
+                  {formatDate(item.target)}
+                </span>
+                <span class="date">
+                  {item.finished || '—'}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 02 / LITERATURE -->
+
+  <section class="progress-section">
+    <div class="section-heading">
+      <div>
+        <p class="section-number">02 / SUPPORTING</p>
+        <h2>Literature Consultation</h2>
+      </div>
+
+      <div class="percentage">
+        <strong>
+          {literaturePercentage === null
+            ? '—'
+            : `${literaturePercentage}%`}
+        </strong>
+        <span>{reviewed} / {identified} identified</span>
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div
+        class="progress-fill secondary"
+        style={`width: ${literaturePercentage ?? 0}%`}
+      ></div>
+    </div>
+
+    <div class="literature-list">
+      {
+        literature.map(item => {
+          const value = item.identified > 0
+            ? Math.min(
+                100,
+                (item.reviewed / item.identified) * 100
+              )
+            : 0;
+
+          return (
+            <div class="literature-row">
+              <span>{item.category}</span>
+
+              <div class="literature-track">
+                <div
+                  class="literature-fill"
+                  style={`width: ${value}%`}
+                ></div>
+              </div>
+
+              <span class="literature-count">
+                {item.reviewed}/{item.identified}
+              </span>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <p class="section-note">
+      Coverage of currently identified literature.
+      The reading list may expand as research develops.
+    </p>
+  </section>
+
+  <!-- 03 / EXPERT CONSULTATION -->
+
+  <section class="progress-section">
+    <div class="section-heading">
+      <div>
+        <p class="section-number">03 / QUALITATIVE</p>
+        <h2>Expert Consultation</h2>
+      </div>
+    </div>
+
+    {
+      thesisProgress.experts.length > 0 ? (
+        <div class="expert-list">
+          {thesisProgress.experts.map(expert => (
+            <div class="expert-row">
+              <div>
+                <strong>{expert.name}</strong>
+                <span>{expert.discipline}</span>
+                {expert.notes && (
+                  <p class="expert-notes">
+                    {expert.notes}
+                  </p>
+                )}
+              </div>
+              <span class="expert-status">
+                {expert.status}
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">
+          Consultation records will be added
+          as the research develops.
+        </p>
+      )
+    }
+
+    <p class="section-note">
+      Expert consultation is assessed qualitatively
+      and does not contribute to the thesis
+      completion percentage.
+    </p>
+  </section>
+
+</section>
+
+<style>
+  .general-progress {
+    width: min(100% - 2rem, 64rem);
+    margin: 0 auto;
+    padding: 6rem 0 8rem;
+    color: inherit;
+  }
+
+  .progress-header {
+    margin-bottom: 5rem;
+  }
+
+  .eyebrow,
+  .section-number {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    margin: 0.7rem 0 1rem;
+  }
+
+  .description {
+    max-width: 36rem;
+    line-height: 1.7;
+    opacity: 0.65;
+  }
+
+  .progress-section {
+    margin-bottom: 5rem;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-weight: 400;
+    margin: 0.5rem 0 0;
+  }
+
+  .percentage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .percentage strong {
+    font-size: 2rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .percentage span {
+    font-size: 0.75rem;
+    opacity: 0.55;
+  }
+
+  .progress-track {
+    height: 0.5rem;
+    background: rgba(70, 80, 85, 0.12);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: rgba(70, 80, 85, 0.85);
+    transition: width 0.4s ease;
+  }
+
+  .progress-fill.secondary {
+    background: rgba(70, 80, 85, 0.55);
+  }
+
+  .column-headings,
+  .milestone-row {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr) 7.5rem 7.5rem;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .column-headings {
+    padding: 0 0.75rem 0.75rem;
+    font-size: 0.7rem;
+    opacity: 0.5;
+  }
+
+  .column-headings span:not(:first-child) {
+    text-align: right;
+  }
+
+  .milestone-group {
+    border-top: 1px solid rgba(70, 80, 85, 0.16);
+  }
+
+  .milestone-group:last-child {
+    border-bottom: 1px solid rgba(70, 80, 85, 0.16);
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.1rem 0.75rem;
+    list-style: none;
+    transition: background 0.2s ease;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    background: rgba(70, 80, 85, 0.05);
+  }
+
+  summary:focus-visible,
+  .milestone-label:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .group-title {
+    font-size: 0.95rem;
+  }
+
+  .group-title::before {
+    content: '+';
+    display: inline-block;
+    width: 1.5rem;
+    opacity: 0.5;
+  }
+
+  details[open] .group-title::before {
+    content: '−';
+  }
+
+  .group-count {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .milestone-list {
+    padding: 0.2rem 0.75rem 1rem 2.25rem;
+  }
+
+  .milestone-row {
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+  }
+
+  .milestone-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .status-indicator {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(70, 80, 85, 0.4);
+    border-radius: 50%;
+    font-size: 0.65rem;
+  }
+
+  .status-indicator.complete {
+    color: white;
+    background: rgba(70, 80, 85, 0.85);
+  }
+
+  .date {
+    text-align: right;
+    font-size: 0.78rem;
+    opacity: 0.65;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .milestone-label {
+    font: inherit;
+    color: inherit;
+  }
+
+  button.milestone-label {
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: help;
+    text-align: left;
+  }
+
+  .has-title {
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(70, 80, 85, 0.4);
+  }
+
+  .title-tooltip {
+    position: relative;
+    display: inline-block;
+    min-width: 0;
+  }
+
+  .tooltip-content {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 0.7rem);
+    z-index: 10;
+    width: max-content;
+    max-width: min(19rem, 75vw);
+    padding: 0.65rem 0.85rem;
+    background: #343d43;
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    white-space: normal;
+  }
+
+  .title-tooltip:hover .tooltip-content,
+  .title-tooltip:focus-within .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .literature-row {
+    display: grid;
+    grid-template-columns: minmax(9rem, 1fr) 2fr 4rem;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.85rem 0;
+    font-size: 0.85rem;
+  }
+
+  .literature-track {
+    height: 0.35rem;
+    background: rgba(70, 80, 85, 0.1);
+    overflow: hidden;
+  }
+
+  .literature-fill {
+    height: 100%;
+    background: rgba(70, 80, 85, 0.55);
+  }
+
+  .literature-count {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.6;
+  }
+
+  .expert-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(70, 80, 85, 0.13);
+  }
+
+  .expert-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .expert-row strong {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .expert-row span,
+  .expert-notes {
+    font-size: 0.8rem;
+    opacity: 0.65;
+  }
+
+  .expert-status {
+    flex-shrink: 0;
+  }
+
+  .section-note,
+  .empty-state {
+    margin-top: 1.5rem;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    opacity: 0.55;
+  }
+
+  @media (max-width: 700px) {
+    .general-progress {
+      padding-top: 5rem;
+    }
+
+    .column-headings,
+    .milestone-row {
+      grid-template-columns:
+        minmax(0, 1fr) 5rem 5rem;
+      gap: 0.5rem;
+    }
+
+    .milestone-list {
+      padding-left: 0.5rem;
+    }
+
+    .milestone-row {
+      font-size: 0.76rem;
+    }
+
+    .date {
+      font-size: 0.7rem;
+    }
+
+    .literature-row {
+      grid-template-columns: minmax(0, 1fr) 1fr 3.5rem;
+      gap: 0.75rem;
+    }
+
+    .section-heading {
+      gap: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-fill,
+    .tooltip-content {
+      transition: none;
+    }
+  }
+</style>

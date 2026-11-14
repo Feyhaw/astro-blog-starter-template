@@ -1,0 +1,51 @@
+
+---
+import SpatialNavigation from '../../components/SpatialNavigation.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import GeneralProgress from '../../components/research/GeneralProgress.astro';
+
+export const prerender = false;
+
+const accessCookie =
+    Astro.cookies.get('capsule_thesis_access');
+
+const hasAccess =
+    accessCookie?.value === 'granted';
+
+if (!hasAccess) {
+    return Astro.redirect('/thesis');
+}
+---
+
+<html lang="en">
+    <head>
+        <BaseHead
+            title="General Progress | Capsule Fey"
+            description="Ground control to Major Tom"
+        />
+    </head>
+
+    <body>
+        <Header />
+
+        <main>
+            <GeneralProgress />
+
+            <p>
+			Proceed to <a class="shortcut" href="/thesis/chapter-structure"
+            style="color: rgb(var(--gray));">
+			Chapter Structure
+			</a> for more information on individual chapters
+			</p>
+            
+            <a class="shortcut" 
+            href="/thesis" 
+            style="color: rgb(var(--gray));">
+            Return to "Thesis"</a>
+        </main>
+        <SpatialNavigation />
+
+    </body>
+
+</html>

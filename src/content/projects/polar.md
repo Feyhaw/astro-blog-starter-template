@@ -9,7 +9,7 @@ abstract: |
     
     These structures reflect the continual exploration of environmental control yet are often dismissed from the mainstream architectural discourse. They are fine specimens of architectural studies: distilled from the complicated concepts commonly exhibited in our societies, polar architecture provides unique answers of functionalism, value, and necessity – if not reality. With few scholarships available in previous years, polar architectures tend to remain more as an engineering topic than an architectural one. This research seeks to approach polar habitats with an architectural perspective, integrating them into the discussion of architectural history and theory. In doing so, the comparative study between polar and contemporary architecture will be established. The evolution of polar architectures will be traced, as well as the futures they entail in the very design.
 
-pubDate: 2026-07-07
+pubDate: 2024-09-16
 
 heroImage: /images/projects/2025_9.jpg
 
@@ -17,7 +17,7 @@ category: PhD Thesis
 
 featured: true
 
-year: 2026
+year: 2024
 
 theme: Polar architecture
 
