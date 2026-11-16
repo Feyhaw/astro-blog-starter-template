@@ -1,0 +1,400 @@
+
+---
+interface Props {
+  dates?: string[];
+  preview?: boolean;
+}
+
+const {
+  dates = ["07-09"],
+  preview = false,
+} = Astro.props;
+
+const campfireId =
+  `campfire-${Math.random().toString(36).slice(2, 9)}`;
+
+const frames = [
+  [
+    "      ^      ",
+    "    /\\ ^    ",
+    "   /+.\/\\     ",
+    "  /%%^%%\\    ",
+    "   \\%+%%/    ",
+    "    \\%%/     ",
+  ],
+  [
+    "   ^         ",
+    "   /\\  /\   ",
+    "  /%*\ /%.\   ",
+    " (%%*%+%o\\   ",
+    "  \\%%^%%/    ",
+    "   \\%%%/     ",
+  ],
+  [
+    "       /\\    ",
+    "   ^  /%\\    ",
+    "  /\\/%+%\    ",
+    " /%%%*%%\\)    ",
+    "  \\%\%%%/    ",
+    "   \\.%+/      ",
+  ],
+  [
+    "    /\\   ^   ",
+    "   /%+\\ /)   ",
+    "  /%%.%\\/    ",
+    "  \\?%%'\\    ",
+    "   /%%.+%/    ",
+    "    \\%%/     ",
+  ],
+  [
+    "        ^     ",
+    "  /\\  /\\     ",
+    "  /\\^/%%\    ",
+    "  \(%*%%%+\    ",
+    "   \\+%%%./    ",
+    "    \*%%/     ",
+  ],
+  [
+    "    ^  /\    ",
+    "   /\\/?\\    ",
+    "  /%%%.%\\    ",
+    "  (%+%*%/     ",
+    "   \\%%%/     ",
+    "    \+%/      ",
+  ],
+];
+---
+
+<div
+  id={campfireId}
+  class="campfire"
+  data-dates={JSON.stringify(dates)}
+  data-preview={String(preview)}
+  hidden
+  role="img"
+  aria-label="A small animated campfire"
+>
+  <div class="sparks" aria-hidden="true"></div>
+  <div class="flame" aria-hidden="true"></div>
+  <div class="logs" aria-hidden="true">o=o@o</div>
+</div>
+
+<style>
+  .campfire {
+    position: relative;
+    width: 150px;
+    height: 160px;
+    pointer-events: none;
+    user-select: none;
+    overflow: visible;
+  }
+
+  .campfire[hidden] {
+    display: none;
+  }
+
+
+    .flame {
+    position: absolute;
+     left: 50%;
+     bottom: 20px;
+     transform: translateX(-50%);
+     white-space: pre;
+     font-family: "Courier New", monospace;
+     font-size: 17px;
+     line-height: 1.05;
+     letter-spacing: 0;
+     text-align: left;
+     width: max-content;
+    }
+
+
+
+    .campfire :global(.flame-row) {
+    display: block;
+    height: 1.05em;
+    white-space: pre;
+    }
+
+    .campfire :global(.flame-char) {
+    display: inline;
+     white-space: pre;
+    }
+
+
+  .logs {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    font-family: "Courier New", monospace;
+    font-size: 17px;
+    letter-spacing: 0;
+    white-space: pre;
+    color: #666a6d;
+  }
+
+  .sparks {
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+  }
+
+  :global(.campfire .spark) {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    font-family: "Courier New", monospace;
+    color: #e9a047;
+    font-size: 12px;
+    opacity: 0;
+    animation: spark-rise var(--duration) linear forwards;
+  }
+
+  @keyframes spark-rise {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+
+    15% {
+      opacity: 0.85;
+    }
+
+    70% {
+      opacity: 0.55;
+    }
+
+    100% {
+      opacity: 0;
+      transform:
+        translate(var(--drift), var(--rise));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(.campfire .spark) {
+      animation: none;
+    }
+  }
+</style>
+
+<script define:vars={{ frames, campfireId }}>
+  const root = document.getElementById(campfireId);
+
+  if (root) {
+    const flame = root.querySelector(".flame");
+    const sparks = root.querySelector(".sparks");
+
+    const dates = JSON.parse(
+      root.dataset.dates || '["07-09"]'
+    );
+
+    const preview = root.dataset.preview === "true";
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    let frameTimer = null;
+    let sparkTimer = null;
+    let dateTimer = null;
+    let currentFrame = -1;
+
+    const colors = {
+      yellow: "#FFD65A",
+      orange: "#F5A23A",
+      red: "#D9573D",
+    };
+
+    function getUKDate() {
+      const parts = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/London",
+        month: "2-digit",
+        day: "2-digit",
+      }).formatToParts(new Date());
+
+      const month = parts.find(
+        part => part.type === "month"
+      )?.value;
+
+      const day = parts.find(
+        part => part.type === "day"
+      )?.value;
+
+      return `${month}-${day}`;
+    }
+
+    function isVisibleToday() {
+      return preview || dates.includes(getUKDate());
+    }
+
+    function getFlameColor(
+      column,
+      row,
+      totalColumns,
+      totalRows
+    ) {
+      const center = (totalColumns - 1) / 2;
+
+      const horizontal = Math.abs(
+        column - center
+      ) / Math.max(center, 1);
+
+      const vertical = 1 -
+        row / Math.max(totalRows - 1, 1);
+
+      const distance =
+        horizontal * 0.8 +
+        vertical * 0.2;
+
+      if (distance < 0.3) {
+        return colors.yellow;
+      }
+
+      if (distance < 0.6) {
+        return colors.orange;
+      }
+
+      return colors.red;
+    }
+
+    function renderFrame(index) {
+      if (!flame) return;
+
+      const rows = frames[index].slice(0, -1);
+      const width = Math.max(
+        ...rows.map(row => row.length)
+      );
+
+      flame.replaceChildren();
+
+      rows.forEach((line, rowIndex) => {
+        const rowElement =
+          document.createElement("span");
+
+        rowElement.className = "flame-row";
+
+        const padded = line.padEnd(width, " ");
+
+        [...padded].forEach((char, column) => {
+          const span =
+            document.createElement("span");
+
+          span.className = "flame-char";
+          span.textContent =
+            char === " " ? "\u00A0" : char;
+
+          if (char !== " ") {
+            span.style.color = getFlameColor(
+              column,
+              rowIndex,
+              width,
+              rows.length
+            );
+          }
+
+          rowElement.appendChild(span);
+        });
+
+        flame.appendChild(rowElement);
+      });
+    }
+
+    function nextFrame() {
+      let next;
+
+      do {
+        next = Math.floor(
+          Math.random() * frames.length
+        );
+      } while (next === currentFrame);
+
+      currentFrame = next;
+      renderFrame(next);
+    }
+
+    function createSpark() {
+      if (!sparks || reducedMotion.matches) {
+        return;
+      }
+
+      const spark = document.createElement("span");
+      spark.className = "spark";
+
+      const symbols = ["·", "°", "*", "˙"];
+      spark.textContent = symbols[
+        Math.floor(Math.random() * symbols.length)
+      ];
+
+      const offset = Math.random() * 28 - 14;
+      const drift = Math.random() * 50 - 25;
+      const rise = -(55 + Math.random() * 65);
+      const duration = 1.5 + Math.random() * 1.5;
+
+      spark.style.left = `calc(50% + ${offset}px)`;
+      spark.style.setProperty(
+        "--drift", `${drift}px`
+      );
+      spark.style.setProperty(
+        "--rise", `${rise}px`
+      );
+      spark.style.setProperty(
+        "--duration", `${duration}s`
+      );
+
+      sparks.appendChild(spark);
+
+      spark.addEventListener(
+        "animationend",
+        () => spark.remove(),
+        { once: true }
+      );
+    }
+
+    function stopAnimation() {
+      clearInterval(frameTimer);
+      clearInterval(sparkTimer);
+
+      frameTimer = null;
+      sparkTimer = null;
+
+      sparks?.replaceChildren();
+    }
+
+    function startAnimation() {
+      if (frameTimer) return;
+
+      nextFrame();
+
+      if (reducedMotion.matches) return;
+
+      frameTimer = setInterval(nextFrame, 500);
+      sparkTimer = setInterval(createSpark, 450);
+    }
+
+    function updateVisibility() {
+      const visible = isVisibleToday();
+      root.hidden = !visible;
+
+      if (visible) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    }
+
+    reducedMotion.addEventListener(
+      "change",
+      () => {
+        stopAnimation();
+        updateVisibility();
+      }
+    );
+
+    updateVisibility();
+
+    // Recheck the date every minute.
+    dateTimer = setInterval(updateVisibility, 60000);
+  }
+</script>

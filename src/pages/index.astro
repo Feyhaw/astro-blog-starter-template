@@ -5,6 +5,12 @@ import SpatialNavigation from '../components/SpatialNavigation.astro';
 import Librarian from '../components/Librarian.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import FirstVisitGuide from '../components/FirstVisitGuide.astro';
+import Campfire from '../components/Campfire.astro'
+import { campfireDates } from '../data/campfireDates';
+
+    const specialDates = campfireDates.map(
+        event => event.date
+    );
 ---
 
 <!doctype html>
@@ -52,6 +58,7 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
                 context="Capsule Fey"
               />
             </div>
+          </div>
         </section>
 
         <section class="ascii-ocean" aria-hidden="true">
@@ -85,6 +92,12 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
             <div class="sand sand-two"></div>
             <div class="sand sand-three"></div>
           </div>
+
+          
+          <div class="campfire-position">
+            <Campfire dates={specialDates} preview={false} />
+          </div>
+
         </section>
       </main>
 
@@ -92,17 +105,34 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
 </html>
 
 <script>
-  const canvas = document.getElementById('starfield');
-  const ctx = canvas.getContext('2d');
+  
+const canvas = document.querySelector<HTMLCanvasElement>(
+  '#starfield'
+);
 
-  let stars = [];
+const ctx = canvas?.getContext('2d') ?? null;
+
+interface Star {
+  x: number;
+  y: number;
+  r: number;
+  speed: number;
+  alpha: number;
+}
+
+let stars: Star[] = [];
+
+if (canvas && ctx) {
+  const starCanvas = canvas;
+  const starContext = ctx;
 
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    starCanvas.width = window.innerWidth;
+    starCanvas.height = window.innerHeight;
+
     stars = Array.from({ length: 140 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height * 0.7,
+      x: Math.random() * starCanvas.width,
+      y: Math.random() * starCanvas.height * 0.7,
       r: Math.random() * 2 + 0.4,
       speed: Math.random() * 0.28 + 0.05,
       alpha: Math.random() * 0.35 + 0.12,
@@ -110,19 +140,32 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
   }
 
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    starContext.clearRect(
+      0,
+      0,
+      starCanvas.width,
+      starCanvas.height
+    );
 
     stars.forEach((star) => {
       star.y += star.speed;
-      if (star.y > canvas.height * 0.75) {
+
+      if (star.y > starCanvas.height * 0.75) {
         star.y = -10;
-        star.x = Math.random() * canvas.width;
+        star.x = Math.random() * starCanvas.width;
       }
 
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(93, 126, 145, ${star.alpha})`;
-      ctx.fill();
+      starContext.beginPath();
+      starContext.arc(
+        star.x,
+        star.y,
+        star.r,
+        0,
+        Math.PI * 2
+      );
+      starContext.fillStyle =
+        `rgba(93, 126, 145, ${star.alpha})`;
+      starContext.fill();
     });
 
     requestAnimationFrame(draw);
@@ -132,6 +175,8 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
   draw();
 
   window.addEventListener('resize', resize);
+}
+
   
   (() => {
 		const button = document.getElementById('begin-conversation');
@@ -374,6 +419,22 @@ import FirstVisitGuide from '../components/FirstVisitGuide.astro';
 			border-color 0.2s ease,
 			opacity 0.2s ease;
 	}
+
+  .campfire-position {
+    position: absolute;
+    right: 12%;
+    bottom: 8%;
+    z-index: 3;
+  }
+
+  @media (max-width: 720px) {
+   .campfire-position {
+     right: 5%;
+     bottom: 6%;
+     transform: scale(0.75);
+     transform-origin: bottom right;
+   }
+  }
 
   @keyframes waveDrift {
     from {

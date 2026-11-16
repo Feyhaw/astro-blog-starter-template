@@ -1,6 +1,6 @@
 ---
 title: Not Just Rocking 
-subtitle: A Cold War history of 
+subtitle: A Cold War history of Rock n'Roll
 
 description: A brief historical review of classic rock and roll 
 
