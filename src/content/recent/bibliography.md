@@ -51,6 +51,14 @@ Some sources on polar and space architectures, housing, and architectural theory
 </p>
 
 <p>
+•	Barber, Daniel A. 2020. <em>Modern Architecture and Climate: Design before Air Conditioning.</em> Princetown: Princeton University Press.
+</p>
+
+<p>
+•	Barber, Daniel A. 2016. <em>A House in the Sun: Modern Architecture and Solar Energy in the Cold War.</em> New York: Oxford University Press.
+</p>
+
+<p>
 •	Belanger, Dian Olson. <em>Deep Freeze: The United States, the International Geophysical Year, and the Origins of Antarctica’s Age of Science.</em> University Press of Colorado, 2006. <a class="shortcut" href="http://www.jstor.org/stable/j.ctt46nthf" style="color: rgb(var(--gray));">
     http://www.jstor.org/stable/j.ctt46nthf 
     </a>

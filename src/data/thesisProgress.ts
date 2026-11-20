@@ -109,7 +109,7 @@ export const thesisProgress = {
         {
           id: "ch3-2",
           label: "Primary Case Study",
-          articleTitle: "The Second Red Flag in the Antarctic: Qingling Station and China’s Antarctic Scheme",
+          articleTitle: "Changcheng Extending South: Qingling Station and China’s Antarctic Scheme",
           target: "04/2027",
           finished: null,
           completed: false,
@@ -178,7 +178,7 @@ export const thesisProgress = {
   literature: [
   { category: "Project", reviewed: 113, identified: 122 },
   { category: "Concept", reviewed: 39, identified: 48 },
-  { category: "Background", reviewed: 186, identified: 207 },
+  { category: "Background", reviewed: 186, identified: 209 },
   { category: "Etymology", reviewed: 3, identified: 4 },
   { category: "Methodology", reviewed: 3, identified: 3 },
 ],
@@ -186,7 +186,7 @@ export const thesisProgress = {
   
 experts: [
   {
-    name: "Peter Senk",
+    name: "Peter Šenk",
     discipline: "Architecture historian",
     status: "Follow-up",
     notes: "Capsule architecture; Metabolism; Archigram",
@@ -222,9 +222,15 @@ experts: [
     notes: "Archigram",
   },
   {
+    name: "Daniel Barber",
+    discipline: "Architecture historian",
+    status: "Contacted",
+    notes: "Environmental control",
+  },
+  {
     name: "Japan National Institute of Polar Research",
     discipline: "Government institution",
-    status: "Planned",
+    status: "Contacted",
     notes: "Living experience",
   },
   {
