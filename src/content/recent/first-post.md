@@ -42,6 +42,12 @@ as the world will never wait for you. The journey of Capsule Fey has only begun,
 am very happen to greet you from this tiny corner of the internet.
 </p>    
 
+<p> In case if you wonder, the two lines of Chinese on the front page literally translates as:
+"Blizzard and rains within a feet, family lights out of reach". It's not a poem but something 
+I came to realized these years. Somehow it perfectly summarizes my life experience, research 
+methodology, and research subjects.
+</p> 
+
 <p>
 <a class="shortcut" href="/recent" style="color: rgb(var(--gray));">
 Return to "Recent"</a>
