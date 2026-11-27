@@ -206,7 +206,7 @@ experts: [
   {
     name: "Hugh Broughton",
     discipline: "Practising architect",
-    status: "Contacted",
+    status: "Follow-up",
     notes: "Antarctic architecture; Interior design; Confinement",
   },
   {
